@@ -1,0 +1,42 @@
+
+.changelog_container{
+	padding: 16px;
+	margin: 64px 46px 64px 46px;
+	font-size: 18px;
+	min-height: 100vh;
+}
+
+@media (max-width:600px) {
+	.changelog_container {
+		margin: 64px 46px 64px 18px;
+	}
+}
+
+.changelog_container h2{
+	font-size: 24px;
+	font-weight: 300;
+	margin-bottom: 16px;
+}
+
+.change_header{
+	font-weight: 400;
+	font-size: 20px;
+	padding: 4px 8px;
+	margin-bottom: 8px;
+	background-color: rgb(58, 60, 63, 0.8);
+	border-radius: 3px;
+	color: #f3c669!important;
+}
+
+.changelog_container .change_log+.change_log{
+	margin-top: 32px;
+}
+
+.change_log ol{
+	list-style-type: decimal;
+	padding: 0;
+}
+
+.change_log ol li{
+	margin-left: 24px;
+}
