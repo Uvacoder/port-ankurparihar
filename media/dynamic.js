@@ -7,35 +7,43 @@ var url_trim, url_slashed;
 var references = {
 	"": {
 		id: "nav-home-icon",
-		page_location_text: "Home"
+		page_location_text: "Home",
+		injectJSLoc: "/media/home.js"
 	},
 	"recent": {
 		id: "nav-recent-icon",
-		page_location_text: "Recent"
+		page_location_text: "Recent",
+		injectJSLoc: ""
 	},
 	"browse": {
 		id: "nav-browse-icon",
-		page_location_text: "Browse"
+		page_location_text: "Browse",
+		injectJSLoc: ""
 	},
 	"search": {
 		id: "nav-search-icon",
-		page_location_text: "Search"
+		page_location_text: "Search",
+		injectJSLoc: ""
 	},
 	"res-iitr": {
 		id: "nav-res-iitr",
-		page_location_text: "IITR"
+		page_location_text: "IITR",
+		injectJSLoc: ""
 	},
 	"demo": {
 		id: "nav-live-demo",
-		page_location_text: "Live Demos"
+		page_location_text: "Live Demos",
+		injectJSLoc: ""
 	},
 	"changelog": {
 		id: "nav-about-whatnew",
-		page_location_text: "What's New"
+		page_location_text: "What's New",
+		injectJSLoc: ""
 	},
 	"about-me": {
 		id: "nav-resource-aboutme",
-		page_location_text: "About Me"
+		page_location_text: "About Me",
+		injectJSLoc: ""
 	}
 };
 
@@ -74,6 +82,7 @@ function loadDoc(relative_url, origin, flag) {
 				home_hero.style.display = "none";
 			}
 			update_url_trim();
+			injectJS(references[url_trim].injectJSLoc);
 			page_location_text.innerHTML = references[url_trim].page_location_text;
 			backToTop();
 		}
@@ -125,8 +134,14 @@ function displayError(status, statusText) {
 }
 
 function injectJS(file_url){
+	// remove previous if exists
+	var JSelem = document.getElementById("injectedJS");
+	if(JSelem){
+		JSelem.parentElement.removeChild(JSelem);
+	}
 	if(!file_url || file_url=="") return;
 	var jsELem = document.createElement("script");
+	jsELem.id = "injectedJS";
 	jsELem.type = "application/javascript";
 	jsELem.src = file_url;
 	content.appendChild(jsELem);
