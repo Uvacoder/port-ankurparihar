@@ -296,7 +296,10 @@ var Semesters = {
 				Title: "Compiler Laboratory",
 				Credits: 3,
 				Session: "2018-19",
-				Semester: "Third Year - 2nd Sem (Spring)"
+				Semester: "Third Year - 2nd Sem (Spring)",
+				Content: {
+					"Codes": "https://drive.google.com/drive/folders/1mT5rnAF_xTLdbW3OD_cL3kZQGVgWzRz-?usp=sharing"
+				}
 			},
 			{
 				Code: "CSN-399",
