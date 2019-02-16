@@ -123,3 +123,11 @@ function displayError(status, statusText) {
 	document.getElementById("error-code").innerHTML = "Error Code: " + status + " " + statusText;
 	toggleNav();
 }
+
+function injectJS(file_url){
+	if(!file_url || file_url=="") return;
+	var jsELem = document.createElement("script");
+	jsELem.type = "application/javascript";
+	jsELem.src = file_url;
+	content.appendChild(jsELem);
+}
