@@ -220,20 +220,20 @@
 						<div class="display_ribbon__header flex row justify-left align-center wrap mb-16">
 							<div class="display_ribbon__header__title flex column">
 								<span>Recent Uploads</span>
-								<span class="display_ribbon__header__title__subtitle">2 days 7 hours ago</span>
+								<span class="display_ribbon__header__title__subtitle" id="ribbon_time__recent"></span>
 							</div>
 							<button type="button" class="display_ribbon__all btn_htv btn-large btn-outline" onclick="alert('Coming soon')">
 								<div class="btn_htv__content">All</div>
 							</button>
 							<div class="display_ribbon__header__nav_container">
-								<button type="button" class="display_ribbon__header__nav-arrow display_ribbon__header__nav-arrow-left btn_htv btn_htv--disabled btn-large btn_htv--outline btn_htv--depressed" id="desktop_ribbon_btn_left" disabled="disabled" onclick="moveRibbonSlider(1)">
+								<button type="button" class="display_ribbon__header__nav-arrow display_ribbon__header__nav-arrow-left btn_htv btn_htv--disabled btn-large btn_htv--outline btn_htv--depressed" disabled="disabled" onclick="moveRibbonSlider(this,1)">
 									<div class="btn_htv__content">
 										<svg style="width:24px;height:24px" viewBox="0 0 24 24">
 											<path fill="#ffffff" d="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z" />
 										</svg>
 									</div>
 								</button>
-								<button type="button" class="display_ribbon__header__nav-arrow display_ribbon__header__nav-arrow-right btn_htv btn-large btn_htv--outline btn_htv--depressed" id="desktop_ribbon_btn_right" onclick="moveRibbonSlider(-1)" >
+								<button type="button" class="display_ribbon__header__nav-arrow display_ribbon__header__nav-arrow-right btn_htv btn-large btn_htv--outline btn_htv--depressed" onclick="moveRibbonSlider(this, -1)" >
 									<div class="btn_htv__content">
 										<svg style="width:24px;height:24px" viewBox="0 0 24 24">
 											<path fill="#ffffff" d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
@@ -243,35 +243,38 @@
 							</div>
 						</div>
 						<div class="display_ribbon__scroll display_ribbon__desktop">
-							<div class="display_ribbon__slider" id="display_ribbon__slider">
-								<div class="elevation-3 mb-16 hvc item card" style="height:auto">
-									<a href="/demo/fractal-generator/" draggable="false" title="Fractal generator" ondragstart="return false;">
-										<div>
-											<div class="hvc__media card__media" style="height:auto">
-												<div class="card__media__content">
-													<div class="hvc__media__cover-container">
-														<div class="hvc__media__cover-aspect-ratio">
-															<div class="hvc__media__cover">
-																<div>
-																	<img src="/media/demo/Sierpinski_triangle-card.png" alt="fractal image" title="Fractal generator" draggable="false" class="hvc__media__cover__image" width="auto" height="auto">
-																</div>
-															</div>
-															<div class="hvc__media__cover-glass"></div>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="card__title">
-												<div class="hvc__content flex column justify-center align-center">
-													<div class="spacer"></div>
-													<div class="hv-title">Fractal generator</div>
-													<div class="hv-subtitle">Live Demo</div>
-													<div class="spacer"></div>
-												</div>
-											</div>
-										</div>
-									</a>
-								</div>
+							<div class="display_ribbon__slider" id="display_ribbon__slider_recent" style="display:inline-flex;flex-direction:row;">
+							</div>
+						</div>
+					</div>
+					<div class="display_ribbon noselect mb-48">
+						<div class="display_ribbon__header flex row justify-left align-center wrap mb-16">
+							<div class="display_ribbon__header__title flex column">
+								<span>Must Visit</span>
+								<span class="display_ribbon__header__title__subtitle" id="ribbon_time__mstwntd"></span>
+							</div>
+							<button type="button" class="display_ribbon__all btn_htv btn-large btn-outline" onclick="alert('Coming soon')">
+								<div class="btn_htv__content">All</div>
+							</button>
+							<div class="display_ribbon__header__nav_container">
+								<button type="button" class="display_ribbon__header__nav-arrow display_ribbon__header__nav-arrow-left btn_htv btn_htv--disabled btn-large btn_htv--outline btn_htv--depressed" disabled="disabled" onclick="moveRibbonSlider(this,1)">
+									<div class="btn_htv__content">
+										<svg style="width:24px;height:24px" viewBox="0 0 24 24">
+											<path fill="#ffffff" d="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z" />
+										</svg>
+									</div>
+								</button>
+								<button type="button" class="display_ribbon__header__nav-arrow display_ribbon__header__nav-arrow-right btn_htv btn-large btn_htv--outline btn_htv--depressed" onclick="moveRibbonSlider(this, -1)" >
+									<div class="btn_htv__content">
+										<svg style="width:24px;height:24px" viewBox="0 0 24 24">
+											<path fill="#ffffff" d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
+										</svg>
+									</div>
+								</button>
+							</div>
+						</div>
+						<div class="display_ribbon__scroll display_ribbon__desktop">
+							<div class="display_ribbon__slider" id="display_ribbon__slider_mstwntd" style="display:inline-flex;flex-direction:row;">
 							</div>
 						</div>
 					</div>
