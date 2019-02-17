@@ -10,20 +10,6 @@ var ribbon_items = [
 				imgsrc: "/media/demo/Sierpinski_triangle-card.png",
 				imgalt: "fractal image",
 				subtitle: "Live Demo"
-			},
-			{
-				href: "/demo/fractal-generator/",
-				title: "Fractal generator",
-				imgsrc: "/media/demo/Sierpinski_triangle-card.png",
-				imgalt: "fractal image",
-				subtitle: "Live Demo"
-			},
-			{
-				href: "/demo/fractal-generator/",
-				title: "Fractal generator",
-				imgsrc: "/media/demo/Sierpinski_triangle-card.png",
-				imgalt: "fractal image",
-				subtitle: "Live Demo"
 			}
 		]
 	},
@@ -32,41 +18,6 @@ var ribbon_items = [
 		timeID: "ribbon_time__mstwntd",
 		lastUpdate: 1550349642763,
 		items: [
-			{
-				href: "/demo/fractal-generator/",
-				title: "Fractal generator",
-				imgsrc: "/media/demo/Sierpinski_triangle-card.png",
-				imgalt: "fractal image",
-				subtitle: "Live Demo"
-			},
-			{
-				href: "/demo/fractal-generator/",
-				title: "Fractal generator",
-				imgsrc: "/media/demo/Sierpinski_triangle-card.png",
-				imgalt: "fractal image",
-				subtitle: "Live Demo"
-			},
-			{
-				href: "/demo/fractal-generator/",
-				title: "Fractal generator",
-				imgsrc: "/media/demo/Sierpinski_triangle-card.png",
-				imgalt: "fractal image",
-				subtitle: "Live Demo"
-			},
-			{
-				href: "/demo/fractal-generator/",
-				title: "Fractal generator",
-				imgsrc: "/media/demo/Sierpinski_triangle-card.png",
-				imgalt: "fractal image",
-				subtitle: "Live Demo"
-			},
-			{
-				href: "/demo/fractal-generator/",
-				title: "Fractal generator",
-				imgsrc: "/media/demo/Sierpinski_triangle-card.png",
-				imgalt: "fractal image",
-				subtitle: "Live Demo"
-			},
 			{
 				href: "/demo/fractal-generator/",
 				title: "Fractal generator",
@@ -102,7 +53,7 @@ function display_ribbons() {
 			divElem.classList.add("elevation-3", "mb-16", "hvc", "item", "card");
 			divElem.setAttribute("style", "height:auto");
 			divElem.innerHTML = `
-				<a href="`+ [i].href + `" draggable="false" title="` + ribbon.items[i].title + `" ondragstart="return false;">
+				<a href="`+ ribbon.items[i].href + `" draggable="false" title="` + ribbon.items[i].title + `" ondragstart="return false;">
 					<div>
 						<div class="hvc__media card__media" style="height:auto">
 							<div class="card__media__content">
