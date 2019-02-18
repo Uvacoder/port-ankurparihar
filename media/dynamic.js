@@ -38,7 +38,7 @@ var references = {
 	"changelog": {
 		id: "nav-about-whatnew",
 		page_location_text: "What's New",
-		injectJSLoc: ""
+		injectJSLoc: "/changelog/script.js"
 	},
 	"about-me": {
 		id: "nav-resource-aboutme",
