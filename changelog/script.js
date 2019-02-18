@@ -2,7 +2,8 @@ var changeData = [
 	{
 		Date:"19/02/2019",
 		changes:[
-			"Date of last update on home ribbons"
+			"Date of last update on home ribbons",
+			"Changelog database implemented"
 		]
 	},
 	{
