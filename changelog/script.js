@@ -3,7 +3,9 @@ var changeData = [
 		Date:"19/02/2019",
 		changes:[
 			"Date of last update on home ribbons",
-			"Changelog database implemented"
+			"Changelog database implemented",
+			"Improved modular structure of website",
+			"Scripts are now more distributed and localized"
 		]
 	},
 	{

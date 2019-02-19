@@ -28,7 +28,7 @@ var references = {
 	"res-iitr": {
 		id: "nav-res-iitr",
 		page_location_text: "IITR",
-		injectJSLoc: ""
+		injectJSLoc: "/res-iitr/script.js"
 	},
 	"demo": {
 		id: "nav-live-demo",
@@ -73,12 +73,11 @@ function loadDoc(relative_url, origin, flag) {
 			fake_elem.innerHTML = this.responseText;
 			content.innerHTML = fake_elem.getElementsByClassName('content')[0].innerHTML;
 			if (origin == "nav-home-icon") {
-				parallax_container.style.display = "block";
 				home_hero.style.display = "block";
-				calculateHeroScale();
+				parallax_container.innerHTML=`<div class="parallax-img"><img src="/media/walls/16.jpg" class="hero_image" id="hero_image-1"></div>`;
 			}
 			else {
-				parallax_container.style.display = "none";
+				parallax_container.innerHTML='';
 				home_hero.style.display = "none";
 			}
 			update_url_trim();
@@ -101,7 +100,6 @@ function update_nav_highlight(origin_id) {
 }
 
 window.addEventListener('popstate', function (e) {
-	// var pop_event = e;
 	update_url_trim();
 	if (url_trim == "demo" && Projects[url_slashed[4]]) {
 		loadDoc("/demo/" + url_slashed[4] + "/index.html", references[url_trim].id, "no_toggle_nav");

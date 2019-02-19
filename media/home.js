@@ -85,15 +85,12 @@ function display_ribbons() {
 	}
 }
 
-display_ribbons();
-
 // Home screen horizontal slider
 var display_ribbon__slider, desktop_ribbon_btn_r, desktop_ribbon_btn_l;
 var lastRibbonPos = 0;
 var display_ribbon_width = null;
 
 function moveRibbonSlider(elem, direction) {
-	/**@type {HTMLElement} */
 	var ribParElem = elem.parentElement.parentElement.parentElement;
 	display_ribbon__slider = ribParElem.childNodes[3].childNodes[1];
 	lastRibbonPos = display_ribbon__slider.getBoundingClientRect().left;
@@ -132,3 +129,22 @@ function updateRibbonButtons(l,r) {
 		desktop_ribbon_btn_r.classList.remove("btn_htv--disabled");
 	}
 }
+
+// hero image
+var hero_image_1 = document.getElementById("hero_image-1");
+var application = document.querySelector('.application');
+var hero_image_scale = (application.scrollHeight - window.innerHeight) / (hero_image_1.height - window.innerHeight);
+hero_image_scale = (hero_image_scale < 0) ? 0 : hero_image_scale;
+
+function calculateHeroScale() {
+	hero_image_scale = (application.scrollHeight - window.innerHeight) / (hero_image_1.height - window.innerHeight);
+	hero_image_scale = (hero_image_scale < 0) ? 0 : hero_image_scale;
+	if (hero_image_scale == 0) {
+		hero_image_1.style.transform = "translateY(0px)";
+	}
+}
+
+hero_image_1.onload = calculateHeroScale;
+
+display_ribbons();
+calculateHeroScale();

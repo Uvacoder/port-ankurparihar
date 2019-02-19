@@ -8,7 +8,6 @@
 }
 
 #frctl_cnvs_div {
-	/* display: flex; */
 	height: 420px;
 	width: 420px;
 }
@@ -17,7 +16,6 @@
 	min-width: 400px;
 	width: 400px;
 	min-height: 400px;
-	/* background-color: #1e1e1e; */
 }
 
 .frctl_rule_editor {
@@ -34,8 +32,6 @@
 	user-select: none;
 	border-radius: 2px;
 	border: 1px solid #d4d4d4;
-	/* border-right: 1px solid #d4d4d4; */
-	/* background-color: #1e1e1e; */
 }
 
 .frctl_lines_content {
@@ -44,8 +40,6 @@
 	width: 100%;
 	height: 100%;
 	will-change:transform;
-	/* top: 0px; */
-	/* left: -15px; */
 	-webkit-user-select: none;
 	-ms-user-select: none;
 	-moz-user-select: none;
@@ -60,7 +54,6 @@
 
 .frctl_view_lines {
 	position: absolute;
-	/* font-family: Consolas, "Courier New", monospace, "Droid Sans Mono", "Droid Sans Fallback"; */
 	font-weight: normal;
 	font-size: 14px;
 	line-height: 20px;
@@ -115,7 +108,6 @@
 }
 
 #fractal_ifs_block h3 {
-	/* margin-top: 20px; */
 	font-size: 26px;
 	font-weight: 300;
 	text-align: center;
@@ -180,7 +172,6 @@
 #frctl_popup input {
 	width: 100%;
 	position: relative;
-	/* top: 5px; */
 	height: 40px;
 	caret-color: #4CAF50;
 	overflow: hidden;
@@ -223,7 +214,6 @@
 .fractal_select{
 	display: flex;
 	width: 100%;
-	/* height: 22px; */
 	background-color: transparent;
 	position: absolute;
 	bottom: 22px;
@@ -264,7 +254,6 @@
 #frctl_play_btn button {
 	background: transparent;
 	border: none;
-	/* width: 40px; */
 	cursor: pointer;
 	border-radius: 30%;	
 }
@@ -296,7 +285,6 @@
 .frctl_del_btn button, .frctl_add_btn button, .frctl_rst_btn button{
 	background: transparent;
 	border: none;
-	/* width: 40px; */
 	cursor: pointer;
 	border-radius: 30%;	
 }

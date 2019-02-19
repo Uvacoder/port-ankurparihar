@@ -21,7 +21,6 @@
 	left: 0;
 	width: 160px;
 	background-color: #303030;
-	/* display: inline-block; */
 	align-content: center;
 	float: left;
 }
@@ -31,7 +30,6 @@
 		min-height: 600px;
 		position: relative;
 		left: 0;
-		/* display: inline-block; */
 		width: 200px;
 		background-color: #303030;
 		align-content: center;
@@ -41,10 +39,7 @@
 
 .iitr_side-options {
 	padding-top: 24px;
-	/* padding-bottom: 24px; */
 	width: 100%;
-	/* text-align: center; */
-	/* display: flex; */
 }
 
 .iitr_side-options h3 {
@@ -61,7 +56,6 @@
 	width: 100%;
 	border-radius: 2px;
 	padding: 8px 8px 8px 16px;
-	/* padding-left: 16px; */
 	font-size: 16px;
 	color: #eee;
 	transition: all 280ms cubic-bezier(.5,0,.1,1);
@@ -107,11 +101,7 @@
 @media (min-width: 960px) {
 	.iitr_sem_opt {
 		font-size: 18px;
-		/* padding: 8px 16px; */
 	}
-	/* .iitr_sem_exp {
-		padding-left: 30px;
-	} */
 }
 
 .iitr_main {
@@ -125,18 +115,6 @@
 	min-height: 600px;
 	margin-left: 160px;
 }
-/* 
-.iitr_main {
-	font-size: 16px;
-	transition: none;
-	position: relative;
-	will-change: padding;
-	width: auto;
-    padding-top: 0px;
-	padding-right: 16px;
-	min-height: 600px;
-	margin-left: 200px;
-} */
 
 @media (min-width: 960px) {
 	.iitr_main {
@@ -148,12 +126,10 @@
 	font-size: 16px;
 	height: 50px;
 	position: relative;
-	/* left: 15%; */
 	top: 0;
 	text-align: center;
 	margin: 0 auto;
 	overflow: hidden;
-	/* background: #f3c669; */
 	padding: 17px;
 }
 
@@ -178,44 +154,19 @@
 
 .sem_box {
 	height: 70px;
-	/* min-height: 100px; */
 	width: 80%;
 	background: #17181a;
 }
 
 .sub_box {
 	height: 100px;
-	/* min-height: 100px; */
 	width: 80%;
 	background: #17181a;
 }
 
-/* .sem_box {
-	height: 100px;
-	width: 44%;
-	background: #17181a;
-} */
-/* min-height: 100px; */
-
-/* .sub_box {
-	height: 100px;
-	width: 80%;
-	background: #17181a;
-} */
-/* min-height: 100px; */
-
-/* .sub_box { */
-	/* height: 100px; */
-	/* min-height: 100px; */
-	/* width: 250px; */
-	/* background: #17181a; */
-/* } */
-
 .sem_box, .sub_box {
-	/* transform: skewX(-15deg); */
 	margin: 5px;
 	border-radius: 2px;
-	/* vertical-align: middle; */
 }
 
 .sem_box button , .sub_box button {
