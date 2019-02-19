@@ -114,7 +114,7 @@ function backToTop() {
 	var id;
 	if (document.documentElement.scrollTop > 0) {
 		id = setInterval(function () {
-			document.documentElement.scrollBy(0, -10);
+			document.documentElement.scrollBy(0, -20);
 			// window.scrollBy(0, -10);
 			// console.log("scrolling...");
 			if (document.documentElement.scrollTop <= 0) {
@@ -125,7 +125,7 @@ function backToTop() {
 	if (document.body.scrollTop > 0) {
 		id = setInterval(function () {
 			// window.scrollBy(0, -10);
-			document.body.scrollBy(0, -10);
+			document.body.scrollBy(0, -20);
 			if (document.body.scrollTop <= 0) {
 				clearInterval(id);
 			}

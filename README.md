@@ -19,7 +19,7 @@
 - Append `card` with image name to use it on home screen
 
 ### Course content
-- Add course information in [database.js](/media/database.js). If the course is new simply add that course in `Semester` variable.
+- Add course information in [script.js](/res-iitr/script.js). If the course is new simply add that course in `Semester` variable.
 - Use `svg_data` to display relative material icon
 - Update semester `cur_sem`
 
