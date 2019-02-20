@@ -283,14 +283,20 @@ var Semesters = {
 				Title: "Principles of Programming Languages",
 				Credits: 3,
 				Session: "2018-19",
-				Semester: "Third Year - 2nd Sem (Spring)"
+				Semester: "Third Year - 2nd Sem (Spring)",
+				Content: {
+					"Notes": "https://drive.google.com/open?id=1KxCMVy9OlDBC4XLLgyP4ZImtG-uQhwAw"
+				}
 			},
 			{
 				Code: "CSN-352",
 				Title: "Compiler Design",
 				Credits: 4,
 				Session: "2018-19",
-				Semester: "Third Year - 2nd Sem (Spring)"
+				Semester: "Third Year - 2nd Sem (Spring)",
+				Content: {
+					"Notes": "https://drive.google.com/drive/folders/1T6G1razV6y2LUCzKbzPIrYNLBfyR-Y5n?usp=sharing"
+				}
 			},
 			{
 				Code: "CSN-362",
@@ -317,7 +323,8 @@ var Semesters = {
 				Session: "2018-19",
 				Semester: "Third Year - 2nd Sem (Spring)",
 				Content: {
-					"Slides": "https://drive.google.com/open?id=1EkYpiGZQ1-tIBVcNmHOXiiXogx83GzwS"
+					"Slides": "https://drive.google.com/open?id=1EkYpiGZQ1-tIBVcNmHOXiiXogx83GzwS",
+					"Assignment": "https://drive.google.com/drive/folders/177LouXpprDZc127I-N2zEt5V3kISNKrE?usp=sharing"
 				}
 			}
 		]
