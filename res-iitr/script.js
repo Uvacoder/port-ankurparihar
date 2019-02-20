@@ -295,7 +295,8 @@ var Semesters = {
 				Session: "2018-19",
 				Semester: "Third Year - 2nd Sem (Spring)",
 				Content: {
-					"Notes": "https://drive.google.com/drive/folders/1T6G1razV6y2LUCzKbzPIrYNLBfyR-Y5n?usp=sharing"
+					"Notes": "https://drive.google.com/drive/folders/1T6G1razV6y2LUCzKbzPIrYNLBfyR-Y5n?usp=sharing",
+					"Books": "https://drive.google.com/open?id=1clsuPdwSMIvzy5MmreznYjHWVYM2p6pw"
 				}
 			},
 			{
@@ -325,6 +326,16 @@ var Semesters = {
 				Content: {
 					"Slides": "https://drive.google.com/open?id=1EkYpiGZQ1-tIBVcNmHOXiiXogx83GzwS",
 					"Assignment": "https://drive.google.com/drive/folders/177LouXpprDZc127I-N2zEt5V3kISNKrE?usp=sharing"
+				}
+			},
+			{
+				Code: "CSE-Exam",
+				Title: "Exam Papers",
+				Credits: 0,
+				Session: "2018-19",
+				Semester: "Third Year - 2nd Sem (Spring)",
+				Content: {
+					"Papers": "https://drive.google.com/drive/folders/1TPLvWNp7iKw2yTjvQlhBKiJhg0H1yYV6?usp=sharing"
 				}
 			}
 		]
