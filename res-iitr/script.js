@@ -266,6 +266,8 @@ var Semesters = {
 				Session: "2018-19",
 				Semester: "Third Year - 2nd Sem (Spring)",
 				Content: {
+					"Notes": "https://drive.google.com/drive/folders/126q9B-ldG29IRZ8Pg48GaVStMX_PAEoI?usp=sharing",
+					"Assignment": "https://drive.google.com/drive/folders/1VlobDAV6XXRsdMSfPjkuD8NMaDmT9EqL?usp=sharing"
 					"Project": "/demo?origin=IES-301"
 				}
 			},
