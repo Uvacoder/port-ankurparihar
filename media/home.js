@@ -2,8 +2,43 @@ var ribbon_items = [
 	{
 		parent: "display_ribbon__slider_recent",
 		timeID: "ribbon_time__recent",
-		lastUpdate: 1549045800000,
+		lastUpdate: 1550680306880,
 		items: [
+			{
+				href: "/res-iitr/",
+				title: "Principles of Programming Languages Notes",
+				imgsrc: "/media/iitr/princi of prog lang.png",
+				imgalt: "Principles of programming languages",
+				subtitle: "IITR Resources"
+			},
+			{
+				href: "/res-iitr/",
+				title: "Compiler Design Notes",
+				imgsrc: "/media/iitr/compiler design.jpg",
+				imgalt: "Compiler Design",
+				subtitle: "IITR Resources"
+			},
+			{
+				href: "/res-iitr/",
+				title: "Compiler Lab Codes",
+				imgsrc: "/media/iitr/compiler lab.jpg",
+				imgalt: "Compiler lab",
+				subtitle: "IITR Resources"
+			},
+			{
+				href: "/res-iitr/",
+				title: "Machine Learning Slides",
+				imgsrc: "/media/iitr/machine learning.jpg",
+				imgalt: "Machine Learning",
+				subtitle: "IITR Resources"
+			},
+			{
+				href: "/res-iitr/",
+				title: "Fractal Notes",
+				imgsrc: "/media/iitr/fractals.jpg",
+				imgalt: "fractals and applications",
+				subtitle: "IITR Resources"
+			},
 			{
 				href: "/demo/fractal-generator/",
 				title: "Fractal generator",
