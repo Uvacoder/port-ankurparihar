@@ -1,18 +1,18 @@
 var changeData = [
 	{
+		Date:"23/02/2019",
+		changes:[
+			"Added sitemap",
+			"Added robots.txt"
+		]
+	},
+	{
 		Date:"19/02/2019",
 		changes:[
 			"Date of last update on home ribbons",
 			"Changelog database implemented",
 			"Improved modular structure of website",
 			"Scripts are now more distributed and localized"
-		]
-	},
-	{
-		Date:"23/02/2019",
-		changes:[
-			"Added sitemap",
-			"Added robots.txt"
 		]
 	},
 	{
