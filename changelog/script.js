@@ -9,6 +9,13 @@ var changeData = [
 		]
 	},
 	{
+		Date:"23/02/2019",
+		changes:[
+			"Added sitemap",
+			"Added robots.txt"
+		]
+	},
+	{
 		Date:"11/02/2019",
 		changes:[
 			"Site published on github"

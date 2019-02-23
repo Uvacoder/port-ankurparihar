@@ -6,6 +6,7 @@
 - Style and Scripts must be included in relative files not in global files
 - Use standard [index.html](index.html) and make necessary changes.
 - Content must be inside `.content` div starting with `stylesheet` element and ending with `injectedJS` element
+- [Update sitemap](www.xml-sitemaps.com)
 
 ## Working in local environment
 - Use local virtual host. Due to all relative links the host must be changed.
