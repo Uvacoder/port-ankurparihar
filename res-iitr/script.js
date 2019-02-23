@@ -331,7 +331,7 @@ var Semesters = {
 			},
 			{
 				Code: "CSE-Exam",
-				Title: "Exam Papers",
+				Title: "Exam Portal",
 				Credits: 0,
 				Session: "2018-19",
 				Semester: "Third Year - 2nd Sem (Spring)",
