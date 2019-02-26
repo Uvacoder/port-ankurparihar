@@ -27,7 +27,7 @@ function scanDemoPage() {
 	params = split.split('&');
 	// console.log(params);
 	params.forEach(p => {
-		[key, value] = [p.split('=')[0], p.split('=')[1]]
+		[key, value] = [p.split('=')[0], p.split('=')[1]];
 		// console.log(key ,'=', value);
 		if(key=='origin'){
 			loadDemo(value);
@@ -46,6 +46,9 @@ function scanDemoPage() {
 }
 
 function loadDemo(origin){
+	if(window.location.href.split('/').length!=5){
+		return;
+	}
 	var demo_list = "";
 	if(!origin){
 		for(project in Projects){

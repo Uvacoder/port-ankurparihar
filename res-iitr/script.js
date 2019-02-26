@@ -405,3 +405,24 @@ function initResIITR() {
 }
 
 initResIITR();
+
+function scanIITRPage() {
+	var params, key, value, proj_obj;
+	var split = decodeURI(window.location.href).split('?')[1];
+	if (!split) {
+		return;
+	}
+	params = split.split('&');
+	// console.log(params);
+	params.forEach(p => {
+		[key, value] = [p.split('=')[0], p.split('=')[1]];
+		// Format
+		// tab=5_3
+		if(key=='tab'){
+			value = value.split('-');
+			showSubject(value[0], value[1]-1);
+			return;
+		}
+	});
+}
+scanIITRPage();

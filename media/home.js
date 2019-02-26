@@ -5,35 +5,35 @@ var ribbon_items = [
 		lastUpdate: 1550680306880,
 		items: [
 			{
-				href: "/res-iitr/",
+				href: "/res-iitr?tab=6-3",
 				title: "Principles of Programming Languages Notes",
 				imgsrc: "/media/iitr/princi of prog lang.png",
 				imgalt: "Principles of programming languages",
 				subtitle: "IITR Resources"
 			},
 			{
-				href: "/res-iitr/",
+				href: "/res-iitr?tab=6-4",
 				title: "Compiler Design Notes",
 				imgsrc: "/media/iitr/compiler design.jpg",
 				imgalt: "Compiler Design",
 				subtitle: "IITR Resources"
 			},
 			{
-				href: "/res-iitr/",
+				href: "/res-iitr?tab=6-5",
 				title: "Compiler Lab Codes",
 				imgsrc: "/media/iitr/compiler lab.jpg",
 				imgalt: "Compiler lab",
 				subtitle: "IITR Resources"
 			},
 			{
-				href: "/res-iitr/",
+				href: "/res-iitr?tab=6-7",
 				title: "Machine Learning Slides",
 				imgsrc: "/media/iitr/machine learning.jpg",
 				imgalt: "Machine Learning",
 				subtitle: "IITR Resources"
 			},
 			{
-				href: "/res-iitr/",
+				href: "/res-iitr?tab=6-1",
 				title: "Fractal Notes",
 				imgsrc: "/media/iitr/fractals.jpg",
 				imgalt: "fractals and applications",
