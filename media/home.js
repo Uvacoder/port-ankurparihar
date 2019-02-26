@@ -68,12 +68,34 @@ var maxListLimit = 12;
 
 function getDayHourString(delta_time) {
 	var day = Math.floor(delta_time / 86400000);
+	// if (day > 365) {
+	// 	var year = Math.floor(day * 4 / 1461);
+	// 	var month = Math.floor((day - year * 1461 / 4) * 48 / 1461);
+	// 	if (month == 0) {
+	// 		return year + ((year > 1) ? " years" : " year") + " ago";
+	// 	}
+	// 	return year + ((year > 1) ? " years " : " year ") + month + ((month > 1) ? " months" : " month") + " ago";
+	// }
+	if (day > 365) {
+		var year = Math.floor(day * 4 / 1461);
+		return year + ((year > 1) ? " years" : " year") + " ago";
+	}
+	if (day > 30) {
+		var month = Math.floor(day * 2 / 61);
+		day = day - month * 61 / 2;
+		return month + ((month > 1) ? " months" : " month") + ((day == 0) ? "ago" : (day + ((day > 1) ? " days" : " day") + " ago"));
+	}
+	if (day > 6) {
+		var week = Math.floor(day / 7);
+		day = day - week * 7;
+		return week + ((week > 1) ? " weeks " : " week ") + ((day == 0) ? "ago" : (day + ((day > 1) ? " days" : " day") + " ago"));
+	}
 	var hour = Math.floor((delta_time - day * 86400000) / 3600000);
 	if (day == 0) {
 		if (hour == 0) {
 			return "Less than an hour ago";
 		}
-		return hour + ((hour > 1) ? " hours " : " hour ") + "ago";
+		return hour + ((hour > 1) ? " hours" : " hour") + " ago";
 	}
 	return day + ((day > 1) ? " days " : " day ") + ((hour == 0) ? "ago" : hour + ((hour > 1) ? " hours " : " hour ") + "ago");
 }
@@ -146,7 +168,7 @@ function moveRibbonSlider(elem, direction) {
 	updateRibbonButtons(ribParElem.childNodes[1], ribParElem.childNodes[3]);
 }
 
-function updateRibbonButtons(l,r) {
+function updateRibbonButtons(l, r) {
 	desktop_ribbon_btn_l = l;
 	desktop_ribbon_btn_r = r;
 	if (lastRibbonPos < 0) {

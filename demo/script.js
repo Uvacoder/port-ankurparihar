@@ -83,3 +83,4 @@ function loadDemo(origin){
 		document.getElementById("demo_title").innerText = "Demo " + origin;
 	}
 }
+scanDemoPage();

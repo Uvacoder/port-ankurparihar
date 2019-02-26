@@ -2,7 +2,7 @@ var changeData = [
 	{
 		Date:"23/02/2019",
 		changes:[
-			"Added sitemap",
+			"Added sitemap.xml",
 			"Added robots.txt"
 		]
 	},
@@ -10,7 +10,6 @@ var changeData = [
 		Date:"19/02/2019",
 		changes:[
 			"Date of last update on home ribbons",
-			"Changelog database implemented",
 			"Improved modular structure of website",
 			"Scripts are now more distributed and localized"
 		]
@@ -103,7 +102,6 @@ var changeData = [
 ];
 
 function printChangeLog(){
-	/** @type {HTMLDivElement} */
 	var changelog_container = document.querySelector(".changelog_container.general.page");
 	changeData.forEach(change => {
 		// console.log(change.Date);

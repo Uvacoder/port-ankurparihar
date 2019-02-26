@@ -5,7 +5,8 @@
 - All the links must be domain relative not directory relative
 - Style and Scripts must be included in relative files not in global files
 - Use standard [index.html](index.html) and make necessary changes.
-- Content must be inside `.content` div starting with `stylesheet` element and ending with `injectedJS` element
+- Content must be inside `.content` div starting with `stylesheet` element for css if required
+- Javascript files must be at the end inside body element. Injected javascripts must have id `injectedJS`
 - [Update sitemap](https://www.xml-sitemaps.com)
 
 ## Working in local environment
@@ -31,7 +32,7 @@
 - Upload relative image of size 800x400 or ratio 2:1 in `/media/demo/` directory
 
 ### Dynamic page
-- Only dynamic page relative to home can be made. i.e. at level 1
+- Only direct child of root node can be dynamic page
 - Create page in appropriate directory and make sure to have a unique `nav-icon` to be used by `cur_tab`
 - Update `references` in [dynamic.js](/media/dynamic.js)
 - Update all other index files to add that page in navigation menu and footer if necessary

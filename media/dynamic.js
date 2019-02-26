@@ -142,5 +142,5 @@ function injectJS(file_url){
 	jsELem.id = "injectedJS";
 	jsELem.type = "application/javascript";
 	jsELem.src = file_url;
-	content.appendChild(jsELem);
+	document.body.appendChild(jsELem);
 }
