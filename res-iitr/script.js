@@ -387,7 +387,6 @@ function showSubject(sem, id) {
 }
 
 function initResIITR() {
-	// iitr_sem_curr.innerHTML = "Current [" + temp[0].substr(0, 3) + ' ' + temp[1] + ']';
 	var i = 0;
 	var sem_str = '';
 	var subs = Semesters[cur_sem].Courses;
