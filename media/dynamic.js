@@ -33,7 +33,7 @@ var references = {
 	"demo": {
 		id: "nav-live-demo",
 		page_location_text: "Live Demos",
-		injectJSLoc: ""
+		injectJSLoc: "/demo/script.js"
 	},
 	"changelog": {
 		id: "nav-about-whatnew",

@@ -1,5 +1,13 @@
 var changeData = [
 	{
+		Date:"26/02/2019",
+		changes:[
+			"Added manifest.json",
+			"Improved user navigation",
+			"Performance improvement"
+		]
+	},
+	{
 		Date:"23/02/2019",
 		changes:[
 			"Added sitemap.xml",

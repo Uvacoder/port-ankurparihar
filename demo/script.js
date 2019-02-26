@@ -56,7 +56,7 @@ function loadDemo(origin){
 			demo_list +=
 			'<div class="demo_index">\
 				<a href="'+Projects[project].File+'" target="_blank" tabindex="-1">\
-					<img src="'+Projects[project].Img+'" width="100%" height="auto"></img>\
+					<img src="'+Projects[project].Img+'" width="100%" height="auto" alt="'+Projects[project].Title+'_img"></img>\
 					<div class="demo_index-overlay" style="display:flex;flex-direction:column-reverse;flex-wrap: wrap-reverse">\
 						<h4>'+Projects[project].Title+'</h4>\
 						<span class="demo_index-shade"></span>\
@@ -73,7 +73,7 @@ function loadDemo(origin){
 				demo_list +=
 				'<div class="demo_index">\
 					<a href="'+Projects[project].File+'" target="_blank" tabindex="-1">\
-						<img src="'+Projects[project].Img+'" width="100%" height="auto"></img>\
+						<img src="'+Projects[project].Img+'" width="100%" height="auto" alt="'+Projects[project].Title+'_img"></img>\
 						<div class="demo_index-overlay" style="display:flex;flex-direction:column-reverse;flex-wrap: wrap-reverse">\
 							<h4>'+Projects[project].Title+'</h4>\
 							<span class="demo_index-shade"></span>\

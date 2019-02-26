@@ -1,0 +1,20 @@
+{
+	"short_name":"player4015",
+	"name":"Ankur's little playground",
+	"icons":[
+		{
+			"src":"/media/img/logo-100.png",
+			"type":"image/png",
+			"sizes":"100x100"
+		},
+		{
+			"src":"/media/img/logo-assassin-512.png",
+			"type":"image/png",
+			"sizes":"512x512"
+		}
+	],
+	"start_url":"/",
+	"background_color":"#17181a",
+	"display":"standalone",
+	"theme_color": "#f3c669"
+}

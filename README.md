@@ -19,6 +19,9 @@
 - Upload content and get a reference like a link to Google drive
 - Upload relative image  of size 268x394 in `/media/{directory}`
 - Append `card` with image name to use it on home screen
+- Image must have `alt` attribute
+- buttons must have `aria-label` with button description
+- cross-origin links must have `link="noopener"` attribute
 
 ### Course content
 - Add course information in [script.js](/res-iitr/script.js). If the course is new simply add that course in `Semester` variable.
