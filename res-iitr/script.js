@@ -385,3 +385,24 @@ function showSubject(sem, id) {
 	}
 	course_content.innerHTML = string;
 }
+
+function initResIITR() {
+	// iitr_sem_curr.innerHTML = "Current [" + temp[0].substr(0, 3) + ' ' + temp[1] + ']';
+	var i = 0;
+	var sem_str = '';
+	var subs = Semesters[cur_sem].Courses;
+	for (sub in subs) {
+		sem_str = sem_str + '<div class="sub_box responsive center_flex"><button onclick="showSubject(' + cur_sem + ',' + i + ')"><div>' + subs[sub].Title + '</div></button></div>';
+		++i;
+	}
+	cur_subs.innerHTML = sem_str;
+	i = 1;
+	sem_str = '';
+	for (sem in Semesters) {
+		sem_str = sem_str + '<div class="sem_box responsive center_flex"><button onclick="showSubjects(' + i + '); toggleReqSem(' + i + ')"><div>' + Semesters[sem].Name + '</div></button></div>';
+		++i;
+	}
+	all_sems.innerHTML = sem_str;
+}
+
+initResIITR();
