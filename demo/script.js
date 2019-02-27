@@ -1,6 +1,6 @@
-const demo_help_div = document.querySelector(".demo_help-div");
-const demo_help_popup = document.getElementById("demo_help-popup");
-const demo_index_list = document.getElementById("demo_index_list");
+var demo_help_div = document.querySelector(".demo_help-div");
+var demo_help_popup = document.getElementById("demo_help-popup");
+var demo_index_list = document.getElementById("demo_index_list");
 
 function showInfoPop(demo_name){
 	demo_help_popup.innerHTML = Projects[demo_name].Description;
