@@ -249,7 +249,10 @@ var Semesters = {
 			{
 				Code: "CSN-399",
 				Title: "Educational Tour",
-				Credits: 0
+				Credits: 0,
+				Content: {
+					"Photos": "https://photos.app.goo.gl/NZswYc12LE583sCW9"
+				}
 			},
 			{
 				Code: "CSN-382",

@@ -2,8 +2,15 @@ var ribbon_items = [
 	{
 		parent: "display_ribbon__slider_recent",
 		timeID: "ribbon_time__recent",
-		lastUpdate: 1550680306880,
+		lastUpdate: 1551722965960,
 		items: [
+			{
+				href: "/res-iitr?tab=6-6",
+				title: "Goa Trip Photos",
+				imgsrc: "/media/iitr/goa.jpg",
+				imgalt: "Goa trip image",
+				subtitle: "IITR Resources"
+			},
 			{
 				href: "/res-iitr?tab=6-3",
 				title: "Principles of Programming Languages Notes",
