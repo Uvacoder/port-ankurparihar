@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<meta charset="utf-8">
 	<!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
@@ -7,8 +8,53 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="shortcut icon" href="/media/img/AP-favicon.png">
 </head>
+
 <body>
 	<p id="status"></p>
-	<a id="auth" href="https://github.com/login/oauth/authorize?client_id=ac8e2ed8d62d346e1595&scope=repo">Authorise with Github</a>
+	<a id="auth" href="https://github.com/login/oauth/authorize?client_id=ac8e2ed8d62d346e1595&scope=repo">Authorise
+		with Github</a>
+	<script>
+		function setCookie(cname, cvalue, exdays) {
+			var d = new Date();
+			d.setTime(d.getTime() + (exdays * 86400000));
+			var expires = 'expires=' + d.toUTCString();
+			document.cookie = cname + '=' + cvalue + ';' + expires + ';path=/';
+		}
+
+		function getCookie(cname) {
+			var name, value, flag = false;
+			var ca = document.cookie.split(';');
+			ca.forEach(p => {
+				if(!flag){
+					[name, value] = [p.split('=')[0].trim(), p.split('=')[1].trim()];
+					if (name == cname) {
+						flag = true;
+						return value;
+					}
+				}
+			});
+			return (flag) ? value : '';
+		}
+		function scanAuthURL() {
+			var params, key, value;
+			var split = decodeURI(window.location.href).split('?')[1];
+			if (!split) {
+				return;
+			}
+			params = split.split('&');
+			params.forEach(p => {
+				[key, value] = [p.split('=')[0], p.split('=')[1]];
+				// console.log(key ,'=', value);
+				if (key == 'access_token') {
+					setCookie('access_token', value, 7);	// set cookie access_token=value for 7 days
+					var redirect_url = getCookie('redirect_url');
+					window.location.href = (redirect_url == '') ? 'https://ankurparihar.github.io' : redirect_url;
+					return;
+				}
+			});
+		}
+		scanAuthURL();
+	</script>
 </body>
+
 </html>
