@@ -25,11 +25,14 @@
 			var name, value, flag = false;
 			var ca = document.cookie.split(';');
 			ca.forEach(p => {
-				if(!flag){
-					[name, value] = [p.split('=')[0].trim(), p.split('=')[1].trim()];
-					if (name == cname) {
-						flag = true;
-						return value;
+				if (!flag) {
+					var pa = p.split('=');
+					if(pa.length==2){
+						[name, value] = [pa[0].trim(), pa[1].trim()];
+						if (name == cname) {
+							flag = true;
+							return value;
+						}
 					}
 				}
 			});
