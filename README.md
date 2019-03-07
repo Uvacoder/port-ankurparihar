@@ -13,6 +13,12 @@
 - Use local virtual host. Due to all relative links the host must be changed.
 - Create an entry if not `127.0.0.1 ankurparihar.github.io` in */etc/hosts* . Use your virtual host ip address in place of `127.0.0.1`.
 
+## Personalization
+- Themes are enabled on website
+- Github authentication is needed to enable personalization
+- [git-ddb](https://github.com/ankurparihar/git-ddb-docs) is used for storing data
+- Use color variables `var(--theme-color, #f3c669)` and `rgba(var(--theme-color-r, 243), var(--theme-color-g, 198), var(--theme-color-b, 105), 0.5)` to apply themes sitewide
+
 ## Content upload
 
 ### General
