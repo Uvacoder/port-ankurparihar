@@ -323,7 +323,7 @@ function toggleReqSem(semester) {
 	iitr_sem_exp.setAttribute("onclick", "showSubjects(" + semester + "); toggleReqSem(" + semester + ")");
 	all_sems.style.display = cur_subs.style.display = "none";
 	req_subs.style.display = iitr_sem_exp.style.display = "block";
-	iitr_sem_exp.style.backgroundColor = "#f3c669";
+	iitr_sem_exp.style.backgroundColor = "var(--theme-color, #f3c669)";
 	course_content.style.display = "none";
 }
 
@@ -348,7 +348,7 @@ function showSubjects(semester) {
 		sub_elem.appendChild(child);
 	});
 	sub_elem.style.display = "block";
-	iitr_sem_exp.style.backgroundColor = "#f3c669";
+	iitr_sem_exp.style.backgroundColor = "var(--theme-color, #f3c669)";
 	iitr_sem_pxe_1.style.display = iitr_sem_pxe_2.style.display = "none";
 	course_content.style.display = "none";
 }

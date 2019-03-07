@@ -1,5 +1,13 @@
 var changeData = [
 	{
+		Date:"07/03/2019",
+		changes:[
+			"Sign In with Git Oauth",
+			"Git-DDB integration",
+			"Personalized themes"
+		]
+	},
+	{
 		Date:"26/02/2019",
 		changes:[
 			"Added manifest.json",

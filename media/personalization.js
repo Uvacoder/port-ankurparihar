@@ -3,10 +3,10 @@ var repos;
 var status;
 var gitddb = false;
 var config_file_path = '/git-ddb-ankurparihar.json';
-var config_data = {};
+var default_config = {"--theme-color":"#f3c669","--theme-color-rgb":[243,198,105]};
 var config_file_sha = '';
 
-var config_flags = {
+var default_flags = {
 	"sign": "",
 	"getUser": false,
 	"checkGDDBRepo": false,
@@ -18,17 +18,19 @@ var config_flags = {
 	"resetConfig": false
 };
 
-var default_flags = config_flags;
+var config_flags = JSON.parse(JSON.stringify(default_flags));
+var config_data = JSON.parse(JSON.stringify(default_config));
 
 function resetConfig() {
+	deleteCookie('theme');
 	console.log('Reset configurations');
 	user = null;
 	repos = null;
 	status = null;
 	gitddb = false;
-	config_data = {};
 	config_file_sha = '';
-	config_flags = default_flags;
+	config_data = JSON.parse(JSON.stringify(default_config));
+	config_flags = JSON.parse(JSON.stringify(default_flags));
 	applyConfig();
 }
 
@@ -75,6 +77,11 @@ function getUser() {
 		return response.json();
 	}).then(myJson => {
 		// console.log(JSON.stringify(myJson));
+		if(myJson['message']){
+			console.log('Could not fetch user info');
+			resetConfig();
+			return;
+		}
 		console.log('User info fetched');
 		user = myJson;
 		if(user['login']){
@@ -197,6 +204,7 @@ function getConfig() {
 			if(config_flags['sign']=='in'){
 				applyConfig();
 			}
+			cookiefieConfig();
 		}
 	});
 }
@@ -227,6 +235,7 @@ function createConfig() {
 			config_file_sha = status['content']['sha'];
 			applyConfig();
 		}
+		cookiefieConfig();
 	});
 }
 
@@ -253,16 +262,27 @@ function updateConfig() {
 	}).then(response => {
 		return response.json();
 	}).then(status => {
-		console.log(status)
+		// console.log(status);
 		if (status['message']) {
 			console.log('Something went wrong updating settings');
 		} else {
 			console.log('Successfully updated settings');
+			applyConfig();
+			cookiefieConfig();
 		}
 	});
 }
 
 function applyConfig() {
+	var root = document.documentElement;
+	if(config_data['--theme-color']){
+		root.style.setProperty('--theme-color', config_data['--theme-color']);
+	}
+	if(config_data['--theme-color-rgb']){
+		root.style.setProperty('--theme-color-r', config_data['--theme-color-rgb'][0]);
+		root.style.setProperty('--theme-color-g', config_data['--theme-color-rgb'][1]);
+		root.style.setProperty('--theme-color-b', config_data['--theme-color-rgb'][2]);
+	}
 	console.log('Configuration applied');
 	if(config_flags['sign']=='in'){
 		config_flags['sign']=='';
@@ -301,7 +321,27 @@ function signIn() {
 	getUser();
 }
 
+function cookiefieConfig(){
+	if(config_data['--theme-color-rgb']){
+		setCookie('theme',JSON.stringify({
+			'--theme-color-rgb': config_data['--theme-color-rgb'],
+			'--theme-color':config_data['--theme-color']
+		}), 30);
+	}
+}
+
+function decookiefieConfig(){
+	var getCook = getCookie('theme');
+	if(getCook!=''){
+		console.log('Applying previously saved theme');
+		getCook = JSON.parse(getCook);
+		config_data['--theme-color-rgb'] = getCook['--theme-color-rgb'];
+		config_data['--theme-color'] = getCook['--theme-color'];
+	}
+	applyConfig();
+}
 if(getCookie('access_token')){
+	decookiefieConfig();
 	console.log('Access token found');
 	signIn();
 }else{

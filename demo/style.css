@@ -38,7 +38,7 @@
 }
 
 #demo_back svg:hover, #demo_info svg:hover, #demo_back svg:active, #demo_info svg:active {
-	color: #f3c669;
+	color: var(--theme-color, #f3c669);
 }
 
 #demo_error {
@@ -122,11 +122,11 @@
 	position: relative;
 	height: 20px;
 	/* background: linear-gradient(rgba(255,255,255,0), #7abd13); */
-	background: -webkit-linear-gradient(top,rgba(122,189,19,0) 0%,#f3c669 100%);
-    background: -moz-linear-gradient(top,rgba(122,189,19,0) 0%,#f3c669 100%);
-    background: -ms-linear-gradient(top,rgba(122,189,19,0) 0%,#f3c669 100%);
-    background: -o-linear-gradient(top,rgba(122,189,19,0) 0%,#f3c669 100%);
-    background: -linear-gradient(top,rgba(122,189,19,0) 0%,#f3c669 100%);
+	background: -webkit-linear-gradient(top,rgba(122,189,19,0) 0%, var(--theme-color, #f3c669) 100%);
+    background: -moz-linear-gradient(top,rgba(122,189,19,0) 0%, var(--theme-color, #f3c669) 100%);
+    background: -ms-linear-gradient(top,rgba(122,189,19,0) 0%, var(--theme-color, #f3c669) 100%);
+    background: -o-linear-gradient(top,rgba(122,189,19,0) 0%, var(--theme-color, #f3c669) 100%);
+    background: -linear-gradient(top,rgba(122,189,19,0) 0%, var(--theme-color, #f3c669) 100%);
 	/* background: -webkit-linear-gradient(top,rgba(122,189,19,0) 0%,#7abd13 100%);
     background: -moz-linear-gradient(top,rgba(122,189,19,0) 0%,#7abd13 100%);
     background: -ms-linear-gradient(top,rgba(122,189,19,0) 0%,#7abd13 100%);
@@ -141,11 +141,11 @@
 	text-align: center;
 	font-size: 16px;
 	background: #ffffff;
-	color: #f3c669;
+	color: var(--theme-color, #f3c669);
 	/* color: #7abd13; */
 }
 .demo_index:hover a .demo_index-overlay h4 {
-	background: #f3c669;
+	background: var(--theme-color, #f3c669);
 	/* background: #7abd13; */
 	color: #ffffff;
 }

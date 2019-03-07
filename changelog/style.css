@@ -25,7 +25,7 @@
 	margin-bottom: 8px;
 	background-color: rgba(58, 60, 63, 0.8);
 	border-radius: 3px;
-	color: #f3c669!important;
+	color: var(--theme-color, #f3c669)!important;
 }
 
 .changelog_container .change_log+.change_log{

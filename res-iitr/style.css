@@ -71,7 +71,7 @@
 	color: #fff;
 	transition: all 280ms cubic-bezier(.5,0,.1,1);
 	display: none;
-	background-color: #f3c669;
+	background-color: var(--theme-color, #f3c669);
 	margin-left: 20px;
 	transform: skewX(-20deg);
 }
@@ -86,7 +86,7 @@
 	color: #fff;
 	transition: all 280ms cubic-bezier(.5,0,.1,1);
 	display: none;
-	background-color: #f3c669!important;
+	background-color: var(--theme-color, #f3c669)!important;
 	margin-left: 20px;
 	transform: skewX(20deg);
 }
@@ -94,8 +94,8 @@
 .iitr_sem_opt.active_sem, .iitr_sem_exp.active_sem {
 	color: #ffffff;
 	cursor: default;
-	background-color: #f3c669 !important;
-    border-color: #f3c669 !important;
+	background-color: var(--theme-color, #f3c669) !important;
+    border-color: var(--theme-color, #f3c669) !important;
 }
 
 @media (min-width: 960px) {
@@ -182,7 +182,7 @@
 }
 
 .sem_box button:hover, .sub_box button:hover {
-	background: #f3c669;
+	background: var(--theme-color, #f3c669);
 }
 
 @media (max-width: 651px) {
@@ -239,7 +239,7 @@
 }
 
 #course_content .course_content_box:hover {
-	color: #f3c669;
+	color: var(--theme-color, #f3c669);
 }
 
 .course_content_box-svg {
