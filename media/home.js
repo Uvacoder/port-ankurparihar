@@ -2,7 +2,7 @@ var ribbon_items = [
 	{
 		parent: "display_ribbon__slider_recent",
 		timeID: "ribbon_time__recent",
-		lastUpdate: 1551722965960,
+		lastUpdate: 1551953886948,
 		items: [
 			{
 				href: "/res-iitr?tab=6-6",

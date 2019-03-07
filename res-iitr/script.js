@@ -251,7 +251,8 @@ var Semesters = {
 				Title: "Educational Tour",
 				Credits: 0,
 				Content: {
-					"Photos": "https://photos.app.goo.gl/NZswYc12LE583sCW9"
+					"Photos": "https://photos.app.goo.gl/NZswYc12LE583sCW9",
+					"Photos": "https://photos.app.goo.gl/CAdUVgx3DZRvMRJm9",
 				}
 			},
 			{
