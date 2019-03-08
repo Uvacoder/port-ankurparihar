@@ -58,7 +58,7 @@ var ribbon_items = [
 	{
 		parent: "display_ribbon__slider_mstwntd",
 		timeID: "ribbon_time__mstwntd",
-		lastUpdate: 1550349642763,
+		lastUpdate: 1552035606222,
 		items: [
 			{
 				href: "/demo/fractal-generator/",
@@ -66,6 +66,13 @@ var ribbon_items = [
 				imgsrc: "/media/demo/Sierpinski_triangle-card.png",
 				imgalt: "fractal image",
 				subtitle: "Live Demo"
+			},
+			{
+				href: "https://github.com/ankurparihar/git-ddb-docs",
+				title: "Git-DDB",
+				imgsrc: "/media/demo/oauth.png",
+				imgalt: "oauth image",
+				subtitle: "WebD Project"
 			}
 		]
 	}
