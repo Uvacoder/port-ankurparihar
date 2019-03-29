@@ -243,7 +243,7 @@ var Semesters = {
 				Title: "Compiler Laboratory",
 				Credits: 3,
 				Content: {
-					"Codes": "https://drive.google.com/drive/folders/1mT5rnAF_xTLdbW3OD_cL3kZQGVgWzRz-?usp=sharing"
+					"Codes": "https://github.com/ankurparihar/Compiler-Lab-Codes"
 				}
 			},
 			{
