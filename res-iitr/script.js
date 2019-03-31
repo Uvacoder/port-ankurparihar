@@ -260,7 +260,8 @@ var Semesters = {
 				Credits: 4,
 				Content: {
 					"Slides": "https://drive.google.com/open?id=1EkYpiGZQ1-tIBVcNmHOXiiXogx83GzwS",
-					"Assignment": "https://drive.google.com/drive/folders/177LouXpprDZc127I-N2zEt5V3kISNKrE?usp=sharing"
+					"Assignment": "https://drive.google.com/drive/folders/177LouXpprDZc127I-N2zEt5V3kISNKrE?usp=sharing",
+					"Project": "https://github.com/ankurparihar/Epileptic-Seizure-Classification/"
 				}
 			},
 			{
