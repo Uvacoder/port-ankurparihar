@@ -2,8 +2,15 @@ var ribbon_items = [
 	{
 		parent: "display_ribbon__slider_recent",
 		timeID: "ribbon_time__recent",
-		lastUpdate: 1551953886948,
+		lastUpdate: 1554655158587,
 		items: [
+			{
+				href: "/res-iitr?tab=6-7",
+				title: "Image Captioning Assignment",
+				imgsrc: "/media/iitr/machine learning.jpg",
+				imgalt: "Image Captioning",
+				subtitle: "IITR Resources"
+			},
 			{
 				href: "/res-iitr?tab=6-6",
 				title: "Goa Trip Photos",
@@ -96,7 +103,7 @@ function getDayHourString(delta_time) {
 	}
 	if (day > 30) {
 		var month = Math.floor(day * 2 / 61);
-		day = day - month * 61 / 2;
+		day = Math.floor(day - month * 61 / 2);
 		return month + ((month > 1) ? " months" : " month") + ((day == 0) ? "ago" : (day + ((day > 1) ? " days" : " day") + " ago"));
 	}
 	if (day > 6) {
