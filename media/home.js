@@ -12,13 +12,6 @@ var ribbon_items = [
 				subtitle: "IITR Resources"
 			},
 			{
-				href: "/res-iitr?tab=6-4",
-				title: "Compiler Design Notes",
-				imgsrc: "/media/iitr/compiler design.jpg",
-				imgalt: "Compiler Design",
-				subtitle: "IITR Resources"
-			},
-			{
 				href: "/res-iitr?tab=6-7",
 				title: "Image Captioning Assignment",
 				imgsrc: "/media/iitr/machine learning.jpg",
@@ -37,6 +30,13 @@ var ribbon_items = [
 				title: "Compiler Lab Codes",
 				imgsrc: "/media/iitr/compiler lab.jpg",
 				imgalt: "Compiler lab",
+				subtitle: "IITR Resources"
+			},
+			{
+				href: "/res-iitr?tab=6-4",
+				title: "Compiler Design Notes",
+				imgsrc: "/media/iitr/compiler design.jpg",
+				imgalt: "Compiler Design",
 				subtitle: "IITR Resources"
 			},
 			{
