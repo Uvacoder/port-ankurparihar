@@ -13,6 +13,13 @@ var ribbon_items = [
 			},
 			{
 				href: "/res-iitr?tab=6-7",
+				title: "Machine Learning Slides",
+				imgsrc: "/media/iitr/machine learning.jpg",
+				imgalt: "Machine Learning",
+				subtitle: "IITR Resources"
+			},
+			{
+				href: "/res-iitr?tab=6-7",
 				title: "Image Captioning Assignment",
 				imgsrc: "/media/iitr/machine learning.jpg",
 				imgalt: "Image Captioning",
@@ -37,13 +44,6 @@ var ribbon_items = [
 				title: "Compiler Design Notes",
 				imgsrc: "/media/iitr/compiler design.jpg",
 				imgalt: "Compiler Design",
-				subtitle: "IITR Resources"
-			},
-			{
-				href: "/res-iitr?tab=6-7",
-				title: "Machine Learning Slides",
-				imgsrc: "/media/iitr/machine learning.jpg",
-				imgalt: "Machine Learning",
 				subtitle: "IITR Resources"
 			},
 			{
