@@ -2,8 +2,15 @@ var ribbon_items = [
 	{
 		parent: "display_ribbon__slider_recent",
 		timeID: "ribbon_time__recent",
-		lastUpdate: 1555229844856,
+		lastUpdate: 1555830954197,
 		items: [
+			{
+				href: "/res-iitr?tab=6-3",
+				title: "Principles of Programming Languages Notes",
+				imgsrc: "/media/iitr/princi of prog lang.png",
+				imgalt: "Principles of programming languages",
+				subtitle: "IITR Resources"
+			},
 			{
 				href: "/res-iitr?tab=6-4",
 				title: "Compiler Design Notes",
@@ -23,13 +30,6 @@ var ribbon_items = [
 				title: "Goa Trip Photos",
 				imgsrc: "/media/iitr/goa.jpg",
 				imgalt: "Goa trip image",
-				subtitle: "IITR Resources"
-			},
-			{
-				href: "/res-iitr?tab=6-3",
-				title: "Principles of Programming Languages Notes",
-				imgsrc: "/media/iitr/princi of prog lang.png",
-				imgalt: "Principles of programming languages",
 				subtitle: "IITR Resources"
 			},
 			{
