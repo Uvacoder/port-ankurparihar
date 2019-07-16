@@ -1,4 +1,4 @@
-var cur_sem = 6;
+var cur_sem = 7;
 var Semesters = {
 	1: {
 		Name: "Autumn 2016",
@@ -271,6 +271,50 @@ var Semesters = {
 				Content: {
 					"Papers": "https://drive.google.com/drive/folders/1TPLvWNp7iKw2yTjvQlhBKiJhg0H1yYV6?usp=sharing"
 				}
+			}
+		]
+	},
+	7: {
+		Name: "Autumn 2019",
+		Session: "2019-20",
+		Semester: "Fourth Year - 1st Sem (Autumn)",
+		Courses: [
+			{
+				Code: "CSN-501",
+				Title: "Advanced Algorithms",
+				Credits: 4,
+				Content: {}
+			},
+			{
+				Code: "CSN-503",
+				Title: "Advanced Computer Networks",
+				Credits: 4,
+				Content: {}
+			},
+			{
+				Code: "CSN-400A",
+				Title: "B.Tech. Project",
+				Credits: 4,
+				Content: {}
+			},
+			{
+				Code: "CSN-499",
+				Title: "Training Seminar",
+				Credits: 2,
+				Content: {}
+			}
+		]
+	},
+	8: {
+		Name: "Spring 2020",
+		Session: "2019-20",
+		Semester: "Fourth Year - 2nd Sem (Spring)",
+		Courses: [
+			{
+				Code: "CSN-400B",
+				Title: "B.Tech. Project",
+				Credits: 4,
+				Content: {}
 			}
 		]
 	}
