@@ -1,0 +1,3 @@
+[submodule "demo/fractal-generator"]
+	path = demo/fractal-generator
+	url = https://github.com/ankurparihar/Fractal-Generator.git
