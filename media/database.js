@@ -11,6 +11,17 @@ var Projects = {
 		Modified: "02/02/2019",
 		Author: "Ankur Parihar",
 		isDemoAvailabe: true
+	},
+	"Time-Table": {
+		Title: "Time-Table Generator",
+		Origin: "Github",
+		File: "/demo/Time-Table/",
+		Img: "/media/demo/time-table.png",
+		Description: "This is a fun project I created during spare time. Time-Table generator creates dynamic time-tables with options like copy-paste, spanning etc.",
+		Created: "29/07/2019",
+		Modified: "29/07/2019",
+		Author: "Ankur Parihar",
+		isDemoAvailabe: true
 	}
 }
 

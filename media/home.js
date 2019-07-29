@@ -2,8 +2,15 @@ var ribbon_items = [
 	{
 		parent: "display_ribbon__slider_recent",
 		timeID: "ribbon_time__recent",
-		lastUpdate: 1555830954197,
+		lastUpdate: 1564412606459,
 		items: [
+			{
+				href: "/demo/Time-Table",
+				title: "Time-Table Generator",
+				imgsrc: "/media/demo/time-table-card.png",
+				imgalt: "Time-Table Generator",
+				subtitle: "Live Demo"
+			},
 			{
 				href: "/res-iitr?tab=6-3",
 				title: "Principles of Programming Languages Notes",
