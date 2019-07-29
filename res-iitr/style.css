@@ -13,10 +13,11 @@
 	padding-top: 0px;
 	background-color: #3a3c3f;
 	font-size: 0;
+	height: 100%;
 }
 
 .iitr-content .iitr_side {
-	min-height: 600px;
+	height: 100%;
 	position: relative;
 	left: 0;
 	width: 160px;
@@ -27,7 +28,7 @@
 
 @media (min-width:960px){
 	.iitr-content .iitr_side {
-		min-height: 600px;
+		height: 100%;
 		position: relative;
 		left: 0;
 		width: 200px;
@@ -40,6 +41,13 @@
 .iitr_side-options {
 	padding-top: 24px;
 	width: 100%;
+}
+
+.iitr_side-options .active-option {
+	color: #ffffff;
+    cursor: default;
+    background-color: var(--theme-color, #f3c669) !important;
+    border-color: var(--theme-color, #f3c669) !important;
 }
 
 .iitr_side-options h3 {
@@ -68,10 +76,8 @@
 	border-radius: 2px;
 	padding: 8px 8px 8px 36px;
 	font-size: 16px;
-	color: #fff;
 	transition: all 280ms cubic-bezier(.5,0,.1,1);
 	display: none;
-	background-color: var(--theme-color, #f3c669);
 	margin-left: 20px;
 	transform: skewX(-20deg);
 }
@@ -83,19 +89,10 @@
 	border-radius: 2px;
 	padding: 8px 8px 8px 36px;
 	font-size: 16px;
-	color: #fff;
 	transition: all 280ms cubic-bezier(.5,0,.1,1);
 	display: none;
-	background-color: var(--theme-color, #f3c669)!important;
 	margin-left: 20px;
 	transform: skewX(20deg);
-}
-
-.iitr_sem_opt.active_sem, .iitr_sem_exp.active_sem {
-	color: #ffffff;
-	cursor: default;
-	background-color: var(--theme-color, #f3c669) !important;
-    border-color: var(--theme-color, #f3c669) !important;
 }
 
 @media (min-width: 960px) {

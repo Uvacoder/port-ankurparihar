@@ -2,14 +2,14 @@ var ribbon_items = [
 	{
 		parent: "display_ribbon__slider_recent",
 		timeID: "ribbon_time__recent",
-		lastUpdate: 1564412606459,
+		lastUpdate: 1564440492137,
 		items: [
 			{
-				href: "/demo/Time-Table",
-				title: "Time-Table Generator",
-				imgsrc: "/media/demo/time-table-card.png",
-				imgalt: "Time-Table Generator",
-				subtitle: "Live Demo"
+				href: "/res-iitr?tab=timetable",
+				title: "IITR Time-Table",
+				imgsrc: "/media/iitr/iitr.jpg",
+				imgalt: "IITR Time-Table",
+				subtitle: "IITR Resources"
 			},
 			{
 				href: "/res-iitr?tab=6-3",
@@ -59,26 +59,19 @@ var ribbon_items = [
 				imgsrc: "/media/iitr/fractals.jpg",
 				imgalt: "fractals and applications",
 				subtitle: "IITR Resources"
-			},
-			{
-				href: "/demo/fractal-generator/",
-				title: "Fractal generator",
-				imgsrc: "/media/demo/Sierpinski_triangle-card.png",
-				imgalt: "fractal image",
-				subtitle: "Live Demo"
 			}
 		]
 	},
 	{
 		parent: "display_ribbon__slider_mstwntd",
 		timeID: "ribbon_time__mstwntd",
-		lastUpdate: 1552035606222,
+		lastUpdate: 1564440492137,
 		items: [
 			{
-				href: "/demo/fractal-generator/",
-				title: "Fractal generator",
-				imgsrc: "/media/demo/Sierpinski_triangle-card.png",
-				imgalt: "fractal image",
+				href: "/demo/Time-Table",
+				title: "Time-Table Generator",
+				imgsrc: "/media/demo/time-table-card.png",
+				imgalt: "Time-Table Generator",
 				subtitle: "Live Demo"
 			},
 			{
@@ -87,7 +80,14 @@ var ribbon_items = [
 				imgsrc: "/media/demo/oauth.png",
 				imgalt: "oauth image",
 				subtitle: "WebD Project"
-			}
+			},
+			{
+				href: "/demo/fractal-generator/",
+				title: "Fractal generator",
+				imgsrc: "/media/demo/Sierpinski_triangle-card.png",
+				imgalt: "fractal image",
+				subtitle: "Live Demo"
+			},
 		]
 	}
 ];

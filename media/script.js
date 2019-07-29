@@ -76,16 +76,11 @@ window.onscroll = function () {
 function toggleNav() {
 	if (sidenav.getBoundingClientRect().left < 0) {
 		// console.log("showing nav...");
-		overlay.style.display = "block";
-		overlay.classList.add("overlay-active");
-		sidenav.style.setProperty("transform", "translateX(0px)");
+		showNav();
 	}
 	else {
 		// console.log("hiding nav...");
-		overlay.style.display = "none";
-		overlay.classList.remove("overlay-active");
-		sidenav.style.setProperty("transform", "translateX(-250px)");
-		enableScroll();
+		hideNav();
 	}
 }
 
@@ -99,6 +94,19 @@ overlay.addEventListener('touchstart', function () {
 var toolbar_search_input = document.querySelector('.input-group_input input');
 var toolbar_search_label = document.querySelector('.toolbar-search-box label');
 var input_group_detail = document.querySelector(".input-group_details");
+
+function hideNav() {
+	overlay.style.display = "none";
+	overlay.classList.remove("overlay-active");
+	sidenav.style.setProperty("transform", "translateX(-250px)");
+	enableScroll();
+}
+
+function showNav() {
+	overlay.style.display = "block";
+	overlay.classList.add("overlay-active");
+	sidenav.style.setProperty("transform", "translateX(0px)");
+}
 
 function alterSearchLabel() {
 	// console.log("keydown...");

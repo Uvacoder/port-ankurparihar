@@ -331,6 +331,8 @@ var iitr_sem_all = document.getElementById('iitr_sem_all');
 var course_content = document.getElementById("course_content");
 var iitr_sem_pxe_1 = document.getElementById('iitr_sem_pxe-1');
 var iitr_sem_pxe_2 = document.getElementById('iitr_sem_pxe-2');
+var iitr_ast_timetable = document.getElementById('iitr_ast_timetable');
+var timetable_holder = document.getElementById('timetable_holder');
 
 function toggleSem(id) {
 	// console.log(id);
@@ -343,8 +345,8 @@ function toggleSem(id) {
 	} else {
 		m = iitr_sem_all;
 	}
-	n.classList.add('active_sem');
-	m.classList.remove('active_sem');
+	document.querySelectorAll(".iitr_side-options .active-option").forEach(elem => {elem.classList.remove("active-option");});
+	n.classList.add('active-option');
 	iitr_title.innerHTML = (n.innerHTML == "All") ? "All" : Semesters[cur_sem].Name;
 	if (id == "iitr_sem_all") {
 		cur_subs.style.display = "none";
@@ -355,7 +357,7 @@ function toggleSem(id) {
 		cur_subs.style.display = "block";
 	}
 	req_subs.style.display = iitr_sem_exp.style.display = iitr_sem_pxe_1.style.display = iitr_sem_pxe_2.style.display = "none";
-	course_content.style.display = "none";
+	course_content.style.display = timetable_holder.style.display = "none";
 }
 
 function toggleReqSem(semester) {
@@ -363,13 +365,13 @@ function toggleReqSem(semester) {
 		toggleSem("iitr_sem_curr");
 		return;
 	}
-	iitr_sem_all.classList.remove("active_sem");
+	document.querySelectorAll(".iitr_side-options .active-option").forEach(elem => {elem.classList.remove("active-option");});
 	iitr_title.innerHTML = iitr_sem_exp.innerHTML = Semesters[semester].Name; /* '<svg style="width:24px;height:24px" viewBox="0 0 24 24"><path fill="#ffffff" d="M19,15L13,21L11.58,19.58L15.17,16H4V4H6V14H15.17L11.58,10.42L13,9L19,15Z" /></svg>' + */
 	iitr_sem_exp.setAttribute("onclick", "showSubjects(" + semester + "); toggleReqSem(" + semester + ")");
 	all_sems.style.display = cur_subs.style.display = "none";
 	req_subs.style.display = iitr_sem_exp.style.display = "block";
-	iitr_sem_exp.style.backgroundColor = "var(--theme-color, #f3c669)";
-	course_content.style.display = "none";
+	iitr_sem_exp.classList.add('active-option');
+	course_content.style.display = timetable_holder.style.display = "none";
 }
 
 function showSubjects(semester) {
@@ -393,9 +395,8 @@ function showSubjects(semester) {
 		sub_elem.appendChild(child);
 	});
 	sub_elem.style.display = "block";
-	iitr_sem_exp.style.backgroundColor = "var(--theme-color, #f3c669)";
-	iitr_sem_pxe_1.style.display = iitr_sem_pxe_2.style.display = "none";
-	course_content.style.display = "none";
+	iitr_sem_exp.classList.add("active-option");
+	iitr_sem_pxe_1.style.display = iitr_sem_pxe_2.style.display = course_content.style.display = timetable_holder.style.display = "none";
 }
 
 function showSubject(sem, id) {
@@ -407,13 +408,12 @@ function showSubject(sem, id) {
 	} else {
 		iitr_sem_pxe = iitr_sem_pxe_2;
 	}
-	iitr_sem_exp.style.backgroundColor = "#303030";
-	iitr_sem_all.classList.remove("active_sem");
-	iitr_sem_curr.classList.remove("active_sem");
+	document.querySelectorAll(".iitr_side-options .active-option").forEach(elem => {elem.classList.remove("active-option");});
+	iitr_sem_pxe.classList.add('active-option');
 	iitr_sem_pxe.innerHTML = sub.Code;
 	iitr_title.innerHTML = sub.Title;
 	iitr_sem_pxe.style.display = "block";
-	req_subs.style.display = cur_subs.style.display = "none";
+	req_subs.style.display = cur_subs.style.display = timetable_holder.style.display = "none";
 	// Show course content
 	course_content.style.display = "flex";
 	var contents = sub.Content;
@@ -452,7 +452,14 @@ function initResIITR() {
 	all_sems.innerHTML = sem_str;
 }
 
-initResIITR();
+function showIITRTimeTable() {
+	toggleSem('iitr_sem_curr');
+	cur_subs.style.display = "none";
+	timetable_holder.style.display = "block";
+	iitr_title.innerHTML = "Time-Table";
+	document.querySelectorAll(".iitr_side-options .active-option").forEach(elem => {elem.classList.remove("active-option");});
+	iitr_ast_timetable.classList.add("active-option");
+}
 
 function scanIITRPage() {
 	var params, key, value, proj_obj;
@@ -467,10 +474,17 @@ function scanIITRPage() {
 		// Format
 		// tab=5_3
 		if(key=='tab'){
-			value = value.split('-');
-			showSubject(value[0], value[1]-1);
+			if(value=='timetable'){
+				showIITRTimeTable();
+			}
+			else {
+				value = value.split('-');
+				showSubject(value[0], value[1]-1);
+			}
 			return;
 		}
 	});
 }
+
+initResIITR();
 scanIITRPage();

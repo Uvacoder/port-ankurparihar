@@ -44,6 +44,11 @@ var references = {
 		id: "nav-resource-aboutme",
 		page_location_text: "About Me",
 		injectJSLoc: ""
+	},
+	"sign-in": {
+		id: "nav-sign-in",
+		page_location_text: "Sign In",
+		injectJSLoc: "/sign-in/script.js"
 	}
 };
 
@@ -63,9 +68,10 @@ function loadDoc(relative_url, origin, flag) {
 	xhttp.onreadystatechange = function () {
 		if (this.readyState == 4 && this.status == 200) {
 			// Small tasks first
-			if (flag != "no_toggle_nav") {
-				toggleNav();
-			}
+			// if (flag != "no_toggle_nav") {
+			// 	toggleNav();
+			// }
+			hideNav();
 			window.history.pushState(null, null, relative_url.replace("index.html", ""));
 			update_nav_highlight(origin);
 			// Replace html
@@ -128,7 +134,7 @@ function displayError(status, statusText) {
 		</div>';
 	// console.log(status);
 	document.getElementById("error-code").innerHTML = "Error Code: " + status + " " + statusText;
-	toggleNav();
+	hideNav();
 }
 
 function injectJS(file_url){
