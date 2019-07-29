@@ -9,6 +9,35 @@
 - Javascript files must be at the end inside body element. Injected javascripts must have id `injectedJS`
 - [Update sitemap](https://www.xml-sitemaps.com)
 
+## Branching
+- [master](https://github.com/ankurparihar/ankurparihar.github.io/tree/master) branch has minified javascript and css files, while [dev](https://github.com/ankurparihar/ankurparihar.github.io/tree/dev) branch has beautified files
+- Demo projects are used as submodules
+- Submodule **master** branch contains original code, **github.io** branch contains minified code embedded into site, **github.io-dev** contains beautified code
+
+#### This repo
+
+|    master   |     dev     |
+|-------------|-------------|
+|   minimize  |  beautified |
+
+#### Submodule repo
+
+| master | github.io | github.io-dev |
+|-----------------------|-----------------------|-----------------------|
+| original code | (site) minimized | (site) beautified |
+
+- Workflow
+	- make sure github.io -> dev, submodule -> github.io-dev
+	- Make changes -> Push to repective branches
+	- In submodules
+		- Minify files
+		- Checkout github.io -> push
+	- After that, in this
+		- Minify files
+		- Checkout all -> push
+	- Making change in non JS/CSS file
+		- Sync with command `git checkout <branch> <path/to/file>`, do not `cherry-pick`
+
 ## Working in local environment
 - Use local virtual host. Due to all relative links the host must be changed.
 - Create an entry if not `127.0.0.1 ankurparihar.github.io` in */etc/hosts* . Use your virtual host ip address in place of `127.0.0.1`.
@@ -26,8 +55,9 @@
 - Upload relative image  of size 268x394 in `/media/{directory}`
 - Image must have `alt` attribute
 - buttons must have `aria-label` with button description
-- cross-origin links must have `link="noopener"` attribute
+- cross-origin links must have `rel="noopener"` attribute
 - Update rich preview meta data as necessary
+- Minify files using [JSMinifier](https://javascript-minifier.com/) and [CSSMinifier](https://cssminifier.com/)
 
 ### Course content
 - Add course information in [script.js](/res-iitr/script.js). If the course is new simply add that course in `Semester` variable.
