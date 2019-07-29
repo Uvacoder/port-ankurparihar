@@ -421,7 +421,7 @@ function showSubject(sem, id) {
 	for (cont in contents) {
 		string +=
 			'<div class="course_content_box elevation-3">\
-			<a href="'+ contents[cont] + '" target="_blank">\
+			<a href="'+ contents[cont] + '" target="_blank" rel="noopener">\
 				<div class="course_content_box-svg">\
 					<div>\
 						'+ svg_data[cont] + '\

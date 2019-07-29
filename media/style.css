@@ -736,7 +736,7 @@ input:focus{
 @media (min-width: 480px){
 	.site-description .sd-content {
 		padding: 0 8px 0 180px;
-		background: url(/media/img/anime-png-30718.png) left/200px auto no-repeat;
+		background: url(/media/img/anime-png-30718.webp) left/200px auto no-repeat;
 		background-position: 0px -10px;
 		background-size: 160px auto;
 		margin-left: 40px;
