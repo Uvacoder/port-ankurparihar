@@ -91,4 +91,6 @@
 - /res-iitr/index.html
 - /demo/index.html
 - /demo/fractal-generator/index.html
+- /demo/Time-Table/index.html
 - /changelog/index.html
+- /sign-in/index.html
