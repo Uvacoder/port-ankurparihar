@@ -2872,8 +2872,16 @@ p {
 	user-select: none;
 }
 
+.menu__content .user_options__list .list__tile__action svg {
+	color: rgba(255, 255, 255, 0.5);
+}
+
 .menu__content .user_options__list:hover .list__tile:hover {
-	color: rgba(var(--theme-color-r, 243), var(--theme-color-g, 198), var(--theme-color-b, 105), .5);
+	color: rgb(var(--theme-color-r, 243), var(--theme-color-g, 198), var(--theme-color-b, 105));
+}
+
+.theme-dark .list .list__tile--link:hover {
+    background: hsla(0,0%,100%,.12);
 }
 
 .list__tile__action, .list__tile__action .input-group--selection-controls {

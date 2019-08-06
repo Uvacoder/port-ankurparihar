@@ -100,9 +100,17 @@ function loadDoc(relative_url, origin, flag) {
 }
 
 function update_nav_highlight(origin_id) {
-	document.getElementById(cur_tab).parentElement.classList.remove("active-list-tile");
-	document.getElementById(origin_id).parentElement.classList.add("active-list-tile");
-	cur_tab = origin_id;
+	try {
+		document.getElementById(cur_tab).parentElement.classList.remove("active-list-tile");
+	} catch (error) {
+		console.log(error);
+	}
+	try {
+		document.getElementById(origin_id).parentElement.classList.add("active-list-tile");
+		cur_tab = origin_id;
+	} catch (error) {
+		console.log(error);
+	}
 }
 
 window.addEventListener('popstate', function (e) {
