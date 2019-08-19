@@ -4,8 +4,6 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-
 
 <url>
   <loc>https://ankurparihar.github.io/</loc>
@@ -13,24 +11,19 @@
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://ankurparihar.github.io/recent/</loc>
+  <loc>https://ankurparihar.github.io/about-me/</loc>
   <lastmod>2019-02-23T14:28:52+00:00</lastmod>
-  <priority>0.80</priority>
+  <priority>0.60</priority>
 </url>
 <url>
   <loc>https://ankurparihar.github.io/browse/</loc>
   <lastmod>2019-02-23T14:28:52+00:00</lastmod>
-  <priority>0.80</priority>
+  <priority>0.60</priority>
 </url>
 <url>
-  <loc>https://ankurparihar.github.io/search/</loc>
+  <loc>https://ankurparihar.github.io/changelog/</loc>
   <lastmod>2019-02-23T14:28:52+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://ankurparihar.github.io/res-iitr/</loc>
-  <lastmod>2019-02-23T14:28:52+00:00</lastmod>
-  <priority>0.80</priority>
+  <priority>0.64</priority>
 </url>
 <url>
   <loc>https://ankurparihar.github.io/demo/</loc>
@@ -38,20 +31,34 @@
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://ankurparihar.github.io/changelog/</loc>
-  <lastmod>2019-02-23T14:28:52+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://ankurparihar.github.io/about-me/</loc>
-  <lastmod>2019-02-23T14:28:52+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
   <loc>https://ankurparihar.github.io/demo/fractal-generator/</loc>
   <lastmod>2019-02-23T14:28:52+00:00</lastmod>
-  <priority>0.64</priority>
+  <priority>0.70</priority>
 </url>
-
+<url>
+  <loc>https://ankurparihar.github.io/demo/Time-Table/</loc>
+  <lastmod>2019-02-23T14:28:52+00:00</lastmod>
+  <priority>0.70</priority>
+</url>
+<url>
+  <loc>https://ankurparihar.github.io/recent/</loc>
+  <lastmod>2019-02-23T14:28:52+00:00</lastmod>
+  <priority>0.60</priority>
+</url>
+<url>
+  <loc>https://ankurparihar.github.io/res-iitr/</loc>
+  <lastmod>2019-02-23T14:28:52+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ankurparihar.github.io/search/</loc>
+  <lastmod>2019-02-23T14:28:52+00:00</lastmod>
+  <priority>0.60</priority>
+</url>
+<url>
+  <loc>https://ankurparihar.github.io/sign-in/</loc>
+  <lastmod>2019-02-23T14:28:52+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
 
 </urlset>
