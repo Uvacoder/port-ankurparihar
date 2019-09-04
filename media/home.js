@@ -2,8 +2,15 @@ var ribbon_items = [
 	{
 		parent: "display_ribbon__slider_recent",
 		timeID: "ribbon_time__recent",
-		lastUpdate: 1564440492137,
+		lastUpdate: 1567616993081,
 		items: [
+			{
+				href: "/res-iitr",
+				title: "Previous Years' content uploaded",
+				imgsrc: "/media/iitr/sh.jpg",
+				imgalt: "IITR Resources",
+				subtitle: "IITR Resources"
+			},
 			{
 				href: "/res-iitr?tab=timetable",
 				title: "IITR Time-Table",
