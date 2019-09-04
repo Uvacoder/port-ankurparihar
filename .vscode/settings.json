@@ -19,7 +19,9 @@
 	"workbench.colorCustomizations":{
         "[Default High Contrast]": {
             "editor.lineHighlightBorder": "#000000"
-        }
+		},
+		"activityBar.background": "#303030",	// ankurparihar.github.io
+		"activityBar.foreground": "#f3c669",	// ankurparihar.github.io
     },
 
     /* Arduino */
