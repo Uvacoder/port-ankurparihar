@@ -460,6 +460,14 @@ var Semesters = {
 				Code: "CSN-499",
 				Title: "Training Seminar",
 				Credits: 2
+			},
+			{
+				Code: "CSE-Exam",
+				Title: "Exam Portal",
+				Credits: 0,
+				Content: {
+					"Papers": "https://drive.google.com/drive/folders/18xxg0rBJKxPFOkMl5KDr3YkISDE5vx_N"
+				}
 			}
 		]
 	},
