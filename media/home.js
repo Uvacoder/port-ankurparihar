@@ -21,7 +21,7 @@ var ribbon_items = [
 			{
 				href: "/res-iitr?tab=6-3",
 				title: "Principles of Programming Languages Notes",
-				imgsrc: "/media/iitr/princi of prog lang.png",
+				imgsrc: "/media/iitr/princi of prog lang.jpg",
 				imgalt: "Principles of programming languages",
 				subtitle: "IITR Resources"
 			},
