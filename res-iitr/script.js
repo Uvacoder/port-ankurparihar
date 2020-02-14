@@ -405,7 +405,7 @@ var Semesters = {
 				Title: "Educational Tour",
 				Credits: 0,
 				Content: {
-					"Photos": "https://photos.app.goo.gl/NZswYc12LE583sCW9"
+					"Photos": "#"
 				}
 			},
 			{
@@ -510,7 +510,7 @@ function toggleSem(id) {
 	} else {
 		m = iitr_sem_all;
 	}
-	document.querySelectorAll(".iitr_side-options .active-option").forEach(elem => {elem.classList.remove("active-option");});
+	document.querySelectorAll(".iitr_side-options .active-option").forEach(elem => { elem.classList.remove("active-option"); });
 	n.classList.add('active-option');
 	iitr_title.innerHTML = (n.innerHTML == "All") ? "All" : Semesters[cur_sem].Name;
 	if (id == "iitr_sem_all") {
@@ -530,7 +530,7 @@ function toggleReqSem(semester) {
 		toggleSem("iitr_sem_curr");
 		return;
 	}
-	document.querySelectorAll(".iitr_side-options .active-option").forEach(elem => {elem.classList.remove("active-option");});
+	document.querySelectorAll(".iitr_side-options .active-option").forEach(elem => { elem.classList.remove("active-option"); });
 	iitr_title.innerHTML = iitr_sem_exp.innerHTML = Semesters[semester].Name; /* '<svg style="width:24px;height:24px" viewBox="0 0 24 24"><path fill="#ffffff" d="M19,15L13,21L11.58,19.58L15.17,16H4V4H6V14H15.17L11.58,10.42L13,9L19,15Z" /></svg>' + */
 	iitr_sem_exp.setAttribute("onclick", "showSubjects(" + semester + "); toggleReqSem(" + semester + ")");
 	all_sems.style.display = cur_subs.style.display = "none";
@@ -573,7 +573,7 @@ function showSubject(sem, id) {
 	} else {
 		iitr_sem_pxe = iitr_sem_pxe_2;
 	}
-	document.querySelectorAll(".iitr_side-options .active-option").forEach(elem => {elem.classList.remove("active-option");});
+	document.querySelectorAll(".iitr_side-options .active-option").forEach(elem => { elem.classList.remove("active-option"); });
 	iitr_sem_pxe.classList.add('active-option');
 	iitr_sem_pxe.innerHTML = sub.Code;
 	iitr_title.innerHTML = sub.Title;
@@ -622,7 +622,7 @@ function showIITRTimeTable() {
 	cur_subs.style.display = "none";
 	timetable_holder.style.display = "block";
 	iitr_title.innerHTML = "Time-Table";
-	document.querySelectorAll(".iitr_side-options .active-option").forEach(elem => {elem.classList.remove("active-option");});
+	document.querySelectorAll(".iitr_side-options .active-option").forEach(elem => { elem.classList.remove("active-option"); });
 	iitr_ast_timetable.classList.add("active-option");
 }
 
@@ -638,13 +638,13 @@ function scanIITRPage() {
 		[key, value] = [p.split('=')[0], p.split('=')[1]];
 		// Format
 		// tab=5_3
-		if(key=='tab'){
-			if(value=='timetable'){
+		if (key == 'tab') {
+			if (value == 'timetable') {
 				showIITRTimeTable();
 			}
 			else {
 				value = value.split('-');
-				showSubject(value[0], value[1]-1);
+				showSubject(value[0], value[1] - 1);
 			}
 			return;
 		}
