@@ -1,2 +1,7 @@
 auth/auth.php
 auth/.git/*
+nuxt/
+README2.md
+/media/global.js
+/media/vuetify-2.2.3.css
+/media/vuetify-2.2.3.min.css

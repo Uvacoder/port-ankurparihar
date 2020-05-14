@@ -770,7 +770,7 @@ input:focus{
 }
 
 .site-description .sd-content {
-	height: 180px;
+	height: 100%;
 	max-width: 960px;
 	color: rgba(255,255,255,.5);
 	font-size: 11px;
