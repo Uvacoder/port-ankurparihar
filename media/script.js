@@ -1,130 +1,169 @@
-var sidenav = document.getElementsByClassName('side-nav')[0];
-var sidescroll_content = document.querySelector('.scroll-content');
-var sidenav_scroll_container = document.querySelector('.side-nav-scroll-container');
-var sidescroll = document.getElementById('custom-scroll');
-var application = document.querySelector('.application');
-var overlay = document.querySelector('.overlay');
-var back_to_top_btn = document.querySelector('.back_to_top-btn');
-var isMobile = false;
+// ======================== Elements and Data Structures ========================
 
-// Temporarily disable scroll https://stackoverflow.com/questions/4770025/how-to-disable-scrolling-temporarily
-// left: 37, up: 38, right: 39, down: 40,
-// spacebar: 32, pageup: 33, pagedown: 34, end: 35, home: 36
-var keys = { 37: 1, 38: 1, 39: 1, 40: 1 };
+const overlay = document.getElementById('overlay')
+const sidenav = document.getElementById('side-navigation')
+const btnNavToggle = document.querySelector('button.nav_drawer_toggle')
+const btnSignIn = document.querySelector('.user-options button.log-in-text')
+const btnBackToTop = document.getElementById('back-to-top-btn')
+const toolbar = document.getElementById('toolbar')
+const toolbarSearch = toolbar.querySelector('#toolbar-search')
+const toolbarSearchBar = toolbarSearch.querySelector('.toolbar-search__bar')
+const toolbarSearchInput = toolbarSearch.querySelector('input')
+const toolbarSearchLabel = toolbarSearch.querySelector('label')
+const footerContainer = document.getElementById('footer-container')
+const siteDescriptionContainer = document.getElementById('sd-container')
+const contentRoot = document.querySelector('main .content--wrap .container')
+const pageLocationElem = document.getElementById('page-location-text')
 
-function preventDefault(e) {
-	e = e || window.event;
-	if (e.preventDefault)
-		e.preventDefault();
-	e.returnValue = false;
+var overlayData = {
+	elements: []
 }
 
-function preventDefaultForScrollKeys(e) {
-	if (keys[e.keyCode]) {
-		preventDefault(e);
-		return false;
-	}
+// ================================ Overlay Logic ===============================
+
+overlay.addEventListener('click', deactivateOverlay)
+overlay.addEventListener('touchstart', deactivateOverlay)
+
+/**
+ * Cover entire application area with transparent layer  
+ * - Above application content
+ * - Below navigation and toolbar  
+ * 
+ * _Note_: Register elements with `registerOverlayElement`
+ */
+function activateOverlay() {
+	overlay.classList.add('overlay--active')
 }
 
-function disableScroll() {
-	if (window.addEventListener) // older FF
-		window.addEventListener('DOMMouseScroll', preventDefault, false);
-	window.onwheel = preventDefault; // modern standard
-	window.onmousewheel = document.onmousewheel = preventDefault; // older browsers, IE
-	window.ontouchmove = preventDefault; // mobile
-	window.onkeydown = preventDefaultForScrollKeys;
+/**
+ * Remove overlay  
+ * Also deactivate registered elements that caused overlay
+ */
+function deactivateOverlay() {
+	overlay.classList.remove('overlay--active')
+	overlayData.elements.forEach(element => {
+		element.f()
+	});
+	overlayData.elements.splice(0, overlayData.elements.length)
 }
 
-function enableScroll() {
-	if (window.removeEventListener)
-		window.removeEventListener('DOMMouseScroll', preventDefault, false);
-	window.onmousewheel = document.onmousewheel = null;
-	window.onwheel = null;
-	window.ontouchmove = null;
-	window.onkeydown = null;
+/**
+ * Register elements that will cause overlay activation  
+ * If user does not interact with element, event propogates to overlay  
+ * In this case overlay will deactivate itself and registered element  
+ * function paramenter decides how it will be deactivated
+ * @param {HTMLElement} e 
+ * @param {Function} f 
+ */
+function registerOverlayElement(ele, fun) {
+	overlayData.elements.push({
+		e: ele,
+		f: fun
+	})
 }
 
-var toolbar = document.querySelector('nav');
-// console.log(toolbar);
-window.onscroll = function () {
-	// console.log("scrolling...");
-	if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-		// console.log("remove...")
-		toolbar.classList.add("semi-transparent");
-		toolbar.classList.remove("transparent");
-		toolbar.classList.remove("elevation-0");
-		back_to_top_btn.classList.add("back_to_top-btn-activ");
+// ============================== Navigation Logic ==============================
 
-	}
-	else {
-		// console.log("add...")
-		toolbar.classList.add("transparent");
-		toolbar.classList.add("elevation-0");
-		toolbar.classList.remove("semi-transparent");
-		back_to_top_btn.classList.remove("back_to_top-btn-activ");
-	}
-	try {
-		if (hero_image_scale != 0) {
-			hero_image_1.style.transform = "translateY(" + (-(document.body.scrollTop || document.documentElement.scrollTop) / hero_image_scale) + "px)";
-			// console.log(hero_image_1.style.transform);
-		}
-	} catch (error) {
-		// console.log("Hero image error...");
-	}
+btnNavToggle.addEventListener('click', toggleNav)
+
+/**
+ * Show navigation panel
+ */
+function showNav() {
+	sidenav.classList.replace('navigation-drawer--close', 'navigation-drawer--open')
+	sidenav.style.setProperty('transform', 'translateX(0px)')
 }
 
+/**
+ * Hide navigation panel
+ */
+function hideNav() {
+	sidenav.classList.replace('navigation-drawer--open', 'navigation-drawer--close')
+	sidenav.style.setProperty('transform', 'translateX(-250px)')
+}
+
+/**
+ * Toggle navigation  
+ * Show hidden navigation or Hide visible navigation
+ */
 function toggleNav() {
 	if (sidenav.getBoundingClientRect().left < 0) {
-		// console.log("showing nav...");
-		showNav();
+		// navigation currently closed
+		registerOverlayElement(sidenav, hideNav)
+		showNav()
+		activateOverlay()
+	} else {
+		// navigation currently active
+		hideNav()
+		deactivateOverlay()
 	}
-	else {
-		// console.log("hiding nav...");
-		hideNav();
-	}
 }
 
-overlay.addEventListener("click", function () {
-	if (overlay.classList.contains('overlay-active')) toggleNav();
-});
-overlay.addEventListener('touchstart', function () {
-	if (overlay.classList.contains('overlay-active')) toggleNav();
-});
+// ============================ Toolbar Search Logic ============================
 
-var toolbar_search_input = document.querySelector('.input-group_input input');
-var toolbar_search_label = document.querySelector('.toolbar-search-box label');
-var input_group_detail = document.querySelector(".input-group_details");
-
-function hideNav() {
-	overlay.style.display = "none";
-	overlay.classList.remove("overlay-active");
-	sidenav.style.setProperty("transform", "translateX(-250px)");
-	enableScroll();
+toolbarSearchInput.onfocus = () => {
+	toolbarSearch.classList.add('focused')
+	toolbarSearchBar.classList.add('input-group--focused', 'input-group--tab-focused')
 }
 
-function showNav() {
-	overlay.style.display = "block";
-	overlay.classList.add("overlay-active");
-	sidenav.style.setProperty("transform", "translateX(0px)");
+toolbarSearchInput.onblur = () => {
+	toolbarSearch.classList.remove('focused')
+	toolbarSearchBar.classList.remove('input-group--focused', 'input-group--tab-focused')
 }
 
+/**
+ * Remove `Search` label from search bar if input has some value
+ */
 function alterSearchLabel() {
-	// console.log("keydown...");
-	if (toolbar_search_input.value != '') {
-		toolbar_search_label.style.display = "none";
-	}
-	else {
-		toolbar_search_label.style.display = "block";
+	if (toolbarSearchInput.value != '') {
+		toolbarSearchLabel.style.display = 'none'
+	} else {
+		toolbarSearchLabel.style.display = 'block'
 	}
 }
 
+// ================= Onscroll Events: Toolbar, back-to-top button =================
+
+/**
+ * @type {Number}
+ */
+var newScrollTop, prevScrollTop = document.documentElement.scrollTop
+/**
+ * @type {Boolean}
+ */
+var toolbarBlack = toolbar.classList.contains('semi-transparent')
+
+/**	Toggle visibility of back-to-top button and transparency of toolbar */
+window.onscroll = function (e) {
+	newScrollTop = document.documentElement.scrollTop
+	if (!toolbarBlack && (newScrollTop > 20)) {
+		// show back-to-top, semi-trans toolbar
+		toolbar.classList.add('semi-transparent')
+		toolbar.classList.remove('transparent', 'elevation-0')
+		toolbarBlack = true
+		btnBackToTop.classList.add('fab-transition-enter', 'fab-transition-enter-active')
+		btnBackToTop.style.display = 'block'
+		setTimeout(() => { btnBackToTop.classList.remove('fab-transition-enter', 'fab-transition-enter-active') }, 100)
+	}
+	else if (toolbarBlack && newScrollTop <= 20) {
+		// hide back-to-top, transparent toolbar
+		toolbar.classList.remove('semi-transparent')
+		toolbar.classList.add('transparent', 'elevation-0')
+		toolbarBlack = false
+		btnBackToTop.classList.add('fab-transition-enter', 'fab-transition-enter-active')
+	}
+}
+
+// ================================= Back To Top =================================
+
+/**
+ * Scroll to top
+ */
 function backToTop() {
 	var id;
 	if (document.documentElement.scrollTop > 0) {
 		id = setInterval(function () {
 			document.documentElement.scrollBy(0, -20);
-			// window.scrollBy(0, -10);
-			// console.log("scrolling...");
 			if (document.documentElement.scrollTop <= 0) {
 				clearInterval(id);
 			}
@@ -132,11 +171,256 @@ function backToTop() {
 	}
 	if (document.body.scrollTop > 0) {
 		id = setInterval(function () {
-			// window.scrollBy(0, -10);
 			document.body.scrollBy(0, -20);
 			if (document.body.scrollTop <= 0) {
 				clearInterval(id);
 			}
 		}, 10);
 	}
+}
+btnBackToTop.onclick = backToTop
+
+// ================================ Ripple Effect ================================
+
+var rippleEnabledElements = [
+	btnNavToggle,	// navigation toggle button
+	btnSignIn,		// sign in button on toolbar
+	btnBackToTop,	// back to top button
+]
+
+rippleEnabledElements.forEach(element => {
+	element.addEventListener('click', (event) => {
+		showRippleEffect(event, element)
+	})
+})
+
+sidenav.querySelectorAll('a').forEach(node => {
+	node.addEventListener('click', (event) => {
+		showRippleEffect(event, node)
+	})
+})
+
+
+/**
+ * Display ripple effect
+ * @param {Event} t 
+ * @param {HTMLElement} e 
+ */
+function showRippleEffect(t, e) {
+	var i = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : {};
+	var n = document.createElement("span")
+	var s = document.createElement("span")
+	n.appendChild(s)
+	n.className = "ripple__container"
+	i.class && (n.className += " " + i.class)
+	var r = e.clientWidth > e.clientHeight ? e.clientWidth : e.clientHeight
+	s.className = "ripple__animation"
+	s.style.width = r * (i.center ? 1 : 2) + "px"
+	s.style.height = s.style.width
+	e.appendChild(n)
+	var o = window.getComputedStyle(e)
+	"absolute" !== o.position && "fixed" !== o.position && (e.style.position = "relative");
+	var a = e.getBoundingClientRect()
+	l = i.center ? "50%" : t.clientX - a.left + "px"
+	u = i.center ? "50%" : t.clientY - a.top + "px"
+	s.classList.add("ripple__animation--enter", "ripple__animation--visible")
+	st(s, "translate(-50%, -50%) translate(" + l + ", " + u + ") scale3d(0.01,0.01,0.01)")
+	s.dataset.activated = Date.now()
+	setTimeout((function () {
+		s.classList.remove("ripple__animation--enter")
+		st(s, "translate(-50%, -50%) translate(" + l + ", " + u + ")  scale3d(0.99,0.99,0.99)")
+	}
+	), 0)
+	t = e
+	e = t.getElementsByClassName("ripple__animation")
+	if (0 !== e.length) {
+		i = e[e.length - 1]
+		n = Date.now() - Number(i.dataset.activated)
+		r = 400 - n
+		r = r < 0 ? 0 : r
+		setTimeout((function () {
+			i.classList.remove("ripple__animation--visible"),
+				setTimeout((function () {
+					try {
+						e.length < 1 && (t.style.position = null)
+						i.parentNode && t.removeChild(i.parentNode)
+					} catch (t) { }
+				}
+				), 300)
+		}
+		), r)
+	}
+}
+
+/**
+ * style transform an element
+ * @param {HTMLElement} t 
+ * @param {any} e 
+ */
+function st(t, e) {
+	t.style.transform = e
+	t.style.webkitTransform = e
+}
+
+// ================================= SPA Logic =================================
+/**
+ * The heart of this application
+ */
+var spa = {
+	init: async () => {
+		// Set event listeners on navigation
+		document.querySelectorAll('aside a').forEach(navAnchor => {
+			navAnchor.addEventListener('click', (e) => {
+				var urlInfo = URLDissect(navAnchor.href)
+				var page = spa.nav[urlInfo.path]
+				deactivateOverlay()
+				if(page!=undefined) spa.loadPage(page)
+				else window.location.href(navAnchor.href)
+				e.preventDefault()
+			})
+		})
+		if(curr_page === undefined){
+			return
+		}
+		await import(spa.map[curr_page].script).then(response => {})
+		spa.data[curr_page].onStaticLoad(contentRoot)
+	},
+	loadPage: async (page) => {
+		try {
+			if(spa.data[page]!=undefined){
+				contentRoot.innerHTML = ''
+				spa.data[page].apply(contentRoot)
+			}else{
+				await import(spa.map[page].script).then(response => {})
+				spa.data[page].apply(contentRoot)
+			}
+			if(page != curr_page){
+				// Update navigation panel
+				var nav = document.getElementById(spa.map[curr_page].nav)
+				nav.classList.remove('primary--text', 'list__tile--active')
+				nav = document.getElementById(spa.map[page].nav)
+				nav.classList.add('primary--text', 'list__tile--active')
+				// Update page location text
+				pageLocationElem.innerHTML = spa.data[page].page_loc_text
+				// Update curr_page
+				curr_page = page
+			}
+		} catch (error) {
+			console.log(error)
+		}
+	},
+	register: (page, data) => {
+		spa.data[page] = data
+	},
+	data: {},
+	map: {
+		'home': {
+			script: '/media/home.js',
+			url: '',
+			nav: 'nav-home'
+		},
+		'change': {
+			script: '/changelog/script.js',
+			url: '/changelog',
+			nav: 'nav-change'
+		}
+	},
+	nav: {
+		'/': 'home',
+		'/changelog': 'change'
+	}
+}
+
+// ================================ URL utilities ===============================
+
+/**
+ * Return useful into from url namely - protocol, domain name, path, params
+ * @param {String} url 
+ */
+function URLDissect(url){
+	var result = {
+		protocol: undefined,
+		domain: undefined,
+		path: undefined,
+		param: {}
+	}
+	url = url.split('://')
+	result.protocol = url[0]
+	url = url[1]
+	result.domain = url.split('/', 1)[0]
+	url = url.replace(result.domain, '').split('?')
+	result.path = url[0]
+	if(url.length<2) return result
+	url = url[1].split('&')
+	result.param = {}
+	url.forEach(param => {
+		param = param.split('=')
+		result.param[param[0]] = param.length>1 ? param[1] : ''
+	})
+	return result
+}
+
+// ======================== Download and Injection Logic ========================
+
+/**
+ * Download content from url
+ * @param {String} url 
+ * @returns response or `null`
+ */
+function download(url) {
+	var xhttp;
+	if (window.XMLHttpRequest) {
+		// code for modern browsers
+		xhttp = new XMLHttpRequest();
+	} else {
+		// code for IE6, IE5
+		xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+	}
+	xhttp.onreadystatechange = function () {
+		if (this.readyState == 4 && this.status == 200) {
+			return this.responseText;
+		}
+		else if (this.readyState == 4) {
+			return null
+		}
+	};
+	xhttp.open("GET", url, true);
+	xhttp.send();
+}
+
+/**
+ * Inject Javascript in DOM
+ * @param {String} url
+ * @param {String} id default `injectedJS`
+ * @param {Boolean} removePrevious default `true`
+ */
+function injectJS(url, id, removePrevious){
+	if(url === undefined || url == '') return
+	if(id === undefined) id = 'injectedJS'
+	if(removePrevious === undefined) removePrevious = true
+
+	if(removePrevious)
+	// remove previous if exists
+	var JSelem = document.getElementById("injectedJS");
+	if(JSelem){
+		JSelem.parentElement.removeChild(JSelem);
+	}
+
+	var jsELem = document.createElement("script");
+	jsELem.id = "injectedJS";
+	jsELem.type = "text/javascript";
+	jsELem.src = url;
+	document.body.appendChild(jsELem);
+}
+
+// ================================ Miscellaneous ===============================
+
+/** Remove focus from active element after click*/
+document.addEventListener('click', function (e) {
+	if (document.activeElement.toString() == '[object HTMLButtonElement]') document.activeElement.blur();
+})
+
+/** Initialize SPA process */
+window.onload = () => {
+	spa.init()
 }

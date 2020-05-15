@@ -1,96 +1,92 @@
-# ankurparihar.github.io
-[Ankur's Little Playground](https://ankurparihar.github.io)
+=========================== New Site Document ===========================
 
-## Important
-- All the links must be domain relative not directory relative
-- Style and Scripts must be included in relative files not in global files
-- Use standard [index.html](index.html) and make necessary changes.
-- Content must be inside `.content` div starting with `stylesheet` element for css if required
-- Javascript files must be at the end inside body element. Injected javascripts must have id `injectedJS`
-- [Update sitemap](https://www.xml-sitemaps.com)
+**_Note:_** __These instructions are for personal use only!__
 
-## Branching
-- [master](https://github.com/ankurparihar/ankurparihar.github.io/tree/master) branch has minified javascript and css files, while [dev](https://github.com/ankurparihar/ankurparihar.github.io/tree/dev) branch has beautified files
-- Demo projects are used as submodules
-- Submodule **master** branch contains original code, **github.io** branch contains minified code embedded into site, **github.io-dev** contains beautified code
+### Follows SPA Architecture
+- This webapp runs as a single page application (SPA)
+- Constant parts of the page like _toolbar_, _navigation-menu_, _footer_ etc. does not reload.
+- When user tries to navigate away from within the application (i.e. using navigation menu or footer links), the URL is parsed.
+- If the URL is application domain, we load only necessary part of application required and redraw necessary area.
+- For each part of website separate static data is generated.
 
-#### This repo
+### Benefits of being SPA
+- Reduce data consumption as only partial data is loaded.
+- SEO friendly
+- Fast
+- Serverless
 
-|    master   |     dev     |
-|-------------|-------------|
-|   minimize  |  beautified |
+### Responsive
+- Responsive layout
+- Testing on Chrome Desktop and chrome Mobile 
 
-#### Submodule repo
+### Overlay mechanism
+- Multiple elements can request overlay activation through `activateOverlay` function.
+- Overlay will deactivate on click or touchstart event.
+- The requesting element needs to register itself through `registerOverlayElement(element, function)`.
+- The function will be executed in case of indirect deactivation of overlay, for example clicking on other area than of element itself
+- For example:
+	- User opens navigation `showNav`
+	- The `navElement` element registers with `registerOverlayElement(navElement, closeNav)`
+	- `closeNav` closes navigation and deactivates overlay
+	- But in case user clicks on overlay it will fire `closeNav` to close the navigation 
+- Overlay can be requsted by many elements, but on deactivation all elements are closed and application returns to its normal state
+- Overlay does not propogate click events but scrolling will work.
 
-| master | github.io | github.io-dev |
-|-----------------------|-----------------------|-----------------------|
-| original code | (site) minimized | (site) beautified |
+### Ripple Effect
+- Ripple logic is copied and minified from vuetify library
+- To use on some element, just add the element to `rippleEnabledElements` array, which will show it after `click` event
+- To use it on custom event on some element, use `showRippleEffect(event, element)` function
+	```javascript
+	element.addEventListener('click', (event) => {
+	    showRippleEffect(event, element)
+	})
+	```
 
-- Workflow
-	- make sure github.io -> dev, submodule -> github.io-dev
-	- Make changes -> Push to repective branches
-	- In submodules
-		- Minify files
-		- Checkout github.io -> push
-	- After that, in this
-		- Minify files
-		- Checkout all -> push
-	- Making change in non JS/CSS file
-		- Sync with command `git checkout <branch> <path/to/file>`, do not `cherry-pick`
+## Developing in local environment
 
-## Working in local environment
-- Use local virtual host. Due to all relative links the host must be changed.
-- Create an entry if not `127.0.0.1 ankurparihar.github.io` in */etc/hosts* . Use your virtual host ip address in place of `127.0.0.1`.
+- Using xampp as local server
+- Enable virtual host by uncommenting this line (remove `#`)
+	```
+	#Include etc/extra/httpd-vhosts.conf
+	```
+- edit virtual host configuration in `/opt/lampp/etc/extra/httpd-vhosts.conf`
+	```xml
+	<VirtualHost *:80>
+		DocumentRoot "/home/ankur/php/subdomains/development/ankurparihar.github.io"
+		DirectoryIndex index.html index.php
+		ServerName ankurparihar.github.io
+		<Directory "/home/ankur/php/subdomains/development/ankurparihar.github.io">
+			Options All
+			AllowOverride All
+			Require all granted
+		</Directory>
+	</VirtualHost>
+	```
 
-## Personalization
-- Themes are enabled on website
-- Github authentication is needed to enable personalization
-- [git-ddb](https://github.com/ankurparihar/git-ddb-docs) is used for storing data
-- Use color variables `var(--theme-color, #f3c669)` and `rgba(var(--theme-color-r, 243), var(--theme-color-g, 198), var(--theme-color-b, 105), 0.5)` to apply themes sitewide
+### Configuration
+- _Environment_: Ubuntu 16.04
+- _Code Editor_: Visual Studio Code
+- _Server Stack_: Xampp
 
-## Content upload
+### Cautions
+- disable git fileMode checking by `git config core.fileMode false`
+- Develop on `dev` branch only
 
-### General
-- Upload content and get a reference like a link to Google drive
-- Upload relative image  of size 268x394 in `/media/{directory}`
-- Image must have `alt` attribute
-- buttons must have `aria-label` with button description
-- cross-origin links must have `rel="noopener"` attribute
-- Update rich preview meta data as necessary
-- Minify files using [JSMinifier](https://javascript-minifier.com/) and [CSSMinifier](https://cssminifier.com/)
+### To test application on mobile
+- Get IP address of device on which local server is running, e.g. `ifconfig` or `hostname -I`
+- _[Optional]_ Disable firewall. In ubuntu use: `sudo ufw disable`
+- From mobile device visit IP address
+- Don't visit domain name _[ankurparihar.github.io]_ as it will redirect to github page instead of local server.
 
-### Course content
-- Add course information in [script.js](/res-iitr/script.js). If the course is new simply add that course in `Semester` variable.
-- Use `svg_data` to display relative material icon
-- Update semester `cur_sem`
 
-### Demos/Projects
-- Add project info in `Projects`
-- Create relative entry in `Semester` if the project is course related
-- For live project create subdir under `demo` directory with same name as written in `Projects`
-- Upload relative image of size 800x400 or ratio 2:1 in `/media/demo/` directory
+### Home Page /
+- Ribbons time default valut --------
+- Ribbons left default disabled
+- Ribbons right default enabled
 
-### Dynamic page
-- Only direct child of root node can be dynamic page
-- Create page in appropriate directory and make sure to have a unique `nav-icon` to be used by `cur_tab`
-- Update `references` in [dynamic.js](/media/dynamic.js)
-- Update all other index files to add that page in navigation menu and footer if necessary
 
-### Home page ribbons
-- Copy ribbon skeleton from [index.html](index.html)
-- Simply create entry in [home.js](/media/home.js) if creating new ribbon
-- Make sure to follow convention
-- Calculate timestamp using
-```javascript
-	(new Date()).getTime();
-```
-
-## Index files
-- /index.html
-- /error.html
-- /res-iitr/index.html
-- /demo/index.html
-- /demo/fractal-generator/index.html
-- /demo/Time-Table/index.html
-- /changelog/index.html
-- /sign-in/index.html
+Do not put event listeners which have function reference in html. Attach them from script only
+Every change must be compiled and corresponding html must be updated
+spa variable contains all the data
+app related scripts are imported, this way variables declared in scripts does not take place in global scope and help reduce conflict
+each script registers itself to spa
