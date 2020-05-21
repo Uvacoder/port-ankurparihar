@@ -268,24 +268,27 @@ function st(t, e) {
  */
 var spa = {
 	init: async () => {
-		// Set event listeners on navigation
-		document.querySelectorAll('aside a').forEach(navAnchor => {
-			navAnchor.addEventListener('click', (e) => {
-				var urlInfo = URLDissect(navAnchor.href)
-				var page = spa.nav[urlInfo.path]
-				deactivateOverlay()
-				if(page!=undefined) spa.loadPage(page)
-				else window.location.href(navAnchor.href)
+		// Set click event listeners on toolbar, navigation and footer
+		document.querySelectorAll('nav a, aside a, footer a').forEach(toolAnchor => {
+			toolAnchor.addEventListener('click', (e) => {
+				if(e.ctrlKey) window.open(toolAnchor.href)
+				else{
+					spa.navigate(toolAnchor.href)
+				}
 				e.preventDefault()
 			})
 		})
+		document.querySelectorAll('aside a').forEach(asideAnchor => {
+			asideAnchor.addEventListener('mouseup', deactivateOverlay)
+		})
+
 		if(curr_page === undefined){
 			return
 		}
 		await import(spa.map[curr_page].script).then(response => {})
 		spa.data[curr_page].onStaticLoad(contentRoot)
 	},
-	loadPage: async (page) => {
+	loadPage: async (page, urlInfo) => {
 		try {
 			if(spa.data[page]!=undefined){
 				contentRoot.innerHTML = ''
@@ -304,15 +307,51 @@ var spa = {
 				pageLocationElem.innerHTML = spa.data[page].page_loc_text
 				// Update curr_page
 				curr_page = page
+				// Update address bar URL
+				if(spa.state.updateWindowHistory) window.history.pushState({title: null, url: urlInfo.url}, null, urlInfo.url)
+				// attach anchor event listeners
+				contentRoot.querySelectorAll('a').forEach(anchor => {
+					anchor.addEventListener('click', (e) => {
+						if(e.ctrlKey) window.open(anchor.href)
+						else{
+							spa.navigate(anchor.href)
+						}
+						e.preventDefault()
+					})
+				})
 			}
 		} catch (error) {
 			console.log(error)
 		}
 	},
+	navigate: (url, target) => {
+		var URLInfo = URLDissect(url)
+		var originInfo = URLDissect(window.location.href)
+		if(URLInfo.domain === originInfo.domain && URLInfo.protocol === originInfo.protocol){
+			const page = spa.nav[URLInfo.path]
+			if(page != undefined) spa.loadPage(page, URLInfo)
+			else window.open(url, target)
+		}else {
+			window.open(url, target)
+		}
+	},
 	register: (page, data) => {
 		spa.data[page] = data
 	},
-	data: {},
+	windowPop: (e) => {
+		url = e.target.location.href
+		targetInfo = URLDissect(url)
+		sourceInfo = URLDissect(spa.state.window__url)
+		if(targetInfo.protocol === sourceInfo.protocol && targetInfo.domain === sourceInfo.domain) {
+			const page = spa.nav[targetInfo.path]
+			if(page != undefined) {
+				spa.state.updateWindowHistory = false
+				spa.loadPage(page, targetInfo)
+				spa.state.updateWindowHistory = true
+				spa.state.window__url = url
+			}
+		}
+	},
 	map: {
 		'home': {
 			script: '/media/home.js',
@@ -327,7 +366,13 @@ var spa = {
 	},
 	nav: {
 		'/': 'home',
-		'/changelog': 'change'
+		'/changelog': 'change',
+		'/changelog/': 'change'
+	},
+	data: {},
+	state: {
+		updateWindowHistory: true,
+		window__url: ''
 	}
 }
 
@@ -339,6 +384,7 @@ var spa = {
  */
 function URLDissect(url){
 	var result = {
+		url: url,
 		protocol: undefined,
 		domain: undefined,
 		path: undefined,
@@ -419,6 +465,10 @@ function injectJS(url, id, removePrevious){
 document.addEventListener('click', function (e) {
 	if (document.activeElement.toString() == '[object HTMLButtonElement]') document.activeElement.blur();
 })
+
+/** When user navigates between history entries of window */
+spa.state.window__url = window.location.href
+window.onpopstate = spa.windowPop
 
 /** Initialize SPA process */
 window.onload = () => {
