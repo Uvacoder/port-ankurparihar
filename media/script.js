@@ -290,13 +290,15 @@ var spa = {
 	},
 	loadPage: async (page, urlInfo) => {
 		try {
-			if(spa.data[page]!=undefined){
-				contentRoot.innerHTML = ''
-				spa.data[page].apply(contentRoot)
-			}else{
+			if(spa.data[page] == undefined){
 				await import(spa.map[page].script).then(response => {})
-				spa.data[page].apply(contentRoot)
 			}
+			contentRoot.innerHTML = ''
+			// Apply style
+			if(spa.map[page].style) injectCSS(spa.map[page].style)
+			// Apply content
+			spa.data[page].apply(contentRoot)
+
 			if(page != curr_page){
 				// Update navigation panel
 				var nav = document.getElementById(spa.map[curr_page].nav)
@@ -354,12 +356,14 @@ var spa = {
 	},
 	map: {
 		'home': {
-			script: '/media/home.js',
+			script: '/script.js',
+			style: '/style.css',
 			url: '',
 			nav: 'nav-home'
 		},
 		'change': {
 			script: '/changelog/script.js',
+			style: '/changelog/style.css',
 			url: '/changelog',
 			nav: 'nav-change'
 		}
@@ -445,18 +449,43 @@ function injectJS(url, id, removePrevious){
 	if(id === undefined) id = 'injectedJS'
 	if(removePrevious === undefined) removePrevious = true
 
-	if(removePrevious)
+	var JSelem
 	// remove previous if exists
-	var JSelem = document.getElementById("injectedJS");
-	if(JSelem){
-		JSelem.parentElement.removeChild(JSelem);
+	if(removePrevious){
+		JSelem = document.getElementById(id);
+		if(JSelem){
+			JSelem.parentElement.removeChild(JSelem);
+		}
 	}
 
-	var jsELem = document.createElement("script");
+	jsELem = document.createElement("script");
 	jsELem.id = "injectedJS";
 	jsELem.type = "text/javascript";
 	jsELem.src = url;
 	document.body.appendChild(jsELem);
+}
+
+function injectCSS(url, id, reload){
+	if(url === undefined || url == '') return
+	if(id === undefined) id = 'injectedCSS'
+	if(reload === undefined) reload = false
+
+	var CSSelem = document.getElementById(id)
+	if(CSSelem && reload){
+		CSSelem.parentElement.removeChild(CSSelem)
+		CSSelem = null
+	}
+
+	if(CSSelem){
+		CSSelem.href = url
+	}else{
+		CSSelem = document.createElement('link')
+		CSSelem.id = id
+		CSSelem.type = 'text/css'
+		CSSelem.rel = 'stylesheet'
+		CSSelem.href = url
+		document.head.appendChild(CSSelem)
+	}
 }
 
 // ================================ Miscellaneous ===============================

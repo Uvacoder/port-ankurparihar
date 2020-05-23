@@ -290,7 +290,6 @@ const home__data = {
 				btnL.classList.remove('btn--disabled')
 			})
 		})
-		
 	}
 }
 
