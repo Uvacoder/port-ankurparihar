@@ -1104,16 +1104,6 @@ p {
 	min-height: 100vh;
 }
 
-.dot-gradient{
-	display: inline-block;
-	height: 100%;
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	background: url(/media/img/dot-overlay.png);
-}
-
 .center_flex {
 	display: -webkit-flexbox;
 	display: -ms-flexbox;

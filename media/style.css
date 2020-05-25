@@ -7051,10 +7051,6 @@ aside.navigation-drawer .ndsc_fader {
 	background: linear-gradient(180deg, #303030 0, #303030 60%, rgba(48, 48, 48, 0) 100%)
 }
 
-aside.navigation-drawer .divider {
-	background: 0 0!important
-}
-
 aside.navigation-drawer .navigation-drawer-scroll-container {
 	position: relative;
 	padding-top: 0
@@ -8857,4 +8853,14 @@ img {
 
 .font-weight-normal {
 	font-weight: 400
+}
+
+.dot-gradient{
+	display: inline-block;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background: url(/media/img/dot-overlay.png);
 }

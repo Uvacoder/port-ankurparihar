@@ -1,172 +1,93 @@
-#iitr_image_holder {
-	position: relative;
+#iitr-image-container {
+	position: relative
 }
 
-@media (min-width:1800px){
-	#iitr_image_holder img {
-		width: 100vw;
-	}
-}
-
-
-.iitr-content{
-	padding-top: 0px;
+.iitr-main {
 	background-color: #3a3c3f;
-	font-size: 0;
+	height: 100%
+}
+
+.iitr-main aside {
 	height: 100%;
+	min-height: 700px;
+	margin-top: 0px;
+	width: 250px;
+	z-index: 20;
+	position: relative
 }
 
-.iitr-content .iitr_side {
+.iitr-main aside .list__tile {
+	border-radius: 2px
+}
+
+.iitr-main aside .primary--text {
+	cursor: default;
+	background: #f3c669;
+	color: inherit!important
+}
+
+.iitr-main aside.navigation-drawer--mini-variant {
+	width: 80px
+}
+
+.iitr-content {
 	height: 100%;
-	position: relative;
-	left: 0;
-	width: 160px;
-	background-color: #303030;
-	align-content: center;
-	float: left;
+	min-height: 700px;
+	margin-left: 80px;
+	padding: 10px
 }
 
-@media (min-width:960px){
-	.iitr-content .iitr_side {
-		height: 100%;
-		position: relative;
-		left: 0;
-		width: 200px;
-		background-color: #303030;
-		align-content: center;
-		float: left;
-	}
+.iitr-main nav.toolbar {
+	background-color: rgba(33, 33, 33, 0.3)
 }
 
-.iitr_side-options {
-	padding-top: 24px;
-	width: 100%;
+.iitr-main nav.toolbar .toolbar__content {
+	height: 48px!important
 }
 
-.iitr_side-options .active-option {
-	color: #ffffff;
-    cursor: default;
-    background-color: var(--theme-color, #f3c669) !important;
-    border-color: var(--theme-color, #f3c669) !important;
-}
-
-.iitr_side-options h3 {
-	font-weight: 700;
-    font-size: 15px;
-    color: rgba(255,255,255,.5);
-    padding-left: 8px;
-    margin-bottom: 12px;
-}
-
-.iitr_sem_opt {
-	cursor: pointer;
-	position: relative;
-	width: 100%;
-	border-radius: 2px;
-	padding: 8px 8px 8px 16px;
-	font-size: 16px;
-	color: #eee;
-	transition: all 280ms cubic-bezier(.5,0,.1,1);
-}
-
-.iitr_sem_exp{
-	cursor: pointer;
-	position: relative;
-	width: 80%;
-	border-radius: 2px;
-	padding: 8px 8px 8px 36px;
-	font-size: 16px;
-	transition: all 280ms cubic-bezier(.5,0,.1,1);
-	display: none;
-	margin-left: 20px;
-	transform: skewX(-20deg);
-}
-
-.iitr_sem_pxe-1, .iitr_sem_pxe-2 {
-	cursor: pointer;
-	position: relative;
-	width: 80%;
-	border-radius: 2px;
-	padding: 8px 8px 8px 36px;
-	font-size: 16px;
-	transition: all 280ms cubic-bezier(.5,0,.1,1);
-	display: none;
-	margin-left: 20px;
-	transform: skewX(20deg);
-}
-
-@media (min-width: 960px) {
-	.iitr_sem_opt {
-		font-size: 18px;
-	}
-}
-
-.iitr_main {
-	font-size: 16px;
-	transition: none;
-	position: relative;
-	will-change: padding;
-	width: auto;
-    padding-top: 0px;
-	padding-right: 16px;
-	min-height: 600px;
-	margin-left: 160px;
-}
-
-@media (min-width: 960px) {
-	.iitr_main {
-		margin-left: 200px;
-	}
-}
-
-.iitr_title {
-	font-size: 16px;
-	height: 50px;
-	position: relative;
-	top: 0;
+.iitr-main nav.toolbar .title {
+	min-width: calc(100vw - 80px);
+	font-weight: 300;
+	margin: 0!important;
 	text-align: center;
-	margin: 0 auto;
-	overflow: hidden;
-	padding: 17px;
+	font-size: 16px!important;
 }
 
-.iitr_main_content {
-	margin-top: 50px;
-	display: block;
-	width: 100%;
-	margin-left: 10px;
+.iitr-main nav.toolbar button {
+	float: left
 }
 
-#all_sems {
-	display: none;
+@media (min-width:960px) {
+	.iitr-main nav.toolbar button {
+		display: none
+	}
+	.iitr-main aside.navigation-drawer--mini-variant {
+		width: 250px
+	}
+	.iitr-main aside.navigation-drawer--mini-variant .subheader {
+		display: block!important
+	}
+	.iitr-main aside.navigation-drawer--mini-variant .list__tile__content {
+		opacity: 1!important
+	}
+	.iitr-content {
+		margin-left: 250px
+	}
 }
 
-#cur_subs {
-	display: block;
+.iitr-main nav.toolbar button.btn-close {
+	transform: rotateY(180deg)
 }
 
-#req_subs {
-	display: none;
-}
-
-.sem_box {
-	height: 70px;
-	width: 80%;
+.card-hori {
+	height: 75px;
+	width: 200px;
 	background: #17181a;
-}
-
-.sub_box {
-	height: 100px;
-	width: 80%;
-	background: #17181a;
-}
-
-.sem_box, .sub_box {
 	margin: 5px;
-	border-radius: 2px;
+	border-radius: 2px
 }
 
-.sem_box button , .sub_box button {
+.card-hori button {
 	width: 100%;
 	min-height: 100%;
 	border-radius: 2px;
@@ -175,80 +96,40 @@
 	color: #fff;
 	background-color: #202020;
 	cursor: pointer;
-
+	padding: 6px
 }
 
-.sem_box button:hover, .sub_box button:hover {
-	background: var(--theme-color, #f3c669);
+.card-hori button:hover {
+	background: #f3c669
 }
 
-@media (max-width: 651px) {
-	.sub_box {
-		height: 50px;
-	}
+.card-hori button:focus {
+	outline: none
 }
 
-@media (min-width: 600px) {
-	.sem_box {
-		width: 40%;
-	}
-	.sub_box {
-		width: 200px;
-	}
-	.sem_box button, .sub_box button{
-		font-size: 16px;
-	}
-}
-
-@media (min-width: 960px) {
-	.sem_box {
-		width: 300px;
-	}
-	.sub_box {
-		width: 300px;
-	}
-	.sem_box button, .sub_box button{
-		font-size: 18px;
-	}
-
-}
-
-#course_content {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: flex-start;
-	align-content: flex-start;
-}
-
-#course_content .course_content_box {
-	margin: 15px;
+.card-vert {
 	width: 120px;
 	height: 160px;
-	background-color: #424242;
-	color: #ffffff;
+	background: #424242;
+	color: #fff;
 	cursor: pointer;
+	margin: 15px
 }
 
-#course_content .course_content_box a {
-	color: inherit;
-	text-decoration: none!important;
+.card-vert:hover {
+	color: #f3c669
 }
 
-#course_content .course_content_box:hover {
-	color: var(--theme-color, #f3c669);
-}
-
-.course_content_box-svg {
+.card-vert .course-svg {
 	width: 120px;
 	height: 120px;
 	background-color: #17181a;
 	display: flex;
 	justify-content: center;
-	align-items: center;
+	align-items: center
 }
 
-.course_content_box-svg div {
+.card-vert .course-svg div {
 	width: 50%;
 	height: 50%;
 	margin: auto;
@@ -256,11 +137,36 @@
 	justify-content: center;
 	align-items: center;
 	background-color: #3a3c3f;
-	border-radius: 50%;
+	border-radius: 50%
 }
 
-.course_content_box-txt {
+.card-vert .course-item {
 	width: 100%;
 	height: 40px;
-	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center
+}
+
+@media (min-width: 600px) {
+	.iitr-content, .iitr-main aside {
+		min-height: 600px;
+	}
+	.card-hori {
+		width: 240px;
+		height: 100px
+	}
+	.iitr-main nav.toolbar .title {
+		font-size: 20px!important
+	}
+}
+
+@media (min-width: 960px) {
+	.card-hori {
+		width: 300px;
+		margin: 15px
+	}
+	.card-hori button {
+		font-size: 18px
+	}
 }

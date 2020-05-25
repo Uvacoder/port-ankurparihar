@@ -42,49 +42,49 @@ const home__data = {
 						subtitle: "IITR Resources"
 					},
 					{
-						href: "/res-iitr?tab=6-3",
+						href: "/res-iitr?tab=6-2",
 						title: "Principles of Programming Languages Notes",
 						imgsrc: "/media/iitr/princi_of_prog_lang.jpg",
 						imgalt: "Principles of programming languages",
 						subtitle: "IITR Resources"
 					},
 					{
-						href: "/res-iitr?tab=6-7",
+						href: "/res-iitr?tab=6-6",
 						title: "Machine Learning Slides",
 						imgsrc: "/media/iitr/machine_learning.jpg",
 						imgalt: "Machine Learning",
 						subtitle: "IITR Resources"
 					},
 					{
-						href: "/res-iitr?tab=6-7",
+						href: "/res-iitr?tab=6-6",
 						title: "Image Captioning Assignment",
 						imgsrc: "/media/iitr/machine_learning.jpg",
 						imgalt: "Image Captioning",
 						subtitle: "IITR Resources"
 					},
 					{
-						href: "/res-iitr?tab=6-6",
+						href: "/res-iitr?tab=6-5",
 						title: "Goa Trip Photos",
 						imgsrc: "/media/iitr/goa.jpg",
 						imgalt: "Goa trip image",
 						subtitle: "IITR Resources"
 					},
 					{
-						href: "/res-iitr?tab=6-5",
+						href: "/res-iitr?tab=6-4",
 						title: "Compiler Lab Codes",
 						imgsrc: "/media/iitr/compiler_lab.jpg",
 						imgalt: "Compiler lab",
 						subtitle: "IITR Resources"
 					},
 					{
-						href: "/res-iitr?tab=6-4",
+						href: "/res-iitr?tab=6-3",
 						title: "Compiler Design Notes",
 						imgsrc: "/media/iitr/compiler_design.jpg",
 						imgalt: "Compiler Design",
 						subtitle: "IITR Resources"
 					},
 					{
-						href: "/res-iitr?tab=6-1",
+						href: "/res-iitr?tab=6-0",
 						title: "Fractal Notes",
 						imgsrc: "/media/iitr/fractals.jpg",
 						imgalt: "fractals and applications",
@@ -122,7 +122,7 @@ const home__data = {
 			}
 		]
 	},
-	apply: (root) => {
+	apply: (root, urlInfo) => {
 		if(!root) {
 			console.log('Error: missing argument - root')
 			return
@@ -200,9 +200,9 @@ const home__data = {
 			})
 			landing.appendChild(ribbonRoot)
 		})
-		home__data.onStaticLoad(root)
+		home__data.onStaticLoad(root, urlInfo)
 	},
-	onStaticLoad: (root) => {
+	onStaticLoad: (root, urlInfo) => {
 		if(!root) {
 			console.log('Error: missing argument - root')
 			return
@@ -215,6 +215,16 @@ const home__data = {
 		root.querySelectorAll('.landing__content button').forEach(node => {
 			node.addEventListener('click', (e) => {
 				showRippleEffect(e, node)
+			})
+		})
+		// attach anchor event listeners
+		root.querySelectorAll('.htv-carousel__scrolls a').forEach(anchor => {
+			anchor.addEventListener('click', (e) => {
+				if (e.ctrlKey) window.open(anchor.href)
+				else {
+					spa.navigate(anchor.href)
+				}
+				e.preventDefault()
 			})
 		})
 		// left button on ribbons

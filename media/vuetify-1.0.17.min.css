@@ -12303,7 +12303,7 @@ table.table tfoot tr td {
 
 .navigation-drawer>.list .list__tile {
 	transition: none;
-	font-weight: 500
+	font-weight: 400
 }
 
 .navigation-drawer>.list .list__tile--active .list__tile__title {
@@ -12319,7 +12319,7 @@ table.table tfoot tr td {
 }
 
 .navigation-drawer>.list:not(.list--dense) .list__tile {
-	font-size: 14px
+	font-size: 16px
 }
 
 .application .theme--light.pagination__item,

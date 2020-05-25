@@ -269,37 +269,36 @@ function st(t, e) {
 var spa = {
 	init: async () => {
 		// Set click event listeners on toolbar, navigation and footer
-		document.querySelectorAll('nav a, aside a, footer a').forEach(toolAnchor => {
+		document.querySelectorAll('nav a, aside#side-navigation a, footer a').forEach(toolAnchor => {
 			toolAnchor.addEventListener('click', (e) => {
-				if(e.ctrlKey) window.open(toolAnchor.href)
-				else{
+				if (e.ctrlKey) window.open(toolAnchor.href)
+				else {
 					spa.navigate(toolAnchor.href)
 				}
 				e.preventDefault()
 			})
 		})
-		document.querySelectorAll('aside a').forEach(asideAnchor => {
+		document.querySelectorAll('aside#side-navigation a').forEach(asideAnchor => {
 			asideAnchor.addEventListener('mouseup', deactivateOverlay)
 		})
-
-		if(curr_page === undefined){
+		if (curr_page === undefined) {
 			return
 		}
-		await import(spa.map[curr_page].script).then(response => {})
-		spa.data[curr_page].onStaticLoad(contentRoot)
+		await import(spa.map[curr_page].script).then(response => { })
+		spa.data[curr_page].onStaticLoad(contentRoot, URLDissect(window.location.href))
 	},
 	loadPage: async (page, urlInfo) => {
 		try {
-			if(spa.data[page] == undefined){
-				await import(spa.map[page].script).then(response => {})
+			if (spa.data[page] == undefined) {
+				await import(spa.map[page].script).then(response => { })
 			}
 			contentRoot.innerHTML = ''
 			// Apply style
-			if(spa.map[page].style) injectCSS(spa.map[page].style)
+			if (spa.map[page].style) injectCSS(spa.map[page].style)
 			// Apply content
-			spa.data[page].apply(contentRoot)
+			spa.data[page].apply(contentRoot, urlInfo)
 
-			if(page != curr_page){
+			if (page != curr_page) {
 				// Update navigation panel
 				var nav = document.getElementById(spa.map[curr_page].nav)
 				nav.classList.remove('primary--text', 'list__tile--active')
@@ -310,17 +309,7 @@ var spa = {
 				// Update curr_page
 				curr_page = page
 				// Update address bar URL
-				if(spa.state.updateWindowHistory) window.history.pushState({title: null, url: urlInfo.url}, null, urlInfo.url)
-				// attach anchor event listeners
-				contentRoot.querySelectorAll('a').forEach(anchor => {
-					anchor.addEventListener('click', (e) => {
-						if(e.ctrlKey) window.open(anchor.href)
-						else{
-							spa.navigate(anchor.href)
-						}
-						e.preventDefault()
-					})
-				})
+				if (spa.state.updateWindowHistory) window.history.pushState({ title: null, url: urlInfo.url }, null, urlInfo.url)
 			}
 		} catch (error) {
 			console.log(error)
@@ -329,11 +318,11 @@ var spa = {
 	navigate: (url, target) => {
 		var URLInfo = URLDissect(url)
 		var originInfo = URLDissect(window.location.href)
-		if(URLInfo.domain === originInfo.domain && URLInfo.protocol === originInfo.protocol){
+		if (URLInfo.domain === originInfo.domain && URLInfo.protocol === originInfo.protocol) {
 			const page = spa.nav[URLInfo.path]
-			if(page != undefined) spa.loadPage(page, URLInfo)
+			if (page != undefined) spa.loadPage(page, URLInfo)
 			else window.open(url, target)
-		}else {
+		} else {
 			window.open(url, target)
 		}
 	},
@@ -344,9 +333,9 @@ var spa = {
 		url = e.target.location.href
 		targetInfo = URLDissect(url)
 		sourceInfo = URLDissect(spa.state.window__url)
-		if(targetInfo.protocol === sourceInfo.protocol && targetInfo.domain === sourceInfo.domain) {
+		if (targetInfo.protocol === sourceInfo.protocol && targetInfo.domain === sourceInfo.domain) {
 			const page = spa.nav[targetInfo.path]
-			if(page != undefined) {
+			if (page != undefined) {
 				spa.state.updateWindowHistory = false
 				spa.loadPage(page, targetInfo)
 				spa.state.updateWindowHistory = true
@@ -366,12 +355,20 @@ var spa = {
 			style: '/changelog/style.css',
 			url: '/changelog',
 			nav: 'nav-change'
+		},
+		'iitr': {
+			script: '/res-iitr/script.js',
+			style: '/res-iitr/style.css',
+			url: '/res-iitr',
+			nav: 'nav-iitr'
 		}
 	},
 	nav: {
 		'/': 'home',
 		'/changelog': 'change',
-		'/changelog/': 'change'
+		'/changelog/': 'change',
+		'/res-iitr': 'iitr',
+		'/res-iitr/': 'iitr'
 	},
 	data: {},
 	state: {
@@ -386,7 +383,7 @@ var spa = {
  * Return useful into from url namely - protocol, domain name, path, params
  * @param {String} url 
  */
-function URLDissect(url){
+function URLDissect(url) {
 	var result = {
 		url: url,
 		protocol: undefined,
@@ -400,12 +397,12 @@ function URLDissect(url){
 	result.domain = url.split('/', 1)[0]
 	url = url.replace(result.domain, '').split('?')
 	result.path = url[0]
-	if(url.length<2) return result
+	if (url.length < 2) return result
 	url = url[1].split('&')
 	result.param = {}
 	url.forEach(param => {
 		param = param.split('=')
-		result.param[param[0]] = param.length>1 ? param[1] : ''
+		result.param[param[0]] = param.length > 1 ? param[1] : ''
 	})
 	return result
 }
@@ -444,16 +441,16 @@ function download(url) {
  * @param {String} id default `injectedJS`
  * @param {Boolean} removePrevious default `true`
  */
-function injectJS(url, id, removePrevious){
-	if(url === undefined || url == '') return
-	if(id === undefined) id = 'injectedJS'
-	if(removePrevious === undefined) removePrevious = true
+function injectJS(url, id, removePrevious) {
+	if (url === undefined || url == '') return
+	if (id === undefined) id = 'injectedJS'
+	if (removePrevious === undefined) removePrevious = true
 
 	var JSelem
 	// remove previous if exists
-	if(removePrevious){
+	if (removePrevious) {
 		JSelem = document.getElementById(id);
-		if(JSelem){
+		if (JSelem) {
 			JSelem.parentElement.removeChild(JSelem);
 		}
 	}
@@ -465,20 +462,20 @@ function injectJS(url, id, removePrevious){
 	document.body.appendChild(jsELem);
 }
 
-function injectCSS(url, id, reload){
-	if(url === undefined || url == '') return
-	if(id === undefined) id = 'injectedCSS'
-	if(reload === undefined) reload = false
+function injectCSS(url, id, reload) {
+	if (url === undefined || url == '') return
+	if (id === undefined) id = 'injectedCSS'
+	if (reload === undefined) reload = false
 
 	var CSSelem = document.getElementById(id)
-	if(CSSelem && reload){
+	if (CSSelem && reload) {
 		CSSelem.parentElement.removeChild(CSSelem)
 		CSSelem = null
 	}
 
-	if(CSSelem){
+	if (CSSelem) {
 		CSSelem.href = url
-	}else{
+	} else {
 		CSSelem = document.createElement('link')
 		CSSelem.id = id
 		CSSelem.type = 'text/css'
