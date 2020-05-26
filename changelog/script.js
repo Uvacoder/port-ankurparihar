@@ -1,10 +1,6 @@
 const change__data = {
 	page_loc_text: "What's New",
-	template: `
-	<div class="whats_new general page full-page-height">
-		<h2>Website Changelogs</h2>
-	</div>
-	`,
+	template: `<div class="whats_new general page full-page-height"><h2>Website Changelogs</h2></div>`,
 	data: {
 		logs: [
 			{

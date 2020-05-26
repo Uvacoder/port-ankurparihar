@@ -469,8 +469,11 @@ function injectCSS(url, id, reload) {
 
 	var CSSelem = document.getElementById(id)
 	if (CSSelem && reload) {
-		CSSelem.parentElement.removeChild(CSSelem)
-		CSSelem = null
+		if(reload) {
+			CSSelem.parentElement.removeChild(CSSelem)
+			CSSelem = null
+		}
+		else return
 	}
 
 	if (CSSelem) {

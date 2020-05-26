@@ -12,12 +12,10 @@ const home__data = {
 					<div class="parallax-content">
 						<h1>Ankur's Little Playground</h1>
 						<span class="subtext">I use this portal to display my work although not all and provide various resources like projects, notes, codes, course contents etc. that are availabe to public.</span>
-						<!-- <div class="gradient"></div> -->
 					</div>
 				</div>
 			</div>
-			<div class="landing__content">
-			</div>
+			<div class="landing__content"></div>
 		</div>
 	`,
 	data: {

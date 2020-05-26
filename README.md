@@ -7,7 +7,7 @@
 - Constant parts of the page like _toolbar_, _navigation-menu_, _footer_ etc. does not reload.
 - When user tries to navigate away from within the application (i.e. using navigation menu or footer links), the URL is parsed.
 - If the URL is application domain, we load only necessary part of application required and redraw necessary area.
-- For each part of website separate static data is generated.
+- For each page of website separate static html files are generated.
 
 ### Benefits of being SPA
 - Reduce data consumption as only partial data is loaded.
@@ -17,7 +17,7 @@
 
 ### Responsive
 - Responsive layout
-- Testing on Chrome Desktop and chrome Mobile 
+- Testing on Chrome Desktop and chrome devtools mobile emulator  
 
 ### Overlay mechanism
 - Multiple elements can request overlay activation through `activateOverlay` function.
@@ -80,13 +80,15 @@
 
 
 ### Home Page /
-- Ribbons time default valut --------
+- Ribbons time default value --------
 - Ribbons left default disabled
 - Ribbons right default enabled
 
 
 Do not put event listeners which have function reference in html. Attach them from script only
-Every change must be compiled and corresponding html must be updated
+Every change must be compiled and corresponding html and data-template must be updated
 spa variable contains all the data
 app related scripts are imported, this way variables declared in scripts does not take place in global scope and help reduce conflict
 each script registers itself to spa
+Styling should be limited to .css files as much as possible
+Dynamic properties should be applied on onStaticLoad method only

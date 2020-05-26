@@ -50,7 +50,7 @@
 	font-weight: 300;
 	margin: 0!important;
 	text-align: center;
-	font-size: 16px!important;
+	font-size: 16px!important
 }
 
 .iitr-main nav.toolbar button {
@@ -149,8 +149,9 @@
 }
 
 @media (min-width: 600px) {
-	.iitr-content, .iitr-main aside {
-		min-height: 600px;
+	.iitr-content,
+	.iitr-main aside {
+		min-height: 600px
 	}
 	.card-hori {
 		width: 240px;
