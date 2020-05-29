@@ -361,6 +361,12 @@ var spa = {
 			style: '/res-iitr/style.css',
 			url: '/res-iitr',
 			nav: 'nav-iitr'
+		},
+		'projects': {
+			script: '/projects/script.js',
+			style: '/projects/style.css',
+			url: '/projects',
+			nav: 'nav-projects'
 		}
 	},
 	nav: {
@@ -368,7 +374,9 @@ var spa = {
 		'/changelog': 'change',
 		'/changelog/': 'change',
 		'/res-iitr': 'iitr',
-		'/res-iitr/': 'iitr'
+		'/res-iitr/': 'iitr',
+		'/projects': 'projects',
+		'/projects/': 'projects'
 	},
 	data: {},
 	state: {

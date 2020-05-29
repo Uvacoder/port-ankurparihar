@@ -21,6 +21,7 @@ const home__data = {
 	data: {
 		ribbon_items: [
 			{
+				id: "recent",
 				name: "Recent Uploads",
 				timeID: "home--recent-time",
 				lastUpdate: 1567616993081,
@@ -91,28 +92,30 @@ const home__data = {
 				]
 			},
 			{
+				id: "showcase",
 				name: "Showcase",
 				timeID: "home--showcase-time",
 				lastUpdate: 1564440492137,
+				url: undefined,
 				items: [
 					{
-						href: "/demo/Time-Table",
+						href: "/projects/time-table",
 						title: "Time-Table Generator",
-						imgsrc: "/media/demo/time-table-card.png",
+						imgsrc: "/media/projects/time-table-card.png",
 						imgalt: "Time-Table Generator",
 						subtitle: "Live Demo"
 					},
 					{
 						href: "https://github.com/ankurparihar/git-ddb-docs",
 						title: "Git-DDB",
-						imgsrc: "/media/demo/oauth.png",
+						imgsrc: "/media/projects/oauth.png",
 						imgalt: "oauth image",
 						subtitle: "WebD Project"
 					},
 					{
-						href: "/demo/fractal-generator",
+						href: "/projects/fractal-generator",
 						title: "Fractal generator",
-						imgsrc: "/media/demo/Sierpinski_triangle-card.png",
+						imgsrc: "/media/projects/Sierpinski_triangle-card.png",
 						imgalt: "fractal image",
 						subtitle: "Live Demo"
 					},
@@ -130,6 +133,7 @@ const home__data = {
 		home__data.data.ribbon_items.forEach(ribbon => {
 			const ribbonRoot = document.createElement('div')
 			ribbonRoot.setAttribute('class', 'htv-carousel noselect mb-5')
+			ribbonRoot.setAttribute('data-ribbon', ribbon.id)
 			ribbonRoot.innerHTML = `
 			<div class="htv-carousel__header flex row justify-left align-center wrap mb-3">
 				<div class="htv-carousel__header__title flex column">
@@ -223,6 +227,25 @@ const home__data = {
 					spa.navigate(anchor.href)
 				}
 				e.preventDefault()
+			})
+		})
+		// All button on ribbons
+		root.querySelectorAll('.htv-carousel').forEach(ribbon => {
+			const ribbonID = ribbon.getAttribute('data-ribbon')
+			home__data.data.ribbon_items.forEach(item => {
+				if(item.id == ribbonID) {
+					var url = item.url
+					if(url != undefined){
+						url = window.location.origin + url
+						const allBtn = ribbon.querySelector('.htv-carousel__header__all')
+						allBtn.addEventListener('click', (e) => {
+							if(e.ctrlKey) window.open(url)
+							else {
+								spa.navigate(url)
+							}
+						})
+					}
+				}
 			})
 		})
 		// left button on ribbons
