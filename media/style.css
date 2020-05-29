@@ -7051,6 +7051,10 @@ aside.navigation-drawer .ndsc_fader {
 	background: linear-gradient(180deg, #303030 0, #303030 60%, rgba(48, 48, 48, 0) 100%)
 }
 
+aside.navigation-drawer .divider {
+    background: 0 0!important;
+}
+
 aside.navigation-drawer .navigation-drawer-scroll-container {
 	position: relative;
 	padding-top: 0

@@ -297,7 +297,8 @@ var spa = {
 			if (spa.map[page].style) injectCSS(spa.map[page].style)
 			// Apply content
 			spa.data[page].apply(contentRoot, urlInfo)
-
+			// Scroll back to top
+			backToTop()
 			if (page != curr_page) {
 				// Update navigation panel
 				var nav = document.getElementById(spa.map[curr_page].nav)
