@@ -1,4 +1,5 @@
 const iitr__data = {
+	navID: "nav-iitr",
 	page_loc_text: "IITR",
 	template: `
 		<div class="iitr-page full-page-height">
@@ -739,4 +740,4 @@ const iitr__data = {
 	}
 }
 
-spa.register('iitr', iitr__data)
+spa.register('/res-iitr', iitr__data)

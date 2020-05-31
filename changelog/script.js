@@ -1,4 +1,5 @@
 const change__data = {
+	navID: "nav-change",
 	page_loc_text: "What's New",
 	template: `<div class="whats_new general page full-page-height"><h2>Website Changelogs</h2></div>`,
 	data: {
@@ -167,4 +168,4 @@ const change__data = {
 	}
 }
 
-spa.register('change', change__data)
+spa.register('/changelog', change__data)

@@ -1,4 +1,5 @@
 const home__data = {
+	navID: "nav-home",
 	page_loc_text: "Home",
 	template: `
 		<div class="landing full-page-height">
@@ -355,4 +356,4 @@ function home__getDayHourString(delta_time) {
 	return day + ((day > 1) ? " days " : " day ") + ((hour == 0) ? "ago" : hour + ((hour > 1) ? " hours " : " hour ") + "ago");
 }
 
-spa.register('home', home__data)
+spa.register('/', home__data)

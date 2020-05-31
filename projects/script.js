@@ -1,4 +1,5 @@
 const projects__data = {
+	navID: "nav-projects",
 	page_loc_text: "Projects",
 	template: `
 		<div id="project_page" class="page full-page-height">
@@ -87,4 +88,4 @@ const projects__data = {
 	}
 }
 
-spa.register('projects', projects__data)
+spa.register('/projects', projects__data)

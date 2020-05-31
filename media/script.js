@@ -284,47 +284,53 @@ var spa = {
 		if (curr_page === undefined) {
 			return
 		}
-		await import(spa.map[curr_page].script).then(response => { })
-		spa.data[curr_page].onStaticLoad(contentRoot, URLDissect(window.location.href))
+		const urlInfo = URLDissect(window.location.href)
+		await import(urlInfo.protocol + '://' + urlInfo.domain + (urlInfo.path == '/' ? '/script.js' : (urlInfo.path + '/script.js'))).then(response => { })
+		// await import(spa.map[curr_page].script).then(response => { })
+		spa.data[curr_page].onStaticLoad(contentRoot, urlInfo)
 	},
-	loadPage: async (page, urlInfo) => {
+	loadPage: async (url) => {
+		const urlInfo = URLDissect(url)
+		const page = urlInfo.path
 		try {
 			if (spa.data[page] == undefined) {
-				await import(spa.map[page].script).then(response => { })
+				await import(urlInfo.protocol + '://' + urlInfo.domain + (urlInfo.path == '/' ? '/script.js' : (urlInfo.path + '/script.js'))).then(response => { })
 			}
 			contentRoot.innerHTML = ''
 			// Apply style
-			if (spa.map[page].style) injectCSS(spa.map[page].style)
+			injectCSS(urlInfo.protocol + '://' + urlInfo.domain + (urlInfo.path == '/' ? '/style.css' : (urlInfo.path + '/style.css')))
 			// Apply content
 			spa.data[page].apply(contentRoot, urlInfo)
 			// Scroll back to top
 			backToTop()
 			if (page != curr_page) {
 				// Update navigation panel
-				var nav = document.getElementById(spa.map[curr_page].nav)
+				var nav = document.getElementById(spa.data[curr_page].navID)
 				nav.classList.remove('primary--text', 'list__tile--active')
-				nav = document.getElementById(spa.map[page].nav)
+				nav = document.getElementById(spa.data[page].navID)
 				nav.classList.add('primary--text', 'list__tile--active')
 				// Update page location text
 				pageLocationElem.innerHTML = spa.data[page].page_loc_text
 				// Update curr_page
 				curr_page = page
 				// Update address bar URL
-				if (spa.state.updateWindowHistory) window.history.pushState({ title: null, url: urlInfo.url }, null, urlInfo.url)
+				if (spa.state.updateWindowHistory) window.history.pushState({ title: null, url: urlInfo.url }, null, url)
 			}
 		} catch (error) {
 			console.log(error)
 		}
 	},
-	navigate: (url, target) => {
+	navigate: async (url, target) => {
 		var URLInfo = URLDissect(url)
-		var originInfo = URLDissect(window.location.href)
-		if (URLInfo.domain === originInfo.domain && URLInfo.protocol === originInfo.protocol) {
-			const page = spa.nav[URLInfo.path]
-			if (page != undefined) spa.loadPage(page, URLInfo)
-			else window.open(url, target)
-		} else {
+		if (target != undefined) {
 			window.open(url, target)
+		} else {
+			var originInfo = URLDissect(window.location.href)
+			if (URLInfo.domain === originInfo.domain && URLInfo.protocol === originInfo.protocol) {
+				spa.loadPage(url)
+			} else {
+				window.open(url, "_blank")
+			}
 		}
 	},
 	register: (page, data) => {
@@ -335,49 +341,11 @@ var spa = {
 		targetInfo = URLDissect(url)
 		sourceInfo = URLDissect(spa.state.window__url)
 		if (targetInfo.protocol === sourceInfo.protocol && targetInfo.domain === sourceInfo.domain) {
-			const page = spa.nav[targetInfo.path]
-			if (page != undefined) {
-				spa.state.updateWindowHistory = false
-				spa.loadPage(page, targetInfo)
-				spa.state.updateWindowHistory = true
-				spa.state.window__url = url
-			}
+			spa.state.updateWindowHistory = false
+			spa.loadPage(url)
+			spa.state.updateWindowHistory = true
+			spa.state.window__url = url
 		}
-	},
-	map: {
-		'home': {
-			script: '/script.js',
-			style: '/style.css',
-			url: '',
-			nav: 'nav-home'
-		},
-		'change': {
-			script: '/changelog/script.js',
-			style: '/changelog/style.css',
-			url: '/changelog',
-			nav: 'nav-change'
-		},
-		'iitr': {
-			script: '/res-iitr/script.js',
-			style: '/res-iitr/style.css',
-			url: '/res-iitr',
-			nav: 'nav-iitr'
-		},
-		'projects': {
-			script: '/projects/script.js',
-			style: '/projects/style.css',
-			url: '/projects',
-			nav: 'nav-projects'
-		}
-	},
-	nav: {
-		'/': 'home',
-		'/changelog': 'change',
-		'/changelog/': 'change',
-		'/res-iitr': 'iitr',
-		'/res-iitr/': 'iitr',
-		'/projects': 'projects',
-		'/projects/': 'projects'
 	},
 	data: {},
 	state: {
