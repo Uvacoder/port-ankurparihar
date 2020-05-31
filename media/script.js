@@ -394,18 +394,20 @@ var spa = {
  */
 function URLDissect(url) {
 	var result = {
-		url: url,
-		protocol: undefined,
-		domain: undefined,
-		path: undefined,
-		param: {}
+		url: url,               // https://ankurparihar.github.io/res-iitr?tab=6-3
+		protocol: undefined,    // https
+		domain: undefined,      // ankurparihar.github.io
+		path: undefined,        // /res-iitr
+		param: {}               // {tab: '6-3'}
 	}
 	url = url.split('://')
 	result.protocol = url[0]
 	url = url[1]
-	result.domain = url.split('/', 1)[0]
+	result.domain = url.split('?')[0].split('/', 1)[0]
 	url = url.replace(result.domain, '').split('?')
 	result.path = url[0]
+	if (result.path.length === 0 || result.path[0] != '/') result.path = '/' + result.path
+	if (result.path.length > 1 && result.path[result.path.length - 1] == '/') result.path = result.path.slice(0, -1)
 	if (url.length < 2) return result
 	url = url[1].split('&')
 	result.param = {}
@@ -478,7 +480,7 @@ function injectCSS(url, id, reload) {
 
 	var CSSelem = document.getElementById(id)
 	if (CSSelem && reload) {
-		if(reload) {
+		if (reload) {
 			CSSelem.parentElement.removeChild(CSSelem)
 			CSSelem = null
 		}
