@@ -206,7 +206,7 @@ sidenav.querySelectorAll('a').forEach(node => {
  * @param {Event} t 
  * @param {HTMLElement} e 
  */
-function showRippleEffect(t, e) {
+async function showRippleEffect(t, e) {
 	var i = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : {};
 	var n = document.createElement("span")
 	var s = document.createElement("span")
