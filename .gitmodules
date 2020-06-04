@@ -4,3 +4,7 @@
 [submodule "demo/Time-Table"]
 	path = demo/Time-Table
 	url = https://github.com/ankurparihar/Time-Table.git
+[submodule "projects/fractal-generator"]
+	path = projects/fractal-generator
+	url = https://github.com/ankurparihar/Fractal-Generator.git
+	branch = github.io-dev

@@ -22,7 +22,7 @@ const projects__data = {
 				tags: ["IES-301"],
 				created: "2 Feb 2019",
 				updated: "2 Feb 2019",
-				explorable: false
+				explorable: true
 			},
 			2: {
 				title: "Git DDB",

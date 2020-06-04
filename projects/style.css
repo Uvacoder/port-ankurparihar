@@ -1,8 +1,9 @@
 #project_page .proj_page-head {
 	padding-top: 16px;
+	padding-bottom: 16px;
 	width: 100%;
 	border-bottom: 3px double;
-	height: 64px
+	height: 80px
 }
 
 #project_page .proj_page-title {
