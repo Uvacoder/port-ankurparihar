@@ -44,7 +44,7 @@ const projects__data = {
 				tags: ["Github"],
 				created: "29 July 2019",
 				updated: "29 July 2019",
-				explorable: false
+				explorable: true
 			}
 		}
 	},
