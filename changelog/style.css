@@ -1,1 +1,56 @@
-.changelog_container{padding:16px;margin:64px 46px 64px 46px;font-size:18px;min-height:100vh}@media (max-width:600px){.changelog_container{margin:64px 46px 64px 18px}}.changelog_container h2{font-size:24px;font-weight:300;margin-bottom:16px}.change_header{font-weight:400;font-size:20px;padding:4px 8px;margin-bottom:8px;background-color:rgba(58,60,63,.8);border-radius:3px;color:var(--theme-color,#f3c669)!important}.changelog_container .change_log+.change_log{margin-top:32px}.change_log ol{list-style-type:decimal;padding:0}.change_log ol li{margin-left:24px}
+.whats_new {
+	padding-top: 64px;
+	padding: 64px 24px;
+	font-size: 18px
+}
+
+.whats_new h2 {
+	font-size: 24px;
+	font-weight: 300;
+	margin-bottom: 16px
+}
+
+.whats_new .change .change__header {
+	font-weight: 400;
+	font-size: 20px;
+	padding: 4px 8px;
+	margin-bottom: 8px;
+	background-color: #3a3c3f;
+	border-radius: 3px
+}
+
+.whats_new .change+.change {
+	margin-top: 32px
+}
+
+.whats_new .divider {
+	width: 50%;
+	margin: 64px auto
+}
+
+.whats_new .app_changelog {
+	position: relative;
+	max-width: 1200px;
+	min-height: 500px;
+	border-radius: 2px;
+	border: none;
+	background-color: rgba(58, 60, 63, .5);
+	padding: 4px;
+	margin: 0 auto 32px auto;
+	display: block
+}
+
+.whats_new .app_changelog::before {
+	content: "";
+	position: absolute;
+	z-index: 0;
+	height: .63rem;
+	left: 2%;
+	width: 96%;
+	bottom: 0;
+	background: 0 0;
+	border-radius: 60%;
+	-webkit-transform: translateZ(0);
+	transform: translateZ(0);
+	box-shadow: #303030 0 0 40px 5px
+}
