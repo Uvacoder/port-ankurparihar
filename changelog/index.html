@@ -2,6 +2,9 @@
 <html lang="en">
 
 <head>
+	<link rel="dns-prefetch" href="https://www.googletagmanager.com">
+	<link rel="dns-prefetch" href="https://www.google-analytics.com">
+	<link rel="dns-prefetch" href="https://stats.g.doubleclick.net">
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-135797512-1"></script>
 	<script>
 		window.dataLayer = window.dataLayer || [];
@@ -26,8 +29,7 @@
 	<title>Ankur's little playground</title>
 	<link rel="manifest" href="/manifest.json">
 	<link rel="shortcut icon" href="/media/img/AP-favicon.png">
-	<link rel="stylesheet" href="/media/vuetify-1.0.17.min.css">
-	<link rel="stylesheet" href="/media/style.css">
+	<link rel="stylesheet" href="/media/style.min.css">
 	<link rel="stylesheet" href="/media/simplebar.min.css">
 	<link rel="stylesheet" href="/media/fonts.roboto.css">
 	<link rel="stylesheet" href="/changelog/style.css" id="injectedCSS">
@@ -36,6 +38,9 @@
 <body>
 	<div id="app" data-app="true" class="application theme--dark app-index-page">
 		<div class="overlay" id="overlay"></div>
+		<div class="dialog__content">
+			<div id="dialog" class="dialog"></div>
+		</div>
 		<div class="application--wrap">
 			<aside id="side-navigation" class="navigation-drawer navigation-drawer--close navigation-drawer--fixed navigation-drawer--floating navigation-drawer--temporary" style="height:100%;margin-top:0px;max-height:calc(100% - 0px);transform:translateX(-250px);width:250px"
 				data-booted="true">
@@ -243,8 +248,8 @@
 					<div class="divider-vertical"></div>
 					<span id="page-location-text" class="page-location-text">What's New</span>
 					<div class="spacer spacer-left"></div>
-					<div id="toolbar-search" class="card card--flat card--hover theme--light toolbar-search flex" style="height:auto" oninput="alterSearchLabel()">
-						<div class="toolbar-search__bar flex row justify-center align-center relative input-group input-group--hide-details theme--light input-group--text-field input-group--single-line primary--text">
+					<div id="toolbar-search" class="card card--flat card--hover toolbar-search flex" style="height:auto">
+						<div class="toolbar-search__bar flex row justify-center align-center relative input-group input-group--hide-details input-group--text-field input-group--single-line primary--text">
 							<label for="search_bar">Search</label>
 							<div class="input-group__input">
 								<input id="search_bar" autocomplete="off" autocapitalize="off" spellcheck="false" tabindex="0" type="text" value="">
@@ -405,7 +410,7 @@
 			</main>
 			<div class="site-description">
 				<div class="sd-content" id="sd-container">
-					<p>Developed with love by <a href="https://github.com/ankurparihar" tabindex="-1" target="_blank">Ankur Parihar</a>, a Computer Science Undergraduate from IIT Roorkee who loves to explore the web and computers. I also love music, books, gaming and tea@tapri with friends :)</p>
+					<p>Developed with love by <a href="https://github.com/ankurparihar" tabindex="-1" target="_blank" rel="noopener">Ankur Parihar</a>, a Computer Science Undergraduate from IIT Roorkee who loves to explore the web and computers. I also love music, books, gaming and tea@tapri with friends :)</p>
 					<p>This site presents my profile, work and useful resources. The site's design is partially inspired from rddzc://rkxswo.df (NSFW warning!!) but the entire logical structure and backend was rewritten from scratch in order to remove external dependies, customize the structure and improve site's performance.</p>
 				</div>
 			</div>
@@ -413,7 +418,7 @@
 				<div class="footer__main">
 					<div class="flex footer__column footer__column--logo">
 						<a href="/" class="footer__logo-link nuxt-link-exact-active nuxt-link-active">
-							<img src="/media/img/logo-50.png" alt="hanime.tv footer logo">
+							<img src="/media/img/logo-50.png" alt="footer logo">
 						</a>
 					</div>
 					<div class="flex footer__column">
@@ -451,7 +456,7 @@
 					</div>
 				</div>
 			</footer>
-			<button id="back-to-top-btn" type="button" class="search-fab elevation-3 btn btn--bottom btn--floating btn--fixed btn--right theme--dark primary" style="transform-origin:center center;display:none;">
+			<button id="back-to-top-btn" type="button" aria-label="back to top" class="search-fab elevation-3 btn btn--bottom btn--floating btn--fixed btn--right theme--dark primary" style="transform-origin:center center;display:none">
 				<div class="btn__content">
 					<svg style="width:24px;height:24px" viewBox="0 0 24 24"><path fill="currentColor" d="M7.41,15.41L12,10.83L16.59,15.41L18,14L12,8L6,14L7.41,15.41Z"/></svg>
 				</div>

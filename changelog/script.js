@@ -5,100 +5,100 @@ const change__data = {
 	data: {
 		logs: [
 			{
-				Date:"18/05/2020",
-				changes:[
+				Date: "18/05/2020",
+				changes: [
 					"Converted to Single Page Application",
 				]
 			},
 			{
-				Date:"05/08/2019",
-				changes:[
+				Date: "05/08/2019",
+				changes: [
 					"Sign In front-end",
 					"Improved styling",
 					"Updated social links"
 				]
 			},
 			{
-				Date:"07/03/2019",
-				changes:[
+				Date: "07/03/2019",
+				changes: [
 					"Sign In with Git Oauth",
 					"Git-DDB integration",
 					"Personalized themes"
 				]
 			},
 			{
-				Date:"26/02/2019",
-				changes:[
+				Date: "26/02/2019",
+				changes: [
 					"Added manifest.json",
 					"Improved user navigation",
 					"Performance improvement"
 				]
 			},
 			{
-				Date:"23/02/2019",
-				changes:[
+				Date: "23/02/2019",
+				changes: [
 					"Added sitemap.xml",
 					"Added robots.txt"
 				]
 			},
 			{
-				Date:"19/02/2019",
-				changes:[
+				Date: "19/02/2019",
+				changes: [
 					"Date of last update on home ribbons",
 					"Improved modular structure of website",
 					"Scripts are now more distributed and localized"
 				]
 			},
 			{
-				Date:"11/02/2019",
-				changes:[
+				Date: "11/02/2019",
+				changes: [
 					"Site published on github"
 				]
 			},
 			{
-				Date:"09/02/2019",
-				changes:[
+				Date: "09/02/2019",
+				changes: [
 					"Navigation scrolling smooth and stabilized",
 					"Added LinkedIn connect option"
 				]
 			},
 			{
-				Date:"04/02/2019",
-				changes:[
+				Date: "04/02/2019",
+				changes: [
 					"Programmed course content mechanism"
 				]
 			},
 			{
-				Date:"03/02/2019",
-				changes:[
+				Date: "03/02/2019",
+				changes: [
 					"Added site favicon",
 					"Added recent upload ribbon on homepage"
 				]
 			},
 			{
-				Date:"02/02/2019",
-				changes:[
+				Date: "02/02/2019",
+				changes: [
 					"Live demo section programmed",
 					"First live demo fractal-generator is up and running",
 					"Added footer"
 				]
 			},
 			{
-				Date:"28/01/2019",
-				changes:[
+				Date: "28/01/2019",
+				changes: [
 					"Added Live Demo Section",
 					"Resolved minor scrolling issue"
 				]
 			},
 			{
-				Date:"27/01/2019",
-				changes:[
+				Date: "27/01/2019",
+				changes: [
 					"Resolved scroll to top button issue"
 				]
 			},
 			{
-				Date:"26/01/2019",
-				changes:[
+				Date: "26/01/2019",
+				changes: [
 					"Added avatar",
 					"IITR Resources gets subjects and semesters display [Content to be added]",
 					"Fixed minor bug in footer causing extra margin for smartphone devices",
@@ -106,30 +106,30 @@ const change__data = {
 				]
 			},
 			{
-				Date:"24/01/2019",
-				changes:[
+				Date: "24/01/2019",
+				changes: [
 					"Added error handling. Website shows error when content is not found",
 					"Mobile optimization (css) for homepage",
 					"Added site description"
 				]
 			},
 			{
-				Date:"22/01/2019",
-				changes:[
+				Date: "22/01/2019",
+				changes: [
 					"Minor bug fixes in toolbar",
 					"Minor bug fixes in directory change mechanism"
 				]
 			},
 			{
-				Date:"21/01/2019",
-				changes:[
+				Date: "21/01/2019",
+				changes: [
 					"Designed dynamic refresh mechanism",
 					"Added directory structure"
 				]
 			},
 			{
-				Date:"18/01/2019",
-				changes:[
+				Date: "18/01/2019",
+				changes: [
 					"Site's basic template developed. For desktop (chrome browser) only.",
 					"Added Changelog section"
 				]
@@ -137,7 +137,7 @@ const change__data = {
 		]
 	},
 	apply: (root) => {
-		if(!root) {
+		if (!root) {
 			console.log('Erro: missing argument - root')
 			return
 		}
@@ -164,7 +164,7 @@ const change__data = {
 		logElem.appendChild(div)
 	},
 	onStaticLoad: (root) => {
-		
+
 	}
 }
 

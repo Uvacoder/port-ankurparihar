@@ -16,6 +16,11 @@
 
 **_Note:_** __These instructions are for personal use only!__
 
+### Important
+- Buttons must have `aria-label` with button's description
+- cross-origin links must have `rel="noopener"` attribute
+- Image must have `alt` attribute
+
 ### Responsiveness
 - Making it as responsive as possible
 - Testing on Chrome Desktop and chrome devtools mobile emulator  

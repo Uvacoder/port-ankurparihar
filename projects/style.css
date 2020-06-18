@@ -32,7 +32,6 @@
 		width: 400px;
 		min-width: 300px
 	}
-	
 	.proj_card .card__media {
 		height: 200px;
 		width: 100%
@@ -65,12 +64,12 @@
 
 .proj_card .card__media .card__media__background {
 	transition: all 0.2s ease 0s;
-    transform: none;
-    transform-origin: 50% 50% 0;
-    zoom: 1
+	transform: none;
+	transform-origin: 50% 50% 0;
+	zoom: 1
 }
 
 .proj_card .card__media:hover .card__media__background {
 	transition: all 6s ease 0s;
-    transform: scale(1.5) rotate(-9deg)
+	transform: scale(1.5) rotate(-9deg)
 }

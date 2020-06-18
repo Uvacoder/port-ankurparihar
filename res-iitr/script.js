@@ -442,7 +442,7 @@ const iitr__data = {
 							"Notes": "https://drive.google.com/drive/folders/126q9B-ldG29IRZ8Pg48GaVStMX_PAEoI",
 							"Slides": "https://drive.google.com/open?id=10V-oWqc5ijYhIip_79NpAfoEHEwAWnGP",
 							"Assignments": "https://drive.google.com/drive/folders/1VlobDAV6XXRsdMSfPjkuD8NMaDmT9EqL",
-							"Project": "/demo?origin=IES-301",
+							"Project": "/projects/fractal-generator",
 						}
 					},
 					{
@@ -592,17 +592,17 @@ const iitr__data = {
 		latestSemBtn.querySelector('.list__tile__title').innerHTML = 'Latest Semester (' + iitr__data.state.curr_sem + ')'
 		allSemBtn.addEventListener('click', iitr__data.showAcademic)
 
-		if(urlInfo.param === undefined){
+		if (urlInfo.param === undefined) {
 			iitr__data.showSemester(iitr__data.state.curr_sem)
-		}else{
+		} else {
 			var tab = urlInfo.param.tab
-			if(tab === undefined){
+			if (tab === undefined) {
 				iitr__data.showSemester(iitr__data.state.curr_sem)
-			}else {
+			} else {
 				tab = tab.split('-')
-				if(tab.length==1 && parseInt(tab[0])!=NaN ){
+				if (tab.length == 1 && parseInt(tab[0]) != NaN) {
 					iitr__data.showSemester(tab)
-				}else if(tab.length==2 && parseInt(tab[0])!=NaN && parseInt(tab[1])!=NaN){
+				} else if (tab.length == 2 && parseInt(tab[0]) != NaN && parseInt(tab[1]) != NaN) {
 					iitr__data.showCourse(tab[0], tab[1])
 				}
 			}
@@ -653,7 +653,7 @@ const iitr__data = {
 		if (sem.target) {
 			sem = sem.target.semester
 		}
-		if(iitr__data.data.Semesters[sem]===undefined) return
+		if (iitr__data.data.Semesters[sem] === undefined) return
 		var iitr_content_div = document.querySelector('.iitr-content div')
 		iitr_content_div.innerHTML = ''
 		document.querySelector('.iitr-main nav .title').innerHTML = iitr__data.data.Semesters[sem].Name + ' (Sem ' + sem + ')'
@@ -675,7 +675,7 @@ const iitr__data = {
 		iitr__data.updateNavigation(sem)
 	},
 	showCourse: (sem, index) => {
-		if(iitr__data.data.Semesters[sem] === undefined || iitr__data.data.Semesters[sem].Courses[index]===undefined) return
+		if (iitr__data.data.Semesters[sem] === undefined || iitr__data.data.Semesters[sem].Courses[index] === undefined) return
 		var course = iitr__data.data.Semesters[sem].Courses[index]
 		var iitr_content_div = document.querySelector('.iitr-content div')
 		iitr_content_div.innerHTML = ''
@@ -705,7 +705,7 @@ const iitr__data = {
 		var allSemElem = document.getElementById('iitr-allSem')
 		var otherSemElem = document.getElementById('iitr-specificSem')
 		activeElem.classList.replace('primary--text', 'list__tile--link')
-		if(sem==0){
+		if (sem == 0) {
 			allSemElem.classList.remove('list__tile--link')
 			allSemElem.classList.add('primary--text')
 			otherSemElem.parentElement.style.display = 'none'
