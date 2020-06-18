@@ -53,11 +53,6 @@
 	margin-bottom: 4px
 }
 
-.proj_card .proj_card-desc {
-	max-height: 40px;
-	overflow: hidden
-}
-
 .proj_card a {
 	color: #f3c669!important
 }
