@@ -339,12 +339,13 @@ var spa = {
 		const urlInfo = URLDissect(url)
 		const page = urlInfo.path
 		try {
+			// Apply style
+			injectCSS(urlInfo.protocol + '://' + urlInfo.domain + (urlInfo.path == '/' ? '/style.css' : (urlInfo.path + '/style.css')))
+			// Load script
 			if (spa.data[page] == undefined) {
 				await import(urlInfo.protocol + '://' + urlInfo.domain + (urlInfo.path == '/' ? '/script.js' : (urlInfo.path + '/script.js'))).then(response => { })
 			}
 			contentRoot.innerHTML = ''
-			// Apply style
-			injectCSS(urlInfo.protocol + '://' + urlInfo.domain + (urlInfo.path == '/' ? '/style.css' : (urlInfo.path + '/style.css')))
 			// Apply content
 			spa.data[page].apply(contentRoot, urlInfo)
 			// Scroll back to top
