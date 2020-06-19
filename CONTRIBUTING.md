@@ -12,6 +12,7 @@
 - [Javascript Minifier](https://javascript-minifier.com/) - Minify javascript files
 - [CSS Minifier](https://cssminifier.com/) - Minify CSS files
 - [Google Chrome's coverage tool](https://developers.google.com/web/tools/chrome-devtools/coverage) - Find unused JavaScript And CSS code
+- [Sitemap Generator](https://www.xml-sitemaps.com/) - Generator XML sitemaps
 
 
 ## General
