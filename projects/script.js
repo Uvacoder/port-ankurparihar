@@ -51,22 +51,22 @@ const projects__data = {
 	apply: (root, URLInfo) => {
 		root.innerHTML = projects__data.template
 		var proj_body = root.querySelector('.proj_page-cont')
-		for(var key in projects__data.data.projects){
+		for (var key in projects__data.data.projects) {
 			var data = projects__data.data.projects[key]
 			var elem = document.createElement('div')
 			elem.setAttribute('class', 'proj_card card elevation-5')
 			elem.innerHTML = `
 				<div class="card__media">
-					<div class="card__media__background" style="background: url(`+ data.img +`) center center / cover no-repeat"></div>
+					<div class="card__media__background" style="background: url(`+ data.img + `) center center / cover no-repeat"></div>
 				</div>
 				<div class="card__title">
 					<div>
-						<div class="proj_card-head">`+ data.title +`</div>
-						<div class="proj_card-date">`+ data.created +`</div>
+						<div class="proj_card-head">`+ data.title + `</div>
+						<div class="proj_card-date">`+ data.created + `</div>
 					</div>
 				</div>
 				<div class="card__actions">
-					<a href="`+ data.url +`" target="_blank" class="btn btn--flat `+ (data.explorable ? '':'btn--disabled') +`">
+					<a href="`+ data.url + `" target="_blank" class="btn btn--flat ` + (data.explorable ? '' : 'btn--disabled') + `">
 						<div class="btn__content btn-explore">Explore</div>
 					</a>
 					<a class="btn btn--flat">

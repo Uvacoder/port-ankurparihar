@@ -75,6 +75,27 @@
 	}
 }
 
+.navigation-drawer--mini-variant {
+	overflow: hidden
+}
+
+.navigation-drawer--mini-variant .list__tile__action {
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	min-width: 48px
+}
+
+.navigation-drawer--mini-variant .list__tile:after,
+.navigation-drawer--mini-variant .list__tile__content {
+	opacity: 0
+}
+
+.navigation-drawer--mini-variant .divider,
+.navigation-drawer--mini-variant .subheader {
+	display: none!important
+}
+
 .iitr-main nav.toolbar button.btn-close {
 	transform: rotateY(180deg)
 }

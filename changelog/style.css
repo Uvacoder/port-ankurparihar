@@ -27,30 +27,3 @@
 	width: 50%;
 	margin: 64px auto
 }
-
-.whats_new .app_changelog {
-	position: relative;
-	max-width: 1200px;
-	min-height: 500px;
-	border-radius: 2px;
-	border: none;
-	background-color: rgba(58, 60, 63, .5);
-	padding: 4px;
-	margin: 0 auto 32px auto;
-	display: block
-}
-
-.whats_new .app_changelog::before {
-	content: "";
-	position: absolute;
-	z-index: 0;
-	height: .63rem;
-	left: 2%;
-	width: 96%;
-	bottom: 0;
-	background: 0 0;
-	border-radius: 60%;
-	-webkit-transform: translateZ(0);
-	transform: translateZ(0);
-	box-shadow: #303030 0 0 40px 5px
-}

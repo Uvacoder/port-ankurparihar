@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-
 Sitemap: https://ankurparihar.github.io/sitemap.xml

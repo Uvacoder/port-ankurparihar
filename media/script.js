@@ -1,6 +1,7 @@
 // ======================== Elements and Data Structures ========================
 
 const overlay = document.getElementById('overlay')
+const dialog = document.getElementById('dialog')
 const sidenav = document.getElementById('side-navigation')
 const btnNavToggle = document.querySelector('button.nav_drawer_toggle')
 const btnSignIn = document.querySelector('.user-options button.log-in-text')
@@ -15,14 +16,15 @@ const siteDescriptionContainer = document.getElementById('sd-container')
 const contentRoot = document.querySelector('main .content--wrap .container')
 const pageLocationElem = document.getElementById('page-location-text')
 
+
+// ================================ Overlay Logic ===============================
+
 var overlayData = {
 	elements: []
 }
 
-// ================================ Overlay Logic ===============================
-
 overlay.addEventListener('click', deactivateOverlay)
-overlay.addEventListener('touchstart', deactivateOverlay)
+overlay.addEventListener('touchstart', deactivateOverlay, { passive: true })
 
 /**
  * Cover entire application area with transparent layer  
@@ -60,6 +62,39 @@ function registerOverlayElement(ele, fun) {
 		e: ele,
 		f: fun
 	})
+}
+
+// ================================ Dialog Logic ===============================
+
+dialog.parentElement.addEventListener('click', (e) => {
+	if (e.target != dialog.parentElement) return
+	hideDialog()
+})
+dialog.parentElement.addEventListener('touchstart', (e) => {
+	if (e.target != dialog.parentElement) return
+	hideDialog()
+}, { passive: true })
+
+/**
+ * Show dialog with html content  
+ * - Above application content
+ * - Below navigation and toolbar  
+ * - Below overlay  
+ * 
+ * @param {String} innerHTML
+ */
+function showDialog(innerHTML) {
+	dialog.innerHTML = innerHTML
+	dialog.parentElement.classList.add('dialog__content__active')
+	dialog.classList.add('dialog--active')
+}
+
+/**
+ * Remove dialog  
+ */
+function hideDialog() {
+	dialog.classList.remove('dialog--active')
+	dialog.parentElement.classList.remove('dialog__content__active')
 }
 
 // ============================== Navigation Logic ==============================
@@ -111,6 +146,8 @@ toolbarSearchInput.onblur = () => {
 	toolbarSearchBar.classList.remove('input-group--focused', 'input-group--tab-focused')
 }
 
+toolbarSearch.oninput = alterSearchLabel
+
 /**
  * Remove `Search` label from search bar if input has some value
  */
@@ -134,7 +171,13 @@ var newScrollTop, prevScrollTop = document.documentElement.scrollTop
 var toolbarBlack = toolbar.classList.contains('semi-transparent')
 
 /**	Toggle visibility of back-to-top button and transparency of toolbar */
-window.onscroll = function (e) {
+window.onscroll = scrollTopUpdate
+
+/**
+ * Update elements based on scrolling position   
+ * Mostly useful upon browser refresh
+ */
+function scrollTopUpdate() {
 	newScrollTop = document.documentElement.scrollTop
 	if (!toolbarBlack && (newScrollTop > 20)) {
 		// show back-to-top, semi-trans toolbar
@@ -288,17 +331,21 @@ var spa = {
 		await import(urlInfo.protocol + '://' + urlInfo.domain + (urlInfo.path == '/' ? '/script.js' : (urlInfo.path + '/script.js'))).then(response => { })
 		// await import(spa.map[curr_page].script).then(response => { })
 		spa.data[curr_page].onStaticLoad(contentRoot, urlInfo)
+		scrollTopUpdate()
 	},
 	loadPage: async (url) => {
+		hideDialog()
+		deactivateOverlay()
 		const urlInfo = URLDissect(url)
 		const page = urlInfo.path
 		try {
+			// Apply style
+			injectCSS(urlInfo.protocol + '://' + urlInfo.domain + (urlInfo.path == '/' ? '/style.css' : (urlInfo.path + '/style.css')))
+			// Load script
 			if (spa.data[page] == undefined) {
 				await import(urlInfo.protocol + '://' + urlInfo.domain + (urlInfo.path == '/' ? '/script.js' : (urlInfo.path + '/script.js'))).then(response => { })
 			}
 			contentRoot.innerHTML = ''
-			// Apply style
-			injectCSS(urlInfo.protocol + '://' + urlInfo.domain + (urlInfo.path == '/' ? '/style.css' : (urlInfo.path + '/style.css')))
 			// Apply content
 			spa.data[page].apply(contentRoot, urlInfo)
 			// Scroll back to top

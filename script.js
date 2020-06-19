@@ -125,7 +125,7 @@ const home__data = {
 		]
 	},
 	apply: (root, urlInfo) => {
-		if(!root) {
+		if (!root) {
 			console.log('Error: missing argument - root')
 			return
 		}
@@ -138,25 +138,21 @@ const home__data = {
 			ribbonRoot.innerHTML = `
 			<div class="htv-carousel__header flex row justify-left align-center wrap mb-3">
 				<div class="htv-carousel__header__title flex column">
-					<span>`+ ribbon.name +`</span>
-					<span id="`+ ribbon.timeID +`" class="htv-carousel__header__title__subtitle">`+ home__getDayHourString((new Date()).getTime() - ribbon.lastUpdate) +`</span>
+					<span>`+ ribbon.name + `</span>
+					<span id="`+ ribbon.timeID + `" class="htv-carousel__header__title__subtitle">` + home__getDayHourString((new Date()).getTime() - ribbon.lastUpdate) + `</span>
 				</div>
-				<button type="button" class="htv-carousel__header__all btn btn--large btn--outline btn--depressed">
+				<button type="button" aria-label="`+ ribbon.name + ` all" class="htv-carousel__header__all btn btn--large btn--outline btn--depressed">
 					<div class="btn__content">ALL</div>
 				</button>
 				<div class="htv-carousel__header__nav_container">
-					<button type="button" class="htv-carousel__header__nav-arrow htv-carousel__header__nav-arrow-left btn btn--large btn--outline btn--depressed">
+					<button type="button" aria-label="`+ ribbon.name + ` move left" class="htv-carousel__header__nav-arrow htv-carousel__header__nav-arrow-left btn btn--large btn--outline btn--depressed">
 						<div class="btn__content">
-							<svg style="width:32px;height:32px" viewBox="0 0 24 24">
-								<path fill="currentColor" d="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z"/>
-							</svg>
+							<svg style="width:32px;height:32px" viewBox="0 0 24 24"><path fill="currentColor" d="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z"/></svg>
 						</div>
 					</button>
-					<button type="button" class="htv-carousel__header__nav-arrow htv-carousel__header__nav-arrow-right btn btn--large btn--outline btn--depressed">
+					<button type="button" aria-label="`+ ribbon.name + ` move right" class="htv-carousel__header__nav-arrow htv-carousel__header__nav-arrow-right btn btn--large btn--outline btn--depressed">
 						<div class="btn__content">
-							<svg style="width:32px;height:32px" viewBox="0 0 24 24">
-								<path fill="currentColor" d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"/>
-							</svg>
+							<svg style="width:32px;height:32px" viewBox="0 0 24 24"><path fill="currentColor" d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"/></svg>
 						</div>
 					</button>
 				</div>
@@ -172,7 +168,7 @@ const home__data = {
 				divElement.setAttribute('class', 'elevation-3 mb-3 hvc item card')
 				divElement.setAttribute('style', 'height:auto')
 				divElement.innerHTML = `
-				<a href="` + item.href + `" draggable="false" title="`+ item.title +`" ondragstart="return false" class="no-touch">
+				<a href="` + item.href + `" draggable="false" title="` + item.title + `" ondragstart="return false" class="no-touch">
 					<div>
 						<div class="hvc__media card__media" style="height:auto">
 							<div class="card__media__content">
@@ -180,7 +176,7 @@ const home__data = {
 									<div class="hvc__media__cover-aspect-ratio">
 										<div class="lazy hvc__media__cover">
 											<div>
-												<img src="`+ item.imgsrc +`" alt="`+ item.imgalt +`" title="`+ item.title +`" draggable="false" class="hvc__media__cover__image">
+												<img src="`+ item.imgsrc + `" alt="` + item.imgalt + `" title="` + item.title + `" draggable="false" class="hvc__media__cover__image">
 											</div>
 										</div>
 										<div class="hvc__media__cover-glass"></div>
@@ -191,8 +187,8 @@ const home__data = {
 						<div class="card__title">
 							<div class="hvc__content flex column justify-center align-center">
 								<div class="spacer"></div>
-								<div class="hv-title">`+ item.title +`</div>
-								<div class="hv-subtitle">`+ item.subtitle +`</div>
+								<div class="hv-title">`+ item.title + `</div>
+								<div class="hv-subtitle">`+ item.subtitle + `</div>
 								<div class="spacer"></div>
 							</div>
 						</div>
@@ -206,7 +202,7 @@ const home__data = {
 		home__data.onStaticLoad(root, urlInfo)
 	},
 	onStaticLoad: (root, urlInfo) => {
-		if(!root) {
+		if (!root) {
 			console.log('Error: missing argument - root')
 			return
 		}
@@ -234,13 +230,13 @@ const home__data = {
 		root.querySelectorAll('.htv-carousel').forEach(ribbon => {
 			const ribbonID = ribbon.getAttribute('data-ribbon')
 			home__data.data.ribbon_items.forEach(item => {
-				if(item.id == ribbonID) {
+				if (item.id == ribbonID) {
 					var url = item.url
-					if(url != undefined){
+					if (url != undefined) {
 						url = window.location.origin + url
 						const allBtn = ribbon.querySelector('.htv-carousel__header__all')
 						allBtn.addEventListener('click', (e) => {
-							if(e.ctrlKey) window.open(url)
+							if (e.ctrlKey) window.open(url)
 							else {
 								spa.navigate(url)
 							}
@@ -266,12 +262,12 @@ const home__data = {
 				const firstElem = slider.firstElementChild
 				const l = firstElem.getBoundingClientRect().left
 				const r = lastElem.getBoundingClientRect().right
-				if( l >= bound_l ) {
+				if (l >= bound_l) {
 					btnL.disabled = true
 					btnL.classList.add('btn--disabled')
 					return
 				}
-				if(l + translate >= bound_l) {
+				if (l + translate >= bound_l) {
 					btnL.disabled = true
 					btnL.classList.add('btn--disabled')
 					translate = bound_l - l
@@ -290,11 +286,11 @@ const home__data = {
 			const slider = header.parentElement.querySelector('.htv-carousel__slider')
 			const lastElem = slider.lastElementChild
 			const r = lastElem.getBoundingClientRect().right
-			if( r <= bound_r ) {
+			if (r <= bound_r) {
 				button.disabled = true
 				button.classList.add('btn--disabled')
 			}
-			
+
 			// Add functionality to move ribbon on each button
 			button.addEventListener('click', (e) => {
 				var btnR = button
@@ -307,12 +303,12 @@ const home__data = {
 				const firstElem = slider.firstElementChild
 				const l = firstElem.getBoundingClientRect().left
 				const r = lastElem.getBoundingClientRect().right
-				if( r <= bound_r ) {
+				if (r <= bound_r) {
 					btnR.disabled = true
 					btnR.classList.add('btn--disabled')
 					return
 				}
-				if(r - translate <= bound_r) {
+				if (r - translate <= bound_r) {
 					btnR.disabled = true
 					btnR.classList.add('btn--disabled')
 					translate = r - bound_r
