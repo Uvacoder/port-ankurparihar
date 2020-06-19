@@ -1059,7 +1059,7 @@ aside.navigation-drawer .nav-drawer-list {
 	height: 180px;
 	max-width: 960px;
 	color: rgba(255, 255, 255, .5);
-	font-size: 11px;
+	font-size: 12px;
 	margin-top: 8px;
 	margin-left: auto;
 	margin-right: auto;
@@ -1081,18 +1081,17 @@ aside.navigation-drawer .nav-drawer-list {
 	.site-description .sd-content {
 		margin-top: 20px;
 		margin-left: 40px;
-		font-size: 12px;
 		padding: 0 16px 0 150px;
 		/* background-position: 0px 0px; */
 		background-size: 160px auto
 	}
 }
 
-@media (min-width:820px) {
+@media (min-width:960px) {
 	.site-description .sd-content {
+		font-size: 14px;
 		max-width: 90vw;
 		padding: 8px 16px 0 200px;
-		background-size: 160px auto;
 		/* background-position: 20px 0px; */
 	}
 	.site-description {
