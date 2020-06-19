@@ -3,13 +3,13 @@
 	"name":"Ankur's little playground",
 	"icons":[
 		{
-			"src":"/media/img/logo-100.png",
-			"type":"image/png",
+			"src":"/media/img/logo-100.webp",
+			"type":"image/webp",
 			"sizes":"100x100"
 		},
 		{
-			"src":"/media/img/logo-assassin-512.png",
-			"type":"image/png",
+			"src":"/media/img/logo-assassin-512.webp",
+			"type":"image/webp",
 			"sizes":"512x512"
 		}
 	],

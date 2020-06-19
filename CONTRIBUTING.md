@@ -13,13 +13,13 @@
 - [CSS Minifier](https://cssminifier.com/) - Minify CSS files
 - [Google Chrome's coverage tool](https://developers.google.com/web/tools/chrome-devtools/coverage) - Find unused JavaScript And CSS code
 - [Sitemap Generator](https://www.xml-sitemaps.com/) - Generator XML sitemaps
-
+- [ImageMagick](https://imagemagick.org/index.php) - Convert images to webp
 
 ## General
 - Buttons must have `aria-label` with button's description
 - cross-origin links must have `rel="noopener"` attribute
 - Image must have `alt` attribute
-- Images must be properly resized and compressed
+- Images must be properly resized and in `webp` format
 - All links must be domain relative.
     - For example, project structure is -
 	```
