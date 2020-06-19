@@ -5,7 +5,7 @@ const home__data = {
 		<div class="landing full-page-height">
 			<div class="parallax-container fixed" style="height:100%">
 				<div class="parallax">
-					<img id="parallax-container-img" alt="parallax image" src="/media/walls/16.jpg" class="hero_image">
+					<img id="parallax-container-img" alt="parallax image" src="/media/walls/16.webp" class="hero_image">
 				</div>
 			</div>
 			<div class="parallax-container">
@@ -30,63 +30,63 @@ const home__data = {
 					{
 						href: "/res-iitr",
 						title: "Previous Years' content uploaded",
-						imgsrc: "/media/iitr/sh.jpg",
+						imgsrc: "/media/iitr/sh.webp",
 						imgalt: "IITR Resources",
 						subtitle: "IITR Resources"
 					},
 					{
 						href: "/res-iitr?tab=timetable",
 						title: "IITR Time-Table",
-						imgsrc: "/media/iitr/iitr.jpg",
+						imgsrc: "/media/iitr/iitr.webp",
 						imgalt: "IITR Time-Table",
 						subtitle: "IITR Resources"
 					},
 					{
 						href: "/res-iitr?tab=6-2",
 						title: "Principles of Programming Languages Notes",
-						imgsrc: "/media/iitr/princi_of_prog_lang.jpg",
+						imgsrc: "/media/iitr/princi_of_prog_lang.webp",
 						imgalt: "Principles of programming languages",
 						subtitle: "IITR Resources"
 					},
 					{
 						href: "/res-iitr?tab=6-6",
 						title: "Machine Learning Slides",
-						imgsrc: "/media/iitr/machine_learning.jpg",
+						imgsrc: "/media/iitr/machine_learning.webp",
 						imgalt: "Machine Learning",
 						subtitle: "IITR Resources"
 					},
 					{
 						href: "/res-iitr?tab=6-6",
 						title: "Image Captioning Assignment",
-						imgsrc: "/media/iitr/machine_learning.jpg",
+						imgsrc: "/media/iitr/machine_learning.webp",
 						imgalt: "Image Captioning",
 						subtitle: "IITR Resources"
 					},
 					{
 						href: "/res-iitr?tab=6-5",
 						title: "Goa Trip Photos",
-						imgsrc: "/media/iitr/goa.jpg",
+						imgsrc: "/media/iitr/goa.webp",
 						imgalt: "Goa trip image",
 						subtitle: "IITR Resources"
 					},
 					{
 						href: "/res-iitr?tab=6-4",
 						title: "Compiler Lab Codes",
-						imgsrc: "/media/iitr/compiler_lab.jpg",
+						imgsrc: "/media/iitr/compiler_lab.webp",
 						imgalt: "Compiler lab",
 						subtitle: "IITR Resources"
 					},
 					{
 						href: "/res-iitr?tab=6-3",
 						title: "Compiler Design Notes",
-						imgsrc: "/media/iitr/compiler_design.jpg",
+						imgsrc: "/media/iitr/compiler_design.webp",
 						imgalt: "Compiler Design",
 						subtitle: "IITR Resources"
 					},
 					{
 						href: "/res-iitr?tab=6-0",
 						title: "Fractal Notes",
-						imgsrc: "/media/iitr/fractals.jpg",
+						imgsrc: "/media/iitr/fractals.webp",
 						imgalt: "fractals and applications",
 						subtitle: "IITR Resources"
 					}
@@ -102,21 +102,21 @@ const home__data = {
 					{
 						href: "/projects/time-table",
 						title: "Time-Table Generator",
-						imgsrc: "/media/projects/time-table-card.png",
+						imgsrc: "/media/projects/time-table-card.webp",
 						imgalt: "Time-Table Generator",
 						subtitle: "Live Demo"
 					},
 					{
 						href: "https://github.com/ankurparihar/git-ddb-docs",
 						title: "Git-DDB",
-						imgsrc: "/media/projects/oauth.png",
+						imgsrc: "/media/projects/oauth.webp",
 						imgalt: "oauth image",
 						subtitle: "WebD Project"
 					},
 					{
 						href: "/projects/fractal-generator",
 						title: "Fractal generator",
-						imgsrc: "/media/projects/Sierpinski_triangle-card.png",
+						imgsrc: "/media/projects/Sierpinski_triangle-card.webp",
 						imgalt: "fractal image",
 						subtitle: "Live Demo"
 					},
