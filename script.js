@@ -245,6 +245,7 @@ const home__data = {
 				}
 			})
 		})
+		home__data.applyInlineStyle(root, true)
 		// left button on ribbons
 		root.querySelectorAll('.landing__content button.htv-carousel__header__nav-arrow-left').forEach(button => {
 			// disable all left buttons initially
@@ -318,6 +319,51 @@ const home__data = {
 				btnL.classList.remove('btn--disabled')
 			})
 		})
+		home__data.applyInlineStyle(root)
+	},
+	applyInlineStyle: (root, status) => {
+		if (status == true) {
+			// Inline styling
+			const width = window.innerWidth
+			if (width >= 1264) {
+				root.querySelectorAll('.htv-carousel .htv-carousel__slider .item').forEach(item => {
+					item.style.display = 'inline-block'
+					item.style.verticalAlign = 'top'
+					item.style.width = '264px'
+				})
+			} else if (width >= 960) {
+				root.querySelectorAll('.htv-carousel .htv-carousel__slider .item').forEach(item => {
+					item.style.display = 'inline-block'
+					item.style.verticalAlign = 'top'
+					item.style.width = '210px'
+				})
+			} else if (width >= 600) {
+				root.querySelectorAll('.htv-carousel .htv-carousel__slider .item').forEach(item => {
+					item.style.display = 'inline-block'
+					item.style.verticalAlign = 'top'
+					item.style.width = '164px'
+				})
+			} else {
+				root.querySelectorAll('.htv-carousel .htv-carousel__slider .item').forEach(item => {
+					item.style.display = 'inline-block'
+					item.style.verticalAlign = 'top'
+					item.style.width = '128px'
+				})
+			}
+			root.querySelectorAll('.hvc').forEach(item => {
+				item.style.margin = '0 4px 0 0'
+			})
+			root.querySelectorAll('.htv-carousel .htv-carousel__scrolls').forEach(item => {
+				item.style.whiteSpace = 'nowrap'
+			})
+		}
+		else {
+			// Inline styling
+			const width = window.innerWidth
+			root.querySelectorAll('.htv-carousel .htv-carousel__slider .item').forEach(item => {
+				item.setAttribute('style', 'height:auto')
+			})
+		}
 	}
 }
 

@@ -329,7 +329,6 @@ var spa = {
 		}
 		const urlInfo = URLDissect(window.location.href)
 		await import(urlInfo.protocol + '://' + urlInfo.domain + (urlInfo.path == '/' ? '/script.js' : (urlInfo.path + '/script.js'))).then(response => { })
-		// await import(spa.map[curr_page].script).then(response => { })
 		spa.data[curr_page].onStaticLoad(contentRoot, urlInfo)
 		scrollTopUpdate()
 	},
@@ -409,11 +408,11 @@ var spa = {
  */
 function URLDissect(url) {
 	var result = {
-		url: url,               // https://ankurparihar.github.io/res-iitr?tab=6-3
+		url: url,               // https://ankurparihar.github.io/res-iitr?tab=6-3&theme=light
 		protocol: undefined,    // https
 		domain: undefined,      // ankurparihar.github.io
 		path: undefined,        // /res-iitr
-		param: {}               // {tab: '6-3'}
+		param: {}               // {tab: '6-3', theme: 'light'}
 	}
 	url = url.split('://')
 	result.protocol = url[0]
@@ -488,18 +487,15 @@ function injectJS(url, id, removePrevious) {
 	document.body.appendChild(jsELem);
 }
 
-function injectCSS(url, id, reload) {
+function injectCSS(url, id, removePrevious) {
 	if (url === undefined || url == '') return
 	if (id === undefined) id = 'injectedCSS'
-	if (reload === undefined) reload = false
+	if (removePrevious === undefined) removePrevious = false
 
 	var CSSelem = document.getElementById(id)
-	if (CSSelem && reload) {
-		if (reload) {
-			CSSelem.parentElement.removeChild(CSSelem)
-			CSSelem = null
-		}
-		else return
+	if (CSSelem && removePrevious) {
+		CSSelem.parentElement.removeChild(CSSelem)
+		CSSelem = null
 	}
 
 	if (CSSelem) {
