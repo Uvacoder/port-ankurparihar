@@ -37,11 +37,10 @@
 			--theme-color-b: 105;
 		}
 	</style> -->
+	<style>body,html{background:#303030}a{color:#fff}button,input,select,textarea{background-color:transparent;border-style:none;color:inherit}</style>
 	<link rel="manifest" href="/manifest.json">
 	<link rel="shortcut icon" href="/media/img/AP-favicon.webp">
-	<link rel="stylesheet" href="/media/style.min.css">
-	<link rel="stylesheet" href="/media/simplebar.min.css">
-	<link rel="stylesheet" href="/media/fonts.roboto.css">
+	<link media="none" onload="media='all'" rel="stylesheet" href="/media/style.min.css">
 	<link rel="stylesheet" href="/style.css" id="injectedCSS">
 </head>
 
@@ -753,8 +752,10 @@
 	<script>
 		var curr_page = "/"
 	</script>
-	<script src="/media/simplebar.min.js" type="text/javascript"></script>
-	<script src="/media/script.js" type="text/javascript"></script>
+	<script defer src="/media/script.js" type="text/javascript"></script>
+	<script defer src="/media/simplebar.min.js" type="text/javascript"></script>
+	<link media="none" onload="media='all'" rel="stylesheet" href="/media/simplebar.min.css">
+	<link media="none" onload="media='all'" rel="stylesheet" href="/media/fonts.roboto.css">
 </body>
 
 </html>
