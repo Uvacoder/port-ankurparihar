@@ -5,7 +5,7 @@ const home__data = {
 		<div class="landing full-page-height">
 			<div class="parallax-container fixed" style="height:100%">
 				<div class="parallax">
-					<img id="parallax-container-img" alt="parallax image" src="/media/walls/16.webp" class="hero_image">
+					<img loading="lazy" id="parallax-container-img" alt="parallax image" src="/media/walls/16.webp" class="hero_image">
 				</div>
 			</div>
 			<div class="parallax-container">
@@ -176,7 +176,7 @@ const home__data = {
 									<div class="hvc__media__cover-aspect-ratio">
 										<div class="lazy hvc__media__cover">
 											<div>
-												<img src="`+ item.imgsrc + `" alt="` + item.imgalt + `" title="` + item.title + `" draggable="false" class="hvc__media__cover__image">
+												<img loading="lazy" src="`+ item.imgsrc + `" alt="` + item.imgalt + `" title="` + item.title + `" draggable="false" class="hvc__media__cover__image">
 											</div>
 										</div>
 										<div class="hvc__media__cover-glass"></div>

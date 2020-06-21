@@ -4,7 +4,7 @@ const iitr__data = {
 	template: `
 		<div class="iitr-page full-page-height">
 			<div id="iitr-image-container">
-				<img src="/media/img/mainbuilding.webp" width="100%" height="auto" style="vertical-align:bottom" alt="IITR Image">
+				<img loading="lazy" src="/media/img/mainbuilding.webp" width="100%" height="auto" style="vertical-align:bottom" alt="IITR Image">
 				<span class="dot-gradient"></span>
 			</div>
 			<div class="iitr-main">
