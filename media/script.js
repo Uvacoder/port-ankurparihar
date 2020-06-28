@@ -360,7 +360,13 @@ var spa = {
 				// Update curr_page
 				curr_page = page
 				// Update address bar URL
-				if (spa.state.updateWindowHistory) window.history.pushState({ title: null, url: urlInfo.url }, null, url)
+				if (spa.state.updateWindowHistory) {
+					split = url.split('?')
+					url = split[0]
+					if(url[url.length-1]!='/') url += '/'
+					if(split.length==2) url = url + '?' + split[1]
+					window.history.pushState({ title: null, url: urlInfo.url }, null, url)
+				}
 			}
 		} catch (error) {
 			console.log(error)
