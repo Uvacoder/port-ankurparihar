@@ -13,12 +13,12 @@
 }
 
 .proj_page-body .proj_page-cont {
+	margin-top: 30px;
 	padding-bottom: 20px
 }
 
 .proj_card {
-	margin: auto;
-	margin-top: 20px;
+	margin: 30px auto;
 	width: 320px
 }
 

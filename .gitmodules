@@ -6,3 +6,6 @@
 	path = projects/time-table
 	url = https://github.com/ankurparihar/Time-Table
 	branch = github.io-dev
+[submodule "projects/Alpino"]
+	path = projects/Alpino
+	url = https://github.com/ankurparihar/Alpino

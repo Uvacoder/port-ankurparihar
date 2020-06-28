@@ -1,16 +1,7 @@
 const projects__data = {
 	navID: "nav-projects",
 	page_loc_text: "Projects",
-	template: `
-		<div id="project_page" class="page full-page-height">
-			<div class="proj_page-head flex">
-				<div class="proj_page-title">Projects</div>
-			</div>
-			<div class="proj_page-body">
-				<div class="proj_page-cont flex row wrap justify-center"></div>
-			</div>
-		</div>
-	`,
+	template: `<div id="project_page" class="page full-page-height"><div class="proj_page-head flex"><div class="proj_page-title">Projects</div></div><div class="proj_page-body"><div class="proj_page-cont flex row wrap justify-center"></div></div></div>`,
 	data: {
 		projects: {
 			1: {
@@ -19,8 +10,8 @@ const projects__data = {
 				url: "/projects/fractal-generator",
 				img: "/media/projects/Sierpinski_triangle.webp",
 				description: "The project was assigned during the course 'Fractals and Applications'. This is a program to generate fractal from given IFS (Iterated Function System) rules.",
-				tags: ["IES-301"],
-				created: "2 Feb 2019",
+				tags: ["ies-301", "fractal", "generator"],
+				created: "Feb 2019",
 				updated: "2 Feb 2019",
 				explorable: true
 			},
@@ -30,8 +21,8 @@ const projects__data = {
 				url: "https://github.com/ankurparihar/git-ddb-docs",
 				img: "/media/projects/git-ddb.webp",
 				description: "Github based distributed database",
-				tags: ["Web, WebD"],
-				created: "8 March 2019",
+				tags: ["web, webd", "github", "distributed", "database"],
+				created: "March 2019",
 				updated: "8 March 2019",
 				explorable: true
 			},
@@ -41,9 +32,20 @@ const projects__data = {
 				url: "/projects/time-table",
 				img: "/media/projects/time-table.webp",
 				description: "This is a fun project I created during spare time. Time-Table generator creates dynamic time-tables with options like copy-paste, spanning etc.",
-				tags: ["Github"],
-				created: "29 July 2019",
+				tags: ["time", "table", "time-table", "generator", "web", "webd"],
+				created: "July 2019",
 				updated: "29 July 2019",
+				explorable: true
+			},
+			4: {
+				title: "Alpino",
+				author: "Ankur Parihar",
+				url: "/projects/Alpino",
+				img: "/media/projects/alpino.webp",
+				description: "A 3-D web media player made for Microsoft Code.Fun.Do. This is primarily a 3D interactive media player but we can place any html content.",
+				tags: ["alpino", "3d", "webd", "web"],
+				created: "Feb 2017",
+				updated: "7 Feb 2017",
 				explorable: true
 			}
 		}

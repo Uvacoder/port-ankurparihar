@@ -96,14 +96,21 @@ const home__data = {
 				id: "showcase",
 				name: "Showcase",
 				timeID: "home--showcase-time",
-				lastUpdate: 1564440492137,
+				lastUpdate: 1593349628043,
 				url: undefined,
 				items: [
 					{
-						href: "/projects/time-table",
-						title: "Time-Table Generator",
-						imgsrc: "/media/projects/time-table-card.webp",
-						imgalt: "Time-Table Generator",
+						href: "/projects/Alpino",
+						title: "Alpino",
+						imgsrc: "/media/projects/alpino-vert.webp",
+						imgalt: "alpino image",
+						subtitle: "Live Demo"
+					},
+					{
+						href: "/projects/fractal-generator",
+						title: "Fractal generator",
+						imgsrc: "/media/projects/Sierpinski_triangle-card.webp",
+						imgalt: "fractal image",
 						subtitle: "Live Demo"
 					},
 					{
@@ -114,10 +121,10 @@ const home__data = {
 						subtitle: "WebD Project"
 					},
 					{
-						href: "/projects/fractal-generator",
-						title: "Fractal generator",
-						imgsrc: "/media/projects/Sierpinski_triangle-card.webp",
-						imgalt: "fractal image",
+						href: "/projects/time-table",
+						title: "Time-Table Generator",
+						imgsrc: "/media/projects/time-table-card.webp",
+						imgalt: "Time-Table Generator",
 						subtitle: "Live Demo"
 					},
 				]
