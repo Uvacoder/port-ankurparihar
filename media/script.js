@@ -171,7 +171,7 @@ var newScrollTop, prevScrollTop = document.documentElement.scrollTop
 var toolbarBlack = toolbar.classList.contains('semi-transparent')
 
 /**	Toggle visibility of back-to-top button and transparency of toolbar */
-window.onscroll = scrollTopUpdate
+window.addEventListener('scroll', scrollTopUpdate, { passive: true })
 
 /**
  * Update elements based on scrolling position   
@@ -363,8 +363,8 @@ var spa = {
 				if (spa.state.updateWindowHistory) {
 					split = url.split('?')
 					url = split[0]
-					if(url[url.length-1]!='/') url += '/'
-					if(split.length==2) url = url + '?' + split[1]
+					if (url[url.length - 1] != '/') url += '/'
+					if (split.length == 2) url = url + '?' + split[1]
 					window.history.pushState({ title: null, url: urlInfo.url }, null, url)
 				}
 			}

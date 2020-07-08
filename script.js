@@ -5,7 +5,11 @@ const home__data = {
 		<div class="landing full-page-height">
 			<div class="parallax-container fixed" style="height:100%">
 				<div class="parallax">
-					<img loading="lazy" id="parallax-container-img" alt="parallax image" src="/media/walls/16.webp" class="hero_image">
+					<picture>
+						<source media="(max-aspect-ratio:832/736)" srcset="/media/walls/713476.webp">
+						<source media="(max-aspect-ratio:1189/736)" srcset="/media/walls/913696.webp">
+						<img loading="lazy" id="parallax-container-img" alt="parallax image" src="/media/walls/16.webp" class="hero_image">
+					</picture>
 				</div>
 			</div>
 			<div class="parallax-container">
@@ -213,6 +217,15 @@ const home__data = {
 			console.log('Error: missing argument - root')
 			return
 		}
+		// hero image
+		const heroImage = document.getElementById('parallax-container-img')
+		window.addEventListener('scroll', () => {
+			var scale = (document.body.scrollHeight - window.innerHeight) / (heroImage.height - window.innerHeight)
+			if (scale > 0) {
+				if (scale < 3) scale = 3
+				heroImage.style.transform = "translateY(" + (-(document.body.scrollTop || document.documentElement.scrollTop) / (scale)) + "px)"
+			}
+		})
 		// Update last update time value on ribbons
 		home__data.data.ribbon_items.forEach(ribbon => {
 			root.querySelector('#' + ribbon.timeID).innerHTML = home__getDayHourString((new Date()).getTime() - ribbon.lastUpdate)

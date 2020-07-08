@@ -54,6 +54,10 @@
 	}
 }
 
+.landing .parallax img {
+	transition: transform 0.05s linear;
+}
+
 
 /* 
 .landing .parallax .gradient {
