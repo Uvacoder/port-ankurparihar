@@ -338,6 +338,8 @@ var spa = {
 		const urlInfo = URLDissect(url)
 		const page = urlInfo.path
 		try {
+			// Hide existing content
+			contentRoot.style.visibility = 'hidden'
 			// Apply style
 			injectCSS(urlInfo.protocol + '://' + urlInfo.domain + (urlInfo.path == '/' ? '/style.css' : (urlInfo.path + '/style.css')))
 			// Load script
@@ -347,6 +349,8 @@ var spa = {
 			contentRoot.innerHTML = ''
 			// Apply content
 			spa.data[page].apply(contentRoot, urlInfo)
+			// Unhide contentRoot
+			contentRoot.style.visibility = 'visible'
 			// Scroll back to top
 			backToTop()
 			if (page != curr_page) {
