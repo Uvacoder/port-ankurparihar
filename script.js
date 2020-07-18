@@ -1,28 +1,7 @@
 const home__data = {
 	navID: "nav-home",
 	page_loc_text: "Home",
-	template: `
-		<div class="landing full-page-height">
-			<div class="parallax-container fixed" style="height:100%">
-				<div class="parallax">
-					<picture>
-						<source media="(max-aspect-ratio:832/736)" srcset="/media/walls/713476.webp">
-						<source media="(max-aspect-ratio:1189/736)" srcset="/media/walls/913696.webp">
-						<img loading="lazy" id="parallax-container-img" alt="parallax image" src="/media/walls/16.webp" class="hero_image">
-					</picture>
-				</div>
-			</div>
-			<div class="parallax-container">
-				<div class="parallax">
-					<div class="parallax-content">
-						<h1>Ankur's Little Playground</h1>
-						<span class="subtext">I use this portal to display my work although not all and provide various resources like projects, notes, codes, course contents etc. that are availabe to public.</span>
-					</div>
-				</div>
-			</div>
-			<div class="landing__content"></div>
-		</div>
-	`,
+	template: `<div class="landing full-page-height"><div class="parallax-container fixed" style="height:100%"><div class="parallax"><picture><source media="(max-aspect-ratio:832/736)" srcset="/media/walls/713476.webp"><source media="(max-aspect-ratio:1189/736)" srcset="/media/walls/913696.webp"><img loading="lazy" id="parallax-container-img" alt="parallax image" src="/media/walls/16.webp" class="hero_image"></picture></div></div><div class="parallax-container"><div class="parallax"><div class="parallax-content"><h1>Ankur's Little Playground</h1><span class="subtext">I use this portal to display my work although not all and provide various resources like projects, notes, codes, course contents etc. that are availabe to public.</span></div></div></div><div class="landing__content"></div></div>`,
 	data: {
 		ribbon_items: [
 			{
@@ -100,9 +79,16 @@ const home__data = {
 				id: "showcase",
 				name: "Showcase",
 				timeID: "home--showcase-time",
-				lastUpdate: 1593349628043,
+				lastUpdate: 1595081134117,
 				url: undefined,
 				items: [
+					{
+						href: "/projects/BicastR",
+						title: "BicastR",
+						imgsrc: "/media/projects/bicastr-card.webp",
+						imgalt: "bicastr image",
+						subtitle: "Concept Demo"
+					},
 					{
 						href: "/projects/Alpino",
 						title: "Alpino",

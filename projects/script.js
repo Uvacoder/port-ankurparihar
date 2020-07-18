@@ -27,17 +27,6 @@ const projects__data = {
 				explorable: true
 			},
 			3: {
-				title: "Time-Table Generator",
-				author: "Ankur Parihar",
-				url: "/projects/time-table",
-				img: "/media/projects/time-table.webp",
-				description: "This is a fun project I created during spare time. Time-Table generator creates dynamic time-tables with options like copy-paste, spanning etc.",
-				tags: ["time", "table", "time-table", "generator", "web", "webd"],
-				created: "July 2019",
-				updated: "29 July 2019",
-				explorable: true
-			},
-			4: {
 				title: "Alpino",
 				author: "Ankur Parihar",
 				url: "/projects/Alpino",
@@ -46,6 +35,28 @@ const projects__data = {
 				tags: ["alpino", "3d", "webd", "web"],
 				created: "Feb 2017",
 				updated: "7 Feb 2017",
+				explorable: true
+			},
+			4: {
+				title: "BicastR",
+				author: "Ankur Parihar",
+				url: "/projects/BicastR",
+				img: "/media/projects/bicastr.webp",
+				description: "BicastR can displays large image or video which doesn't fit on display on multiple displays which put together re-creates the entire media and provides a rich viewing experience. It creates the effect of a larger display using smaller displays.",
+				tags: ["bicastr", "split", "multi", "display", "web"],
+				created: "Oct 2018",
+				updated: "9 July 2020",
+				explorable: true
+			},
+			5: {
+				title: "Time-Table Generator",
+				author: "Ankur Parihar",
+				url: "/projects/time-table",
+				img: "/media/projects/time-table.webp",
+				description: "This is a fun project I created during spare time. Time-Table generator creates dynamic time-tables with options like copy-paste, spanning etc.",
+				tags: ["time", "table", "time-table", "generator", "web", "webd"],
+				created: "July 2019",
+				updated: "29 July 2019",
 				explorable: true
 			}
 		}

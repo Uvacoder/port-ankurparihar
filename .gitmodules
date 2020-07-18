@@ -9,3 +9,6 @@
 [submodule "projects/Alpino"]
 	path = projects/Alpino
 	url = https://github.com/ankurparihar/Alpino
+[submodule "projects/BicastR"]
+	path = projects/BicastR
+	url = https://github.com/ankurparihar/BicastR.git
