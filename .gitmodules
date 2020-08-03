@@ -4,11 +4,17 @@
 	branch = github.io-dev
 [submodule "projects/time-table"]
 	path = projects/time-table
-	url = https://github.com/ankurparihar/Time-Table
+	url = https://github.com/ankurparihar/Time-Table.git
 	branch = github.io-dev
 [submodule "projects/Alpino"]
 	path = projects/Alpino
-	url = https://github.com/ankurparihar/Alpino
+	url = https://github.com/ankurparihar/Alpino.git
+	branch = github.io-dev
 [submodule "projects/BicastR"]
 	path = projects/BicastR
 	url = https://github.com/ankurparihar/BicastR.git
+	branch = github.io-dev
+[submodule "projects/DME-raymond"]
+	path = projects/DME-raymond
+	url = https://github.com/ankurparihar/Raymond-algorithm.git
+	branch = github.io-dev

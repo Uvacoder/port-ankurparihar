@@ -16,6 +16,17 @@ const projects__data = {
 				explorable: true
 			},
 			2: {
+				title: "Raymond's Algorithm",
+				author: "Ankur Parihar",
+				url: "/projects/DME-raymond",
+				img: "/media/projects/raymond.webp",
+				description: "The project was assigned during the course 'Operating Systems (CSN-232)'. It is an implementation of raymond's algorihm. Raymond's algorithm is a tree based message passing algorithm for mutual exclusion of critical section among concurrent processes.",
+				tags: ["csn-232", "kerry", "raymond", "algorithm", "implementation", "simulation"],
+				created: "12 April 2018",
+				updated: "4 August 2020",
+				explorable: true
+			},
+			3: {
 				title: "Git DDB",
 				author: "Ankur Parihar",
 				url: "https://github.com/ankurparihar/git-ddb-docs",
@@ -26,7 +37,7 @@ const projects__data = {
 				updated: "8 March 2019",
 				explorable: true
 			},
-			3: {
+			4: {
 				title: "Alpino",
 				author: "Ankur Parihar",
 				url: "/projects/Alpino",
@@ -37,7 +48,7 @@ const projects__data = {
 				updated: "7 Feb 2017",
 				explorable: true
 			},
-			4: {
+			5: {
 				title: "BicastR",
 				author: "Ankur Parihar",
 				url: "/projects/BicastR",
@@ -48,7 +59,7 @@ const projects__data = {
 				updated: "9 July 2020",
 				explorable: true
 			},
-			5: {
+			6: {
 				title: "Time-Table Generator",
 				author: "Ankur Parihar",
 				url: "/projects/time-table",

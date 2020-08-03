@@ -79,9 +79,16 @@ const home__data = {
 				id: "showcase",
 				name: "Showcase",
 				timeID: "home--showcase-time",
-				lastUpdate: 1595081134117,
+				lastUpdate: 1596520310895,
 				url: undefined,
 				items: [
+					{
+						href: "/projects/DME-raymond",
+						title: "Raymond's Algorithm",
+						imgsrc: "/media/projects/raymond-vert.webp",
+						imgalt: "simulation image",
+						subtitle: "Live Demo"
+					},
 					{
 						href: "/projects/BicastR",
 						title: "BicastR",
