@@ -1,15 +1,20 @@
 [submodule "projects/fractal-generator"]
 	path = projects/fractal-generator
 	url = https://github.com/ankurparihar/Fractal-Generator.git
-	branch = github.io-dev
+	branch = github.io
 [submodule "projects/time-table"]
 	path = projects/time-table
-	url = https://github.com/ankurparihar/Time-Table
-	branch = github.io-dev
+	url = https://github.com/ankurparihar/Time-Table.git
+	branch = github.io
 [submodule "projects/Alpino"]
 	path = projects/Alpino
-	url = https://github.com/ankurparihar/Alpino
+	url = https://github.com/ankurparihar/Alpino.git
+	branch = github.io
 [submodule "projects/BicastR"]
 	path = projects/BicastR
-	url = https://github.com/ankurparihar/BicastR
+	url = https://github.com/ankurparihar/BicastR.git
+	branch = github.io
+[submodule "projects/DME-raymond"]
+	path = projects/DME-raymond
+	url = https://github.com/ankurparihar/Raymond-algorithm.git
 	branch = github.io
