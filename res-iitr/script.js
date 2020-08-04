@@ -315,7 +315,8 @@ const iitr__data = {
 						Content: {
 							"Slides": "https://drive.google.com/open?id=1jth2XSoC4mxDNu_fku6yQcZj4EOqUJhM",
 							"Books": "https://drive.google.com/open?id=1WWflQmheKYinWGtrxv5obp6gTuwbvQ8v",
-							"Assignments": "https://drive.google.com/drive/folders/1gC4piTUVFQdWrNa4m3EW-msbKn4OjMrj"
+							"Assignments": "https://drive.google.com/drive/folders/1gC4piTUVFQdWrNa4m3EW-msbKn4OjMrj",
+							"Project": "/projects/DME-raymond"
 						}
 					},
 					{
