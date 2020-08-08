@@ -138,11 +138,18 @@ const change__data = {
 		]
 	},
 	apply: (root) => {
-		if (!root) {
-			console.log('Erro: missing argument - root')
+		if (root === undefined) {
+			console.warn('Error: contentRoot not specified')
 			return
 		}
 		root.innerHTML = change__data.template
+		change__data.onStaticLoad(root)
+	},
+	onStaticLoad: (root) => {
+		if (root === undefined) {
+			console.warn('Error: contentRoot not specified')
+			return
+		}
 		const logElem = root.querySelector('.whats_new')
 		change__data.data.logs.forEach(log => {
 			const div = document.createElement('div')
@@ -163,9 +170,6 @@ const change__data = {
 		const div = document.createElement('div')
 		div.setAttribute('class', 'divider')
 		logElem.appendChild(div)
-	},
-	onStaticLoad: (root) => {
-
 	}
 }
 

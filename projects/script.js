@@ -74,7 +74,18 @@ const projects__data = {
 		}
 	},
 	apply: (root, URLInfo) => {
+		if (root === undefined) {
+			console.warn('Error: contentRoot not specified')
+			return
+		}
 		root.innerHTML = projects__data.template
+		projects__data.onStaticLoad(root, URLInfo)
+	},
+	onStaticLoad: (root, URLInfo) => {
+		if (root === undefined) {
+			console.warn('Error: contentRoot not specified')
+			return
+		}
 		var proj_body = root.querySelector('.proj_page-cont')
 		for (var key in projects__data.data.projects) {
 			var data = projects__data.data.projects[key]
@@ -101,9 +112,6 @@ const projects__data = {
 			`
 			proj_body.appendChild(elem)
 		}
-		projects__data.onStaticLoad(root, URLInfo)
-	},
-	onStaticLoad: (root, URLInfo) => {
 		// Add ripple effect on buttons
 		root.querySelectorAll('a').forEach(button => {
 			button.addEventListener('click', (e) => {

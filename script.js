@@ -129,12 +129,20 @@ const home__data = {
 			}
 		]
 	},
-	apply: (root, urlInfo) => {
-		if (!root) {
-			console.log('Error: missing argument - root')
+	apply: (root) => {
+		if (root === undefined) {
+			console.warn('Error: contentRoot not specified')
 			return
 		}
 		root.innerHTML = home__data.template
+		home__data.onStaticLoad(root)
+	},
+	onStaticLoad: (root) => {
+		if (root === undefined) {
+			console.warn('Error: contentRoot not specified')
+			return
+		}
+		// create ribbons
 		const landing = root.querySelector('.landing__content')
 		home__data.data.ribbon_items.forEach(ribbon => {
 			const ribbonRoot = document.createElement('div')
@@ -204,13 +212,6 @@ const home__data = {
 			})
 			landing.appendChild(ribbonRoot)
 		})
-		home__data.onStaticLoad(root, urlInfo)
-	},
-	onStaticLoad: (root, urlInfo) => {
-		if (!root) {
-			console.log('Error: missing argument - root')
-			return
-		}
 		// hero image
 		const heroImage = document.getElementById('parallax-container-img')
 		window.addEventListener('scroll', () => {
