@@ -1,78 +1,8 @@
 const iitr__data = {
 	navID: "nav-iitr",
 	page_loc_text: "IITR",
-	template: `
-		<div class="iitr-page full-page-height">
-			<div id="iitr-image-container">
-				<img loading="lazy" src="/media/img/mainbuilding.webp" width="100%" height="auto" style="vertical-align:bottom" alt="IITR Image">
-				<span class="dot-gradient"></span>
-			</div>
-			<div class="iitr-main">
-				<nav class="iitr-toolbar toolbar toolbar--dense">
-					<div class="toolbar__content justify-center">
-						<button type="button" class="nav_drawer_toggle btn btn--icon" aria-label="IITR menu">
-							<div class="btn__content">
-								<svg style="width:32px;height:32px" viewBox="0 0 24 24"><path fill="currentColor" d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"></path></svg>
-							</div>
-						</button>
-						<div class="title">Spring 2020 (Sem 8)</div>
-					</div>
-				</nav>
-				<aside class="navigation-drawer navigation-drawer--mini-variant left elevation-10" data-booted="true">
-					<div class="list nav-drawer-list">
-						<div class="subheader subheading grey--text text--darken-1">Academic</div>
-						<div>
-							<a id="iitr-latestSem" class="list__tile primary--text" tabindex="-1">
-								<div class="list__tile__action">
-									<svg style="width:24px;height:24px" viewBox="0 0 24 24"><path fill="currentColor" d="M5 12C5 13.11 4.11 14 3 14C1.9 14 1 13.11 1 12C1 10.9 1.9 10 3 10C4.11 10 5 10.9 5 12M4 2V8H2V2H4M2 22V16H4V22H2M24 6V18C24 19.11 23.11 20 22 20H10C8.9 20 8 19.11 8 18V14L6 12L8 10V6C8 4.89 8.9 4 10 4H22C23.11 4 24 4.89 24 6M22 6H10V10.83L8.83 12L10 13.17V18H22V6M12 9H20V11H12V9M12 13H18V15H12V13Z"></path></svg>
-								</div>
-								<div class="list__tile__content">
-									<div class="list__tile__title" title="Show latest semester">Latest Semester (8)</div>
-								</div>
-							</a>
-						</div>
-						<div>
-							<a id="iitr-allSem" class="list__tile list__tile--link" tabindex="-1">
-								<div class="list__tile__action">
-									<svg style="width:24px;height:24px" viewBox="0 0 24 24"><path fill="currentColor" d="M16,15H9V13H16V15M19,11H9V9H19V11M19,7H9V5H19V7M3,5V21H19V23H3A2,2 0 0,1 1,21V5H3M21,1A2,2 0 0,1 23,3V17C23,18.11 22.11,19 21,19H7A2,2 0 0,1 5,17V3C5,1.89 5.89,1 7,1H21M7,3V17H21V3H7Z"></path></svg>
-								</div>
-								<div class="list__tile__content">
-									<div class="list__tile__title" title="Show all semesters">All Semesters</div>
-								</div>
-							</a>
-						</div>
-						<div style="display:none">
-							<a id="iitr-specificSem" class="list__tile list__tile--link" tabindex="-1">
-								<div class="list__tile__action">
-									<svg style="width:24px;height:24px" viewBox="0 0 24 24"><path fill="currentColor" d="M5,3C3.89,3 3,3.89 3,5V19C3,20.11 3.89,21 5,21H19C20.11,21 21,20.11 21,19V5C21,3.89 20.11,3 19,3H5M5,5H19V19H5V5M7,7V9H17V7H7M7,11V13H17V11H7M7,15V17H14V15H7Z"></path></svg>
-								</div>
-								<div class="list__tile__content">
-									<div class="list__tile__title"></div>
-								</div>
-							</a>
-						</div>
-					</div>
-					<div class="divider mb-48"></div>
-					<div class="list nav-drawer-list">
-						<div class="subheader subheading grey--text text--darken-1">Assets</div>
-						<div>
-							<a id="iitr-timetable" class="list__tile list__tile--link list__tile--disabled" tabindex="-1">
-								<div class="list__tile__action">
-									<svg style="width:24px;height:24px" viewBox="0 0 24 24"><path fill="currentColor" d="M15,13H16.5V15.82L18.94,17.23L18.19,18.53L15,16.69V13M19,8H5V19H9.67C9.24,18.09 9,17.07 9,16A7,7 0 0,1 16,9C17.07,9 18.09,9.24 19,9.67V8M5,21C3.89,21 3,20.1 3,19V5C3,3.89 3.89,3 5,3H6V1H8V3H16V1H18V3H19A2,2 0 0,1 21,5V11.1C22.24,12.36 23,14.09 23,16A7,7 0 0,1 16,23C14.09,23 12.36,22.24 11.1,21H5M16,11.15A4.85,4.85 0 0,0 11.15,16C11.15,18.68 13.32,20.85 16,20.85A4.85,4.85 0 0,0 20.85,16C20.85,13.32 18.68,11.15 16,11.15Z"></path></svg>
-								</div>
-								<div class="list__tile__content">
-									<div class="list__tile__title">Time Table</div>
-								</div>
-							</a>
-						</div>
-					</div>
-				</aside>
-				<div class="iitr-content">
-					<div class="flex row wrap" style="position:absolute"></div>
-				</div>
-			</div>
-		</div>
-	`,
+	template: `<div class="iitr-page full-page-height"><div id="iitr-image-container"><img loading="lazy" src="/media/img/mainbuilding.webp" width="100%" height="auto" style="vertical-align:bottom" alt="IITR Image"><span class="dot-gradient"></span></div><div class="iitr-main"><nav class="iitr-toolbar toolbar toolbar--dense"><div class="toolbar__content justify-center"><button type="button" class="nav_drawer_toggle btn btn--icon" aria-label="IITR menu"><div class="btn__content"><svg style="width:32px;height:32px" viewBox="0 0 24 24"><path fill="currentColor" d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"></path></svg></div></button><div class="title">Spring 2020 (Sem 8)</div></div></nav><aside class="navigation-drawer navigation-drawer--mini-variant left elevation-10" data-booted="true"><div class="list nav-drawer-list"><div class="subheader subheading grey--text text--darken-1">Academic</div><div><a id="iitr-latestSem" class="list__tile primary--text" tabindex="-1"><div class="list__tile__action"><svg style="width:24px;height:24px" viewBox="0 0 24 24"><path fill="currentColor" d="M5 12C5 13.11 4.11 14 3 14C1.9 14 1 13.11 1 12C1 10.9 1.9 10 3 10C4.11 10 5 10.9 5 12M4 2V8H2V2H4M2 22V16H4V22H2M24 6V18C24 19.11 23.11 20 22 20H10C8.9 20 8 19.11 8 18V14L6 12L8 10V6C8 4.89 8.9 4 10 4H22C23.11 4 24 4.89 24 6M22 6H10V10.83L8.83 12L10 13.17V18H22V6M12 9H20V11H12V9M12 13H18V15H12V13Z"></path></svg></div><div class="list__tile__content"><div class="list__tile__title" title="Show latest semester">Latest Semester (8)</div></div></a></div><div><a id="iitr-allSem" class="list__tile list__tile--link" tabindex="-1"><div class="list__tile__action"><svg style="width:24px;height:24px" viewBox="0 0 24 24"><path fill="currentColor" d="M16,15H9V13H16V15M19,11H9V9H19V11M19,7H9V5H19V7M3,5V21H19V23H3A2,2 0 0,1 1,21V5H3M21,1A2,2 0 0,1 23,3V17C23,18.11 22.11,19 21,19H7A2,2 0 0,1 5,17V3C5,1.89 5.89,1 7,1H21M7,3V17H21V3H7Z"></path></svg></div><div class="list__tile__content"><div class="list__tile__title" title="Show all semesters">All Semesters</div></div></a></div><div style="display:none"><a id="iitr-specificSem" class="list__tile list__tile--link" tabindex="-1"><div class="list__tile__action"><svg style="width:24px;height:24px" viewBox="0 0 24 24"><path fill="currentColor" d="M5,3C3.89,3 3,3.89 3,5V19C3,20.11 3.89,21 5,21H19C20.11,21 21,20.11 21,19V5C21,3.89 20.11,3 19,3H5M5,5H19V19H5V5M7,7V9H17V7H7M7,11V13H17V11H7M7,15V17H14V15H7Z"></path></svg></div><div class="list__tile__content"><div class="list__tile__title"></div></div></a></div></div><div class="divider mb-48"></div><div class="list nav-drawer-list"><div class="subheader subheading grey--text text--darken-1">Assets</div><div><a id="iitr-timetable" class="list__tile list__tile--link list__tile--disabled" tabindex="-1"><div class="list__tile__action"><svg style="width:24px;height:24px" viewBox="0 0 24 24"><path fill="currentColor" d="M15,13H16.5V15.82L18.94,17.23L18.19,18.53L15,16.69V13M19,8H5V19H9.67C9.24,18.09 9,17.07 9,16A7,7 0 0,1 16,9C17.07,9 18.09,9.24 19,9.67V8M5,21C3.89,21 3,20.1 3,19V5C3,3.89 3.89,3 5,3H6V1H8V3H16V1H18V3H19A2,2 0 0,1 21,5V11.1C22.24,12.36 23,14.09 23,16A7,7 0 0,1 16,23C14.09,23 12.36,22.24 11.1,21H5M16,11.15A4.85,4.85 0 0,0 11.15,16C11.15,18.68 13.32,20.85 16,20.85A4.85,4.85 0 0,0 20.85,16C20.85,13.32 18.68,11.15 16,11.15Z"></path></svg></div><div class="list__tile__content"><div class="list__tile__title">Time Table</div></div></a></div></div></aside><div class="iitr-content"><div class="flex row wrap" style="position:absolute"></div></div></div></div>`,
+	style: `#iitr-image-container{position:relative}.iitr-main{background-color:#3a3c3f;height:100%}.iitr-main aside{height:100%;min-height:700px;margin-top:0;width:250px;z-index:20;position:relative}.iitr-main aside .list__tile{border-radius:2px}.iitr-main aside .primary--text{cursor:default;background:#f3c669;color:inherit!important}.iitr-main aside.navigation-drawer--mini-variant{width:80px}.iitr-content{height:100%;min-height:700px;margin-left:80px;padding:10px}.iitr-main nav.toolbar{background-color:rgba(33,33,33,.3)}.iitr-main nav.toolbar .toolbar__content{height:48px!important}.iitr-main nav.toolbar .title{min-width:calc(100vw - 80px);font-weight:300;margin:0!important;text-align:center;font-size:16px!important}.iitr-main nav.toolbar button{float:left}@media (min-width:960px){.iitr-main nav.toolbar button{display:none}.iitr-main aside.navigation-drawer--mini-variant{width:250px}.iitr-main aside.navigation-drawer--mini-variant .subheader{display:block!important}.iitr-main aside.navigation-drawer--mini-variant .list__tile__content{opacity:1!important}.iitr-content{margin-left:250px}}.navigation-drawer--mini-variant{overflow:hidden}.navigation-drawer--mini-variant .list__tile__action{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;min-width:48px}.navigation-drawer--mini-variant .list__tile:after,.navigation-drawer--mini-variant .list__tile__content{opacity:0}.navigation-drawer--mini-variant .divider,.navigation-drawer--mini-variant .subheader{display:none!important}.iitr-main nav.toolbar button.btn-close{transform:rotateY(180deg)}.card-hori{height:75px;width:200px;background:#17181a;margin:5px;border-radius:2px}.card-hori button{width:100%;min-height:100%;border-radius:2px;border:none;font-size:16px;color:#fff;background-color:#202020;cursor:pointer;padding:6px}.card-hori button:hover{background:#f3c669}.card-hori button:focus{outline:0}.card-vert{width:120px;height:160px;background:#424242;color:#fff;cursor:pointer;margin:15px}.card-vert:hover{color:#f3c669}.card-vert .course-svg{width:120px;height:120px;background-color:#17181a;display:flex;justify-content:center;align-items:center}.card-vert .course-svg div{width:50%;height:50%;margin:auto;display:flex;justify-content:center;align-items:center;background-color:#3a3c3f;border-radius:50%}.card-vert .course-item{width:100%;height:40px;display:flex;justify-content:center;align-items:center}@media (min-width:600px){.iitr-content,.iitr-main aside{min-height:600px}.card-hori{width:240px;height:100px}.iitr-main nav.toolbar .title{font-size:20px!important}}@media (min-width:960px){.card-hori{width:300px;margin:15px}.card-hori button{font-size:18px}}`,
 	data: {
 		Semesters: {
 			1: {

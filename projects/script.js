@@ -2,6 +2,7 @@ const projects__data = {
 	navID: "nav-projects",
 	page_loc_text: "Projects",
 	template: `<div id="project_page" class="page full-page-height"><div class="proj_page-head flex"><div class="proj_page-title">Projects</div></div><div class="proj_page-body"><div class="proj_page-cont flex row wrap justify-center"></div></div></div>`,
+	style: `#project_page .proj_page-head{padding-top:16px;padding-bottom:16px;width:100%;border-bottom:3px double;height:80px}#project_page .proj_page-title{width:100%;font-size:28px;text-align:center}.proj_page-body .proj_page-cont{margin-top:30px;padding-bottom:20px}.proj_card{margin:30px auto;width:320px}.proj_card .card__media{height:160px;width:100%}@media (min-width:960px){.proj_card{width:400px;min-width:300px}.proj_card .card__media{height:200px;width:100%}}.proj_card .proj_card-head{font-size:24px;font-weight:400;line-height:32px}.proj_card .card__title{padding-bottom:0}.proj_card .proj_card-date{color:#9e9e9e!important;margin-bottom:4px}.proj_card a{color:#f3c669!important}.proj_card .card__media .card__media__background{transition:all .2s ease 0s;transform:none;transform-origin:50% 50% 0;zoom:1}.proj_card .card__media:hover .card__media__background{transition:all 6s ease 0s;transform:scale(1.5) rotate(-9deg)}`,
 	data: {
 		projects: {
 			1: {

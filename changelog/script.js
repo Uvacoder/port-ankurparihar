@@ -2,6 +2,7 @@ const change__data = {
 	navID: "nav-change",
 	page_loc_text: "What's New",
 	template: `<div class="whats_new general page full-page-height"><h2>Website Changelogs</h2></div>`,
+	style: `.whats_new{padding-top:64px;padding:64px 24px;font-size:18px}.whats_new h2{font-size:24px;font-weight:300;margin-bottom:16px}.whats_new .change .change__header{font-weight:400;font-size:20px;padding:4px 8px;margin-bottom:8px;background-color:#3a3c3f;border-radius:3px}.whats_new .change+.change{margin-top:32px}.whats_new .divider{width:50%;margin:64px auto}`,
 	data: {
 		logs: [
 			{

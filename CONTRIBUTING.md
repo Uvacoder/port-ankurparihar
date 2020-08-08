@@ -146,12 +146,14 @@ A page is part of application. Like `/res-iitr`, `/sign-in` etc.
 - The folder must contains `index.html`, `style.css` and `script.js` files
 - index.html contains static html code
 - style.css contains styling rules for the page only
-- script.js contains page specific logic
+- script.js contains page specific logic and styling rules
 - `script.js` must follow below structure. Example for page - `/section1/page1/`
 	```javascript
 		const page__data = {
 			navID: "nav-page-nav",	// to highlight navigation corresponding element in navigation menu
 			page_loc_text: "Page",	// short description to display on header of page
+			template: "...",		// page's skeleton which can be appended to contentRoot
+			style: "...",			// page's styling rules, copied directly (minified) from page's style.css
 			apply: (root, URLInfo) => {
 				// Logic when: html doesn't contain static data
 			},

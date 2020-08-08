@@ -15,6 +15,7 @@ const footerContainer = document.getElementById('footer-container')
 const siteDescriptionContainer = document.getElementById('sd-container')
 const contentRoot = document.querySelector('main .content--wrap .container')
 const pageLocationElem = document.getElementById('page-location-text')
+const pageStyleElem = document.getElementById('pageStyle')
 
 
 // ================================ Overlay Logic ===============================
@@ -338,19 +339,20 @@ var spa = {
 		const urlInfo = URLDissect(url)
 		const page = urlInfo.path
 		try {
-			// Hide existing content
-			contentRoot.style.visibility = 'hidden'
-			// Apply style
-			injectCSS(urlInfo.protocol + '://' + urlInfo.domain + (urlInfo.path == '/' ? '/style.css' : (urlInfo.path + '/style.css')))
 			// Load script
 			if (spa.data[page] == undefined) {
 				await import(urlInfo.protocol + '://' + urlInfo.domain + (urlInfo.path == '/' ? '/script.js' : (urlInfo.path + '/script.js'))).then(response => { })
 			}
 			contentRoot.innerHTML = ''
+			// remove existing pageStyle
+			let injectedCSS = document.getElementById('injectedCSS')
+			if (injectedCSS) {
+				injectedCSS.parentElement.removeChild(injectedCSS)
+			}
+			// Apply style
+			pageStyleElem.innerHTML = spa.data[page].style
 			// Apply content
 			spa.data[page].apply(contentRoot, urlInfo)
-			// Unhide contentRoot
-			contentRoot.style.visibility = 'visible'
 			// Scroll back to top
 			backToTop()
 			if (page != curr_page) {
