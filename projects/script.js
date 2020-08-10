@@ -102,7 +102,7 @@ const projects__data = {
 					</div>
 				</div>
 				<div class="card__actions">
-					<a href="`+ data.url + `" target="_blank" class="btn btn--flat ` + (data.explorable ? '' : 'btn--disabled') + `">
+					<a href="`+ data.url + `" target="_blank" class="btn btn--flat ` + (data.explorable ? '' : 'btn--disabled') + `" rel="noopener">
 						<div class="btn__content btn-explore">Explore</div>
 					</a>
 					<a class="btn btn--flat">
