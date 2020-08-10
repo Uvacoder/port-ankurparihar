@@ -672,7 +672,8 @@ footer.footer .footer__header {
 	color: #fff;
 	font-weight: 700;
 	font-size: 14px;
-	line-height: 14px
+	line-height: 14px;
+	margin-bottom: 0
 }
 
 footer.footer .footer__list:hover .footer__link {
