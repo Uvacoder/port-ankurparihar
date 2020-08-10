@@ -1,6 +1,11 @@
 # ankurparihar.github.io
 [Ankur's Little Playground](https://ankurparihar.github.io)
 
+### PageSpeed score powered by [readme-pagespeed-insights](https://github.com/ankurparihar/readme-pagespeed-insights)
+<p align="center">
+	<img align="center" src="./pagespeed.svg" width="800px">
+</p>
+
 ## SPA Architecture
 - This webapp runs as a single page application (SPA)
 - Constant parts of the page like _toolbar_, _navigation-menu_, _footer_ etc. does not reload between navigations.
