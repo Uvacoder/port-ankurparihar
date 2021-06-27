@@ -16,15 +16,17 @@
 
 ## Building from scratch - And why?
 
-Although there are pretty good frameworks and tools to build SPA and SSG (static site generator) like [Gatsby](https://www.gatsbyjs.org/) and [NuxtJS](https://nuxtjs.org/) that highly align with goals I have in my mind. But there are few issues I find with using them, like
-- You need to learn them to use them. Learning is good but problem solving is even better!
-- You have to learn additional things like node.js, ReactJS(for Gatsby) or VueJS(for NuxtJS), webpack etc. etc. No time to spend on those things.
-- You have no idea what's going on behind the scene. When you look at generated files, they seems all garbage and makes no sense!
-- You can't be assured about its reliability and performance even if widely used and backed by huge community.
+There are pretty good frameworks and tools to build SPA and SSG (static site generator) like [Gatsby](https://www.gatsbyjs.org/) and [NuxtJS](https://nuxtjs.org/) that highly align with goals I have in my mind. But for some reasons, I find less comfortable using them, like
+- I need to learn them to use them. Learning is good but problem solving is even better!
+- I have to spend some time on learning few other things like node.js, ReactJS(for Gatsby) or VueJS(for NuxtJS), webpack etc. etc. Not knowing which direction to head currently.
+- As a beginner, I have no idea what's going on behind the scene in the library.
+- Doing it from scratch allows me to learn about reliability and performance issues, on the lowest level.
 
-So after giving it a thought I went with vanilla(pure) HTML, CSS and JavaScript(no jQuery also). HTML and CSS part is clearly very frustrating. So I use code snippets from around the web for this. Huge thanks to [Vuetify](https://vuetifyjs.com/) and hanime(NSFW Warning!!!), where I mostly look for help. Javascript part was good. Almost completely written by myself from scratch solving various problems.
+After giving it a thought I went with vanilla(pure) HTML, CSS and JavaScript(no jQuery also). Javascript part is the taught me the most. Almost completely written by myself from scratch solving various problems.
 
-The biggest achievement for me is to design and implement SPA system architecture from scratch which makes this site very good in terms of performance. This is also my first experience in system architecture design.
+But it will accomodate new techs in future.
+
+**_The biggest achievement_** - to design and implement SPA system architecture from scratch which makes this site very good in terms of performance. This is also my first experience in frontend system architecture design.
 
 
 Read [contributing guidelines](./CONTRIBUTING.md) for internal working
