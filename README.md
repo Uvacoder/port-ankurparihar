@@ -1,8 +1,11 @@
 # ankurparihar.github.io
 [Ankur's Little Playground](https://ankurparihar.github.io)
 
+### PageSpeed score powered by [readme-pagespeed-insights](https://github.com/ankurparihar/readme-pagespeed-insights)
+<p align="center">
+	<img align="center" src="./pagespeed.svg" width="800px">
+</p>
 
-> High performace static website.
 
 
 ## SPA Architecture
@@ -37,6 +40,7 @@ It might accomodate new techs in future.
 - Uses an external library for scrolling, [simplebar](https://github.com/Grsmto/simplebar)
 - Repository structure is not good, a proper setup for developing, building and deployment is required.
 - Github actions needed for deploying, pagespeed scores is needed.
+- CDN to be used for efficient caching and incresing performance.
 
 
 **Read [contributing guidelines](./CONTRIBUTING.md) for internal working**
