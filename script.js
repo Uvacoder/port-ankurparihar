@@ -288,7 +288,7 @@ const home__data = {
 					btnL.classList.add('btn--disabled')
 					translate = bound_l - l
 				}
-				slider.style.transform = 'translateX(' + (l - parseInt(window.getComputedStyle(firstElem, null).getPropertyValue('margin-left')) + translate) + 'px)'
+				slider.style.transform = 'translateX(' + (l - parseInt(window.getComputedStyle(firstElem, null).getPropertyValue('margin-left')) - bound_l + translate) + 'px)'
 				btnR.disabled = false
 				btnR.classList.remove('btn--disabled')
 
@@ -313,6 +313,7 @@ const home__data = {
 				const btnL = btnR.parentElement.querySelector('.htv-carousel__header__nav-arrow-left')
 				const header = btnR.parentElement.parentElement
 				const bound_r = header.getBoundingClientRect().right - parseInt(window.getComputedStyle(header, null).getPropertyValue('padding-right')) + 1
+				const bound_l = header.getBoundingClientRect().left + parseInt(window.getComputedStyle(header, null).getPropertyValue('padding-left')) - 1
 				var translate = window.innerWidth / 1.5
 				const slider = header.parentElement.querySelector('.htv-carousel__slider')
 				const lastElem = slider.lastElementChild
@@ -329,7 +330,7 @@ const home__data = {
 					btnR.classList.add('btn--disabled')
 					translate = r - bound_r
 				}
-				slider.style.transform = 'translateX(' + (l - parseInt(window.getComputedStyle(firstElem, null).getPropertyValue('margin-left')) - translate) + 'px)'
+				slider.style.transform = 'translateX(' + (l - parseInt(window.getComputedStyle(firstElem, null).getPropertyValue('margin-left')) - bound_l - translate) + 'px)'
 				btnL.disabled = false
 				btnL.classList.remove('btn--disabled')
 			})
