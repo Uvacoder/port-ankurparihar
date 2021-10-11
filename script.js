@@ -288,7 +288,7 @@ const home__data = {
 					btnL.classList.add('btn--disabled')
 					translate = bound_l - l
 				}
-				slider.style.transform = 'translateX(' + (l - parseInt(window.getComputedStyle(firstElem, null).getPropertyValue('margin-left')) - bound_l + translate) + 'px)'
+				slider.style.transform = 'translateX(' + (l - bound_l + translate) + 'px)'
 				btnR.disabled = false
 				btnR.classList.remove('btn--disabled')
 
@@ -330,7 +330,7 @@ const home__data = {
 					btnR.classList.add('btn--disabled')
 					translate = r - bound_r
 				}
-				slider.style.transform = 'translateX(' + (l - parseInt(window.getComputedStyle(firstElem, null).getPropertyValue('margin-left')) - bound_l - translate) + 'px)'
+				slider.style.transform = 'translateX(' + (l - bound_l - translate) + 'px)'
 				btnL.disabled = false
 				btnL.classList.remove('btn--disabled')
 			})

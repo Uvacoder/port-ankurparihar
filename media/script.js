@@ -4,7 +4,7 @@ const overlay = document.getElementById('overlay')
 const dialog = document.getElementById('dialog')
 const sidenav = document.getElementById('side-navigation')
 const btnNavToggle = document.querySelector('button.nav_drawer_toggle')
-const btnSignIn = document.querySelector('.user-options button.log-in-text')
+const btnSignIn = document.querySelector('.user-options a.log-in-text')
 const btnBackToTop = document.getElementById('back-to-top-btn')
 const toolbar = document.getElementById('toolbar')
 const toolbarSearch = toolbar.querySelector('#toolbar-search')
@@ -228,7 +228,7 @@ btnBackToTop.onclick = backToTop
 
 var rippleEnabledElements = [
 	btnNavToggle,	// navigation toggle button
-	btnSignIn,		// sign in button on toolbar
+	// btnSignIn,		// sign in button on toolbar
 	btnBackToTop,	// back to top button
 ]
 
